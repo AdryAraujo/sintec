@@ -22,7 +22,7 @@ const Login = () => {
         <div className={styles.esqueceuSuaSenha}>Esqueceu sua senha?</div>
         <div className={styles.inputgroup}>
           <div className={styles.input}>
-            <div className={styles.placeholder}>Placeholder</div>
+            <div className={styles.placeholder}>ola</div>
           </div>
           <div className={styles.inputleftelement}>
 
