@@ -1,0 +1,161 @@
+.card,
+.logoIcon,
+.somIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 435px;
+  height: 900px;
+}
+.card,
+.somIcon {
+  top: 53px;
+  left: 1194px;
+  width: 24px;
+  height: 24px;
+}
+.card {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xs);
+  background-color: #edfdfd;
+  box-shadow: var(--base);
+  width: 573px;
+  height: 412px;
+}
+.esqueceuSuaSenha {
+  position: absolute;
+  top: 75.24%;
+  left: 70.16%;
+  font-size: 12px;
+  text-decoration: underline;
+  line-height: 20px;
+  font-family: var(--font-roboto);
+  color: #6750a4;
+  text-align: right;
+}
+.placeholder {
+  align-self: stretch;
+  position: relative;
+}
+.input {
+  flex: 1;
+  border-radius: var(--br-9xs);
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  box-sizing: border-box;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-base) 0 var(--padding-21xl);
+  z-index: 0;
+}
+.icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.inputgroup,
+.inputgroup1,
+.inputleftelement {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+}
+.inputleftelement {
+  margin: 0 !important;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.inputgroup,
+.inputgroup1 {
+  width: 78.53%;
+  top: calc(50% + 64px);
+  right: 9.25%;
+  left: 12.22%;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.inputgroup1 {
+  top: calc(50% - 16px);
+}
+.leftIcon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.children {
+  position: relative;
+  line-height: 20px;
+}
+.rightIcon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: none;
+}
+.button {
+  position: absolute;
+  height: 7.77%;
+  width: 37%;
+  top: 84.95%;
+  right: 29.67%;
+  bottom: 7.28%;
+  left: 33.33%;
+  border-radius: var(--br-7xs);
+  background-color: var(--cyan-300);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-xs);
+  box-sizing: border-box;
+  gap: var(--gap-5xs);
+  cursor: pointer;
+  font-size: var(--text-sm-lineheight-5-font-bold-size);
+  color: var(--white);
+}
+.logoSintec1Icon {
+  position: absolute;
+  top: 56px;
+  left: 206px;
+  width: 181px;
+  height: 77px;
+  overflow: hidden;
+}
+.cardLogin {
+  position: absolute;
+  top: 245px;
+  left: 575px;
+  width: 573px;
+  height: 412px;
+}
+.login {
+  position: relative;
+  border-radius: var(--br-xs);
+  background-color: #6750a4;
+  box-shadow: var(--base);
+  width: 1280px;
+  height: 900px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--gray-400);
+  font-family: var(--text-sm-lineheight-5-font-bold);
+  align-items: center;
+  display: flex;
+}

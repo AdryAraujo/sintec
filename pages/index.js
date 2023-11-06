@@ -1,11 +1,13 @@
 import Sidebar from '../components/Sidebar'
 import { Flex, Text, IconButton } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
+import Teste from "../components/teste"
 
 export default function Home() {
   return (
     <Flex w="100%">
-      <Sidebar />
+      <Teste/>
+      {/* <Sidebar />
       <Flex
         pos="absolute"
         top="50%"
@@ -19,7 +21,7 @@ export default function Home() {
             icon={<FiMenu />}
           />
         to resize the vertical navigation bar.</Text>
-      </Flex>
+      </Flex> */}
     </Flex>
   )
 }
