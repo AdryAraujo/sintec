@@ -13,10 +13,12 @@ const Login = () => {
   }, []);
 
   return (
-    <div className={styles.login}>
+    <div className={styles.funciona}>
+      <div>
         <Image className={styles.logoIcon} alt="" src={LogoLogin} />
         <Image className={styles.somIcon} alt="" src={Som} />
         {/* <SomIcon className={styles.teste}/> */}
+      </div>
       <div className={styles.cardLogin}>
         <div className={styles.card} />
         <div className={styles.esqueceuSuaSenha}>Esqueceu sua senha?</div>

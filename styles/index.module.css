@@ -147,7 +147,7 @@
 .login {
   position: relative;
   border-radius: var(--br-xs);
-  background-color: #6750a4;
+  background-color: white;
   box-shadow: var(--base);
   width: 1280px;
   height: 900px;
@@ -158,4 +158,9 @@
   font-family: var(--text-sm-lineheight-5-font-bold);
   align-items: center;
   display: flex;
+}
+.funciona {
+  width: 435px;
+  background-color: #000;
+  border: #6750a4;
 }
