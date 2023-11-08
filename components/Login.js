@@ -4,8 +4,8 @@ import LogoLogin from "../assets/logoLogin.svg"
 import Image from "next/image";
 import Logo from "../assets/logo_sintec.svg"
 import { Button, ButtonGroup, Input, InputGroup, InputLeftElement, InputRightElement, Link, Stack } from "@chakra-ui/react";
-import { HiOutlineMail } from "react-icons/hi";
-import { IoKeyOutline } from "react-icons/io5";
+import { HiOutlineMail, HiMiniMoon } from "react-icons/hi";
+import { IoKeyOutline, IoMoon } from "react-icons/io5";
 import { FiLogIn } from "react-icons/fi";
 
 
@@ -19,6 +19,7 @@ export default function Login(){
             <div className={styles.logo}>
                 <Image alt="" src={LogoLogin} />
             </div>
+            {/* <IoMoon className={styles.icon}/> */}
             <div className={styles.form_login}>
                 <Image className={styles.logoSintec1Icon} alt="" src={Logo}/>
                 <div className={styles.containerInputs}>
