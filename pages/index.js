@@ -7,8 +7,8 @@ import Login from '../components/Login'
 export default function Home() {
   return (
     <Flex w="100%">
-      <Login/>
-      {/* <Sidebar />
+      {/* <Login/> */}
+      <Sidebar />
       <Flex
         pos="absolute"
         top="50%"
@@ -22,7 +22,7 @@ export default function Home() {
             icon={<FiMenu />}
           />
         to resize the vertical navigation bar.</Text>
-      </Flex> */}
+      </Flex>
     </Flex>
   )
 }
