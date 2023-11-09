@@ -1,19 +1,19 @@
+import { Avatar, Divider, Flex, Heading, IconButton, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import { Flex, Text, IconButton, Divider, Avatar, Heading } from '@chakra-ui/react'
-import { FiMenu, FiHome, FiCalendar, FiUser, FiDollarSign, FiBriefcase, FiSettings, FiDownload, FiFileText, FiGlobe } from 'react-icons/fi'
-import { IoDownloadOutline, IoKeyOutline, IoPawOutline, IoPeopleOutline, IoPersonAddOutline, IoPersonCircleOutline, IoReceiptOutline, IoSearch, IoTodayOutline } from 'react-icons/io5'
+import { BsPersonAdd, BsPersonVcard } from "react-icons/bs"
+import { FiDownload, FiFileText, FiGlobe, FiHome, FiMenu, FiUser } from 'react-icons/fi'
+import { HiOutlineDocumentSearch } from 'react-icons/hi'
+import { IoKeyOutline, IoPeopleOutline, IoPersonCircleOutline, IoReceiptOutline, IoTodayOutline } from 'react-icons/io5'
 import NavItem from '../components/NavItem'
-import { HiOutlineDocumentSearch, HiOutlineUsers } from 'react-icons/hi'
-import { BsFileEarmarkPerson, BsPersonAdd, BsPersonVcard } from "react-icons/bs";
 
 export default function Sidebar() {
     const [navSize, changeNavSize] = useState("large")
     return (
         <Flex
-            pos="sticky"
-            left="5"
+            // pos="sticky"
+            // left="5"
             h="900px"
-            marginTop="2.5vh"
+            // marginTop="2.5vh"
             boxShadow="0 4px 12px 0 rgba(0, 0, 0, 0.05)"
             borderRadius={navSize == "small" ? "15px" : "30px"}
             w={navSize == "small" ? "75px" : "240px"}
@@ -40,7 +40,7 @@ export default function Sidebar() {
                             changeNavSize("small")
                     }}
                 />
-                <NavItem navSize={navSize} icon={FiHome} title="Dashboard" description="This is the description for the dashboard." />
+                <NavItem navSize={navSize} icon={FiHome} title="Home" description="This is the description for the dashboard." />
                 <Divider display={navSize == "small" ? "none" : "flex"} borderColor={'gray.400'} />
                 <NavItem navSize={navSize} icon={FiDownload} title="Importar Contas" _hover={{ background: '#fff' }} />
                 <NavItem navSize={navSize} icon={IoReceiptOutline} title="Contas Detalhados" />

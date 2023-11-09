@@ -22,7 +22,7 @@ export default function NavHoverBox({ title, icon, description }) {
             <Flex
                 h={200}
                 w={200}
-                // w="100%"
+                w="100%"
                 flexDir="column"
                 alignItems="center"
                 justify="center"
@@ -34,8 +34,6 @@ export default function NavHoverBox({ title, icon, description }) {
                 <Icon as={icon} fontSize="3xl" mb={4} />
                 <Heading size="md" fontWeight="normal">{title}</Heading>
                 <Text>{description}</Text>
-                {/* <Divider display={navSize == "small" ? "flex" : "flex"} borderColor={'gray.400'} /> */}
-
             </Flex>
         </>
     )
