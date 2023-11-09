@@ -4,7 +4,6 @@ import {
     Heading,
     Text,
     Icon,
-    Divider
 } from '@chakra-ui/react'
 
 export default function NavHoverBox({ title, icon, description }) {
