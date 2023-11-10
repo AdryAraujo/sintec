@@ -13,7 +13,7 @@ import NavHoverBox from '../components/NavHoverBox'
 export default function NavItem({ icon, title, description, active, navSize }) {
     return (
         <Flex
-            mt={2}
+            mt={1}
             flexDir="column"
             w="100%"
             alignItems={navSize == "small" ? "center" : "flex-start"}

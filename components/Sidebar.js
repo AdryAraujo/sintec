@@ -12,11 +12,11 @@ export default function Sidebar() {
         <Flex
             // pos="sticky"
             // left="5"
-            h="900px"
+            h="898px"
             // marginTop="2.5vh"
             boxShadow="0 4px 12px 0 rgba(0, 0, 0, 0.05)"
-            borderRadius={navSize == "small" ? "15px" : "30px"}
-            w={navSize == "small" ? "75px" : "240px"}
+            borderRadius={navSize == "small" ? "12px" : "12px"}
+            w={navSize == "small" ? "75px" : "275px"}
             flexDir="column"
             justifyContent="space-between"
             backgroundColor='cyan.100'
@@ -54,7 +54,7 @@ export default function Sidebar() {
                 <NavItem navSize={navSize} icon={IoPersonCircleOutline} title="Administrar Perfil" />
                 <NavItem navSize={navSize} icon={BsPersonAdd} title="Novo Usuário" />
                 <NavItem navSize={navSize} icon={FiGlobe} title="Monitorar Rede" />
-                <NavItem navSize={navSize} icon={BsPersonVcard} title="Monitorar Rede" />
+                <NavItem navSize={navSize} icon={BsPersonVcard} title="Listar Todos Usuários" />
                 <NavItem navSize={navSize} icon={IoKeyOutline} title="Lista de Credenciais" />
             </Flex>
             <Flex
