@@ -45,7 +45,7 @@ export default function FiltroDet() {
                     variant='outline'
                     mb={3}
                     colorScheme='cyan.300'
-                    mt={15}
+                    mt={2}
             >Filtrar</Button>
             <Button 
                     leftIcon={<FiX/>} 
