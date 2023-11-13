@@ -4,7 +4,7 @@ import { BsPersonAdd, BsPersonVcard } from "react-icons/bs"
 import { FiDownload, FiFileText, FiGlobe, FiHome, FiMenu, FiUser } from 'react-icons/fi'
 import { HiOutlineDocumentSearch } from 'react-icons/hi'
 import { IoKeyOutline, IoPeopleOutline, IoPersonCircleOutline, IoReceiptOutline, IoTodayOutline } from 'react-icons/io5'
-import NavItem from '../components/NavItem'
+import NavItem from './NavItem'
 
 export default function Sidebar() {
     const [navSize, changeNavSize] = useState("large")
@@ -16,7 +16,7 @@ export default function Sidebar() {
             // marginTop="2.5vh"
             boxShadow="0 4px 12px 0 rgba(0, 0, 0, 0.05)"
             borderRadius={navSize == "small" ? "12px" : "12px"}
-            w={navSize == "small" ? "75px" : "30%"}
+            w={navSize == "small" ? "75px" : "25%"}
             flexDir="column"
             justifyContent="space-between"
             backgroundColor='cyan.100'

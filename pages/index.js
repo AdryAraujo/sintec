@@ -2,13 +2,13 @@ import Sidebar from '../components/Sidebar'
 import { Flex, Text, IconButton } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
 import Teste from "../components/teste"
-import Login from '../components/Login'
-import CircCad from '../components/CircCad'
+import Login from './Login'
+import CircCad from './CircCad'
 
 export default function Home() {
   return (
-    <CircCad/>
-    // <Sidebar />
+    // <CircCad/>
+    <Sidebar />
       // <Login/>
 
       // <Flex

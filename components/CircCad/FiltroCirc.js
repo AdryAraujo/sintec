@@ -1,10 +1,7 @@
 import { Button, Flex, Input, Select, Text } from '@chakra-ui/react';
 import React from 'react';
-import { FiLogIn, FiX } from 'react-icons/fi';
+import { FiX } from 'react-icons/fi';
 import { IoSearch } from 'react-icons/io5';
-
-
-
 
 export default function FiltroCirc() {
     return (
@@ -19,8 +16,6 @@ export default function FiltroCirc() {
             marginInline={'20px'}
             marginTop={'20px'}
             backgroundColor={'white'}
-
-            
         >
             <Text mt={4}>Fornecedor:</Text>
             <Select placeholder='Select option' mb={3}>

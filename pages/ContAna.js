@@ -1,14 +1,11 @@
-import { Center, Flex, Input, Select, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 import React from 'react';
-import TableCirc from './TableCirc';
-import FiltroCirc from './FiltroCirc';
-import Sidebar from './Sidebar';
-import Rotas from './Rotas';
+import FiltroAna from '../components/ContAna/FiltroAna';
+import Rotas from '../components/Rotas';
+import Sidebar from '../components/Navbar/Sidebar';
+import TableAna from '../components/ContAna/TableAna';
 
-
-
-
-export default function CircCad() {
+export default function ContAna() {
     return (
         <Flex
             border='1px solid #E2E8F0'
@@ -43,10 +40,10 @@ export default function CircCad() {
                     <Text
                         alignSelf={'center'}
                         margin={5}
-                        fontSize='4xl'>Circuitos Cadastrados</Text>
+                        fontSize='4xl'>Contas Analítico</Text>
                     <Flex>
-                        <FiltroCirc />
-                        <TableCirc />
+                        <FiltroAna />
+                        <TableAna />
                     </Flex>
 
                 </Flex>
