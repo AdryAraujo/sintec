@@ -14,7 +14,7 @@ export default function TableAna() {
                     <Tr>
                         <Th >Mês Conta</Th>
                         <Th>Serviço Contrato</Th>
-                        <Th >Num. Contrato</Th>
+                        <Th >Contrato</Th>
                         <Th >Tipo Unidade</Th>
                         <Th >Valor</Th>
                     </Tr>
