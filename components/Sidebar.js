@@ -16,7 +16,7 @@ export default function Sidebar() {
             // marginTop="2.5vh"
             boxShadow="0 4px 12px 0 rgba(0, 0, 0, 0.05)"
             borderRadius={navSize == "small" ? "12px" : "12px"}
-            w={navSize == "small" ? "75px" : "275px"}
+            w={navSize == "small" ? "75px" : "30%"}
             flexDir="column"
             justifyContent="space-between"
             backgroundColor='cyan.100'

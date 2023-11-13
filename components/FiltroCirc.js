@@ -16,7 +16,8 @@ export default function FiltroCirc() {
             padding={'12px'}
             border='1px solid cyan.100'
             borderRadius={'12px'}
-            margin={'20px'}
+            marginInline={'20px'}
+            marginTop={'20px'}
             backgroundColor={'white'}
 
             
