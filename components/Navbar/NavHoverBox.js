@@ -6,7 +6,7 @@ import {
     Icon,
 } from '@chakra-ui/react'
 
-export default function NavHoverBox({ title, icon, description }) {
+export default function NavHoverBox({ title, icon, description, href }) {
     return (
         <>
             <Flex
@@ -20,7 +20,6 @@ export default function NavHoverBox({ title, icon, description }) {
                 borderRight="10px solid #82AAAD"
             />
             <Flex
-                h={200}
                 w={200}
                 w="100%"
                 flexDir="column"

@@ -1,4 +1,4 @@
-import Sidebar from '../components/Sidebar'
+import Sidebar from '../components/Navbar/Sidebar'
 import { Flex, Text, IconButton } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
 import Teste from "../components/teste"
