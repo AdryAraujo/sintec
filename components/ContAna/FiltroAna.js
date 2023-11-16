@@ -1,4 +1,4 @@
-import { Button, Flex, Input, Select, Text } from '@chakra-ui/react';
+import { Button, Flex, FormControl, FormLabel, Input, Select, Text } from '@chakra-ui/react';
 import React from 'react';
 import { FiX } from 'react-icons/fi';
 import { IoSearch } from 'react-icons/io5';
@@ -17,22 +17,28 @@ export default function FiltroAna() {
             marginTop={'20px'}
             backgroundColor={'white'}
         >
-            <Text mt={4}>Fornecedor:</Text>
-            <Select placeholder='Select option' mb={3}>
-                <option value='option1'>Option 1</option>
-                <option value='option2'>Option 2</option>
-                <option value='option3'>Option 3</option>
-            </Select>
-            <Text>Mês da Conta:</Text>
-            <Select placeholder='Select option' mb={3}>
-                <option value='option1'>Option 1</option>
-                <option value='option2'>Option 2</option>
-                <option value='option3'>Option 3</option>
-            </Select>
-            <Text>Serviço do Contrato:</Text>
-            <Input placeholder='Basic usage' mb={3} />
-            <Text>Tipo da Unidade:</Text>
-            <Input placeholder='Basic usage' mb={65} />
+            <FormControl>
+                <FormLabel mt={4}>Fornecedor:</FormLabel>
+                <Select placeholder='Selecione uma opção' mb={4}>
+                    <option>United Arab Emirates</option>
+                    <option>Nigeria</option>
+                </Select>
+            </FormControl>
+            <FormControl>
+                <FormLabel>Mês da Conta:</FormLabel>
+                <Select placeholder='Selecione uma opção' mb={4}>
+                    <option>United Arab Emirates</option>
+                    <option>Nigeria</option>
+                </Select>
+            </FormControl>
+            <FormControl>
+                <FormLabel>Serviço do Contrato:</FormLabel>
+                <Input type='email' mb={4}/>
+            </FormControl>
+            <FormControl>
+                <FormLabel>Tipo da Unidade:</FormLabel>
+                <Input type='email' mb={25}/>
+            </FormControl>
             <Button 
                         leftIcon={<IoSearch/>} 
                         color='blue.600'
@@ -78,7 +84,5 @@ export default function FiltroAna() {
                 >Limpar</Button>
             </Flex>
         </Flex>
-
-
     )
 }

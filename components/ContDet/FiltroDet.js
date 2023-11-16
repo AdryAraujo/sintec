@@ -1,4 +1,4 @@
-import { Button, Flex, Input, Select, Text } from '@chakra-ui/react';
+import { Button, Flex, FormControl, FormLabel, Input, Select, Text } from '@chakra-ui/react';
 import React from 'react';
 import { FiX } from 'react-icons/fi';
 import { IoSearch } from 'react-icons/io5';
@@ -9,7 +9,7 @@ export default function FiltroDet() {
         <Flex
             flexDir="column"
             width={'240px'}
-            height={'570px'}
+            height={'600px'}
             padding={'12px'}
             border='1px solid cyan.100'
             borderRadius={'12px'}
@@ -17,33 +17,43 @@ export default function FiltroDet() {
             marginTop={'20px'}
             backgroundColor={'white'}
         >
-            <Text mt={4}>Fornecedor:</Text>
-            <Select placeholder='Select option' mb={3}>
-                <option value='option1'>Option 1</option>
-                <option value='option2'>Option 2</option>
-                <option value='option3'>Option 3</option>
-            </Select>
-            <Text>Mês da Conta:</Text>
-            <Select placeholder='Select option' mb={3}>
-                <option value='option1'>Option 1</option>
-                <option value='option2'>Option 2</option>
-                <option value='option3'>Option 3</option>
-            </Select>
-            <Text>Contrato:</Text>
-            <Input placeholder='Basic usage' mb={3} />
-            <Text>Diretoria:</Text>
-            <Input placeholder='Basic usage' mb={3} />
-            <Text>Nome Unidade:</Text>
-            <Input placeholder='Basic usage' mb={3} />
-            <Text>Circuito:</Text>
-            <Input placeholder='Basic usage' mb={30} />
+            <FormControl>
+                <FormLabel mt={3}>Fornecedor:</FormLabel>
+                <Select placeholder='Selecione uma opção' mb={2}>
+                    <option>United Arab Emirates</option>
+                    <option>Nigeria</option>
+                </Select>
+            </FormControl>
+            <FormControl>
+                <FormLabel>Mês da Conta:</FormLabel>
+                <Select placeholder='Selecione uma opção' mb={2}>
+                    <option>United Arab Emirates</option>
+                    <option>Nigeria</option>
+                </Select>
+            </FormControl>
+            <FormControl>
+                <FormLabel>Contrato:</FormLabel>
+                <Input type='email' mb={2}/>
+            </FormControl>
+            <FormControl>
+                <FormLabel>Diretoria:</FormLabel>
+                <Input type='email' mb={2}/>
+            </FormControl>
+            <FormControl>
+                <FormLabel>Nome Unidade:</FormLabel>
+                <Input type='email' mb={2}/>
+            </FormControl>
+            <FormControl>
+                <FormLabel>Circuito:</FormLabel>
+                <Input type='email' mb={15}/>
+            </FormControl>
             <Button 
                     leftIcon={<IoSearch/>} 
                     color='cyan.300'
                     width='212px'
                     height='32px'
                     variant='outline'
-                    mb={3}
+                    mb={2}
                     colorScheme='cyan.300'
                     mt={2}
             >Filtrar</Button>
@@ -53,7 +63,7 @@ export default function FiltroDet() {
                     width='212px'
                     height='32px'
                     variant='outline'
-                    mb={3}
+                    mb={2}
                     colorScheme='red'
             >Limpar</Button>
 

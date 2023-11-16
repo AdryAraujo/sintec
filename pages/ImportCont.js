@@ -1,4 +1,4 @@
-import { Flex, Input, Text } from '@chakra-ui/react';
+import { Flex, FormControl, FormHelperText, FormLabel, Input, Text } from '@chakra-ui/react';
 import React from 'react';
 import FiltroCirc from '../components/CircCad/FiltroCirc';
 import Rotas from '../components/Rotas';
@@ -42,12 +42,18 @@ export default function CircCad() {
                         margin={5}
                         fontSize='4xl'>Importar Contas</Text>
                     <Flex>
-                        <Text>Serviço do Contrato:</Text>
-                        <Input placeholder='Basic usage' mb={3} />
-                        <Text>Serviço do Contrato:</Text>
-                        <Input placeholder='Basic usage' mb={3} />
-                        <Text>Serviço do Contrato:</Text>
-                        <Input placeholder='Basic usage' mb={3} />
+                        <FormControl>
+                            <FormLabel>Serviço do Contrato:</FormLabel>
+                            <Input type='email' />
+                        </FormControl>
+                        <FormControl>
+                            <FormLabel>Email address</FormLabel>
+                            <Input type='email' />
+                        </FormControl>
+                        <FormControl>
+                            <FormLabel>Email address</FormLabel>
+                            <Input type='email' />
+                        </FormControl>
                     </Flex>
                     <TableCirc />
                 </Flex>
