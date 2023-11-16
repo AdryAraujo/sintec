@@ -18,26 +18,26 @@ export default function FiltroAna() {
             backgroundColor={'white'}
         >
             <FormControl>
-                <FormLabel mt={4}>Fornecedor:</FormLabel>
-                <Select placeholder='Selecione uma opção' mb={4}>
+                <FormLabel mb={0} mt={4}>Fornecedor:</FormLabel>
+                <Select placeholder='Selecione uma opção' mb={5}>
                     <option>United Arab Emirates</option>
                     <option>Nigeria</option>
                 </Select>
             </FormControl>
             <FormControl>
-                <FormLabel>Mês da Conta:</FormLabel>
-                <Select placeholder='Selecione uma opção' mb={4}>
+                <FormLabel mb={0}>Mês da Conta:</FormLabel>
+                <Select placeholder='Selecione uma opção' mb={5}>
                     <option>United Arab Emirates</option>
                     <option>Nigeria</option>
                 </Select>
             </FormControl>
             <FormControl>
-                <FormLabel>Serviço do Contrato:</FormLabel>
-                <Input type='email' mb={4}/>
+                <FormLabel mb={0}>Serviço do Contrato:</FormLabel>
+                <Input type='text' mb={5}/>
             </FormControl>
             <FormControl>
-                <FormLabel>Tipo da Unidade:</FormLabel>
-                <Input type='email' mb={25}/>
+                <FormLabel mb={0}>Tipo da Unidade:</FormLabel>
+                <Input type='text' mb={45}/>
             </FormControl>
             <Button 
                         leftIcon={<IoSearch/>} 

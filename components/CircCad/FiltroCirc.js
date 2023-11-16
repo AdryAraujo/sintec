@@ -18,36 +18,28 @@ export default function FiltroCirc() {
             backgroundColor={'white'}
         >
             <FormControl>
-                <FormLabel mt={4}>Fornecedor:</FormLabel>
+                <FormLabel mb={0} mt={4}>Fornecedor:</FormLabel>
                 <Select placeholder='Selecione uma opção' mb={3}>
                     <option>United Arab Emirates</option>
                     <option>Nigeria</option>
                 </Select>
             </FormControl>
             <FormControl>
-                <FormLabel>Diretoria:</FormLabel>
+                <FormLabel mb={0}>Diretoria:</FormLabel>
+                <Input type='text' mb={3}/>
+            </FormControl>
+            <FormControl>
+                <FormLabel mb={0}>Contrato:</FormLabel>
+                <Input type='number' mb={3}/>
+            </FormControl>
+            <FormControl>
+                <FormLabel mb={0}>Nome Unidade:</FormLabel>
                 <Input type='email' mb={3}/>
             </FormControl>
             <FormControl>
-                <FormLabel>Contrato:</FormLabel>
-                <Input type='email' mb={3}/>
+                <FormLabel mb={0}>Circuito:</FormLabel>
+                <Input type='number' mb={55}/>
             </FormControl>
-            <FormControl>
-                <FormLabel>Nome Unidade:</FormLabel>
-                <Input type='email' mb={3}/>
-            </FormControl>
-            <FormControl>
-                <FormLabel>Circuito:</FormLabel>
-                <Input type='email' mb={30}/>
-            </FormControl>
-            {/* <Text></Text>
-            <Input placeholder='Basic usage' mb={3} />
-            <Text>Diretoria:</Text>
-            <Input placeholder='Basic usage' mb={3} />
-            <Text>Nome Unidade:</Text>
-            <Input placeholder='Basic usage' mb={3} />
-            <Text>Circuito:</Text>
-            <Input placeholder='Basic usage' mb={50} /> */}
             <Button
                 leftIcon={<IoSearch />}
                 color='cyan.300'
