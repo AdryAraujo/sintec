@@ -8,7 +8,7 @@ import CircCad from './CircCad'
 export default function Home() {
   return (
     // <CircCad/>
-    <Sidebar />
+    <Login />
       // <Login/>
 
       // <Flex
