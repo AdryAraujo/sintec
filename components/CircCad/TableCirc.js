@@ -7,7 +7,8 @@ export default function TableCirc() {
             marginTop={'20px'}
             marginRight={'15px'}
             backgroundColor={'white'}
-            borderRadius={'12px'}>
+            borderRadius={'12px'}
+            >
             <Table>
                 <Thead>
                     <Tr>

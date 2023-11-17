@@ -4,7 +4,7 @@ import TableDet from '../components/ContDet/TableDet';
 import Sidebar from '../components/Navbar/Sidebar';
 import Rotas from '../components/Rotas';
 import FiltroDet from '../components/ContDet/FiltroDet';
-import styles from '../styles/CircCad.module.css'
+import styles from '../styles/Container.module.css'
 
 export default function ContDet() {
     return (

@@ -4,7 +4,7 @@ import { FiSkipBack } from 'react-icons/fi';
 import Sidebar from '../components/Navbar/Sidebar';
 import Rotas from '../components/Rotas';
 import TableDeta from '../components/TableDeta';
-import styles from '../styles/CircCad.module.css'
+import styles from '../styles/Container.module.css'
 
 export default function Detalhamento() {
     return (

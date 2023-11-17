@@ -4,7 +4,7 @@ import FiltroCirc from '../components/CircCad/FiltroCirc';
 import Rotas from '../components/Rotas';
 import Sidebar from '../components/Navbar/Sidebar';
 import TableCirc from '../components/CircCad/TableCirc';
-import styles from '../styles/CircCad.module.css'
+import styles from '../styles/Container.module.css'
 
 export default function CircCad() {
     return (

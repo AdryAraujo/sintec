@@ -4,10 +4,11 @@ export default function TableDet() {
     return (
         <TableContainer
             width={'full'}
-            marginTop={'20px'}
-            marginRight={'15px'}
-            backgroundColor={'white'}
-            borderRadius={'12px'}
+            // marginTop={'20px'}
+            // marginRight={'15px'}
+            // backgroundColor={'white'}
+            // borderRadius={'12px'}
+            className={styles.containerTable}
         >
             <Table>
                 <Thead>

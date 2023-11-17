@@ -4,7 +4,7 @@ import FiltroAna from '../components/ContAna/FiltroAna';
 import Rotas from '../components/Rotas';
 import Sidebar from '../components/Navbar/Sidebar';
 import TableAna from '../components/ContAna/TableAna';
-import styles from '../styles/CircCad.module.css'
+import styles from '../styles/Container.module.css'
 
 
 export default function ContAna() {
