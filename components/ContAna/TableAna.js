@@ -1,13 +1,16 @@
 import { Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import React from 'react';
+import styles from '../../styles/Table.module.css'
+
 export default function TableAna() {
     return (
         <TableContainer
             width={'full'}
-            marginTop={'20px'}
-            marginRight={'15px'}
-            backgroundColor={'white'}
-            borderRadius={'12px'}
+            // marginTop={'20px'}
+            // marginRight={'15px'}
+            // backgroundColor={'white'}
+            // borderRadius={'12px'}
+            className={styles.containerTable}
         >
             <Table>
                 <Thead>

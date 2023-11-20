@@ -20,7 +20,7 @@ export default function Sidebar() {
             borderRadius={navSize == "small" ? "12px" : "12px"}
             w={navSize == "small" ? "75px" : "25%"}
             flexDir="column"
-            // justifyContent="space-between"
+            justifyContent="space-between"
             backgroundColor='cyan.100'
         >
             <Flex
@@ -63,6 +63,7 @@ export default function Sidebar() {
 
                 
             </Flex>
+            {/* parte do avatar e nome do usuário */}
             <Flex
                 p="5%"
                 flexDir="column"

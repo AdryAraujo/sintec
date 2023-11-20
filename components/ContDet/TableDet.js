@@ -1,9 +1,10 @@
 import { Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import React from 'react';
+import styles from '../../styles/Table.module.css'
 export default function TableDet() {
     return (
         <TableContainer
-            width={'full'}
+            // width={'full'}
             // marginTop={'20px'}
             // marginRight={'15px'}
             // backgroundColor={'white'}
