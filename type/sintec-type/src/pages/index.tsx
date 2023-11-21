@@ -4,6 +4,7 @@ import styles from '@/styles/Home.module.css'
 import Login from  './Login'
 import Cadastro from './Cadastro'
 import Sidebar from '@/components/Navbar/Sidebar'
+import CircCad from './CircCad'
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-       <Sidebar/>
+       <CircCad/>
     </>
   )
 }
