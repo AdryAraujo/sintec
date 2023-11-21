@@ -1,33 +1,36 @@
-import styles from "../styles/Cadastro.module.css";
+import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
+import styles from "../styles/Container.module.css";
 import React from 'react';
-import LogoLogin from "../assets/logoLogin.svg"
-import Image from "next/image";
-import Logo from "../assets/logo_sintec.svg"
-import { Button, ButtonGroup, FormControl, FormLabel, Input, InputGroup, InputLeftElement, InputRightElement, Link, Stack } from "@chakra-ui/react";
-import { HiOutlineMail, HiMiniMoon } from "react-icons/hi";
-import { IoKeyOutline, IoMoon } from "react-icons/io5";
-import { FiLogIn } from "react-icons/fi";
-import { Router } from "next/router";
+import { Flex, Text } from '@chakra-ui/react';
+import { FiSkipBack } from 'react-icons/fi';
+import Sidebar from '../components/Navbar/Sidebar';
+import Rotas from '../components/Rotas';
+import TableDeta from '../components/TableDeta';
+import { IoIosAddCircleOutline } from "react-icons/io";
 
-
-export default function Login() {
-
+export default function Detalhamento() {
     const [show, setShow] = React.useState(false)
     const handleClick = () => setShow(!show)
-    // const handleLogin = () => {
-    //     Router.push('/CircCad');
-    // };
-
     return (
-        <div className={styles.container}>
-            <div className={styles.logo}>
-                <Image alt="" src={LogoLogin} />
-            </div>
-            {/* <IoMoon className={styles.icon}/> */}
-            <div className={styles.form_login}>
-                <Image className={styles.logoSintec1Icon} alt="" src={Logo} />
-                <div className={styles.containerInputs}>
-                    <FormControl isRequired >
+        <Flex
+            className={styles.containerTotal}
+        >
+            <Sidebar />
+            <Flex
+                className={styles.containerPrincipal}
+            >
+                <Rotas />
+                <Flex
+                    paddingInline={'15px'}
+                    className={styles.containerTable}
+                >
+                    <Text
+                        alignSelf={'center'}
+                        margin={5}
+                        fontSize='4xl'>Cadastro de Usuários</Text>
+                    <Flex
+                        mt={3}>
+                        <FormControl isRequired >
                         <FormLabel mb={0}>Nome Completo:</FormLabel>
                         <Input type='number'
                             variant='filled'
@@ -38,7 +41,8 @@ export default function Login() {
                             borderColor='gray.200'
                             width='450px'
                             marginBottom='20px'
-                            mb={4} />
+                            mb={4}
+                            mr={2} />
                     </FormControl>
                     <FormControl isRequired >
                         <FormLabel mb={0}>Login da Rede:</FormLabel>
@@ -51,7 +55,8 @@ export default function Login() {
                             borderColor='gray.200'
                             width='450px'
                             marginBottom='20px'
-                            mb={4} />
+                            mb={4}
+                            mr={2} />
                     </FormControl>
                     <FormControl isRequired >
                         <FormLabel mb={0}>Senha:</FormLabel>
@@ -74,22 +79,116 @@ export default function Login() {
                             </InputRightElement>
                         </InputGroup>
                     </FormControl>
-                    <Link href="/CircCad" alignSelf={'center'}>
-                        <Button
-                            as="a"
-                            leftIcon={<FiLogIn />}
-                            backgroundColor='cyan.300'
-                            variant='solid'
-                            color='white'
-                            width='212px'
-                            height='32px'
-                        // onClick={handleLogin}
-                        >
-                            Login
-                        </Button>
-                    </Link>
-                </div>
-            </div>
-        </div>
+                    </Flex>
+                    <Button
+                        leftIcon={<IoIosAddCircleOutline />}
+                        color='blue.600'
+                        width='212px'
+                        height='32px'
+                        variant='outline'
+
+                        colorScheme='blue.600'
+                        alignSelf={'center'}
+                    >Cadastrar</Button>
+                    <TableDeta />
+                    <Button
+                        leftIcon={<FiSkipBack />}
+                        color='blue.600'
+                        width='212px'
+                        height='32px'
+                        variant='outline'
+                        mb={3}
+                        colorScheme='blue.600'
+                        mt={7}
+                        alignSelf={'center'}
+                    >Voltar</Button>
+                </Flex>
+            </Flex>
+        </Flex>
+
     )
 }
+
+// export default function Login() {
+
+//     const [show, setShow] = React.useState(false)
+//     const handleClick = () => setShow(!show)
+//     // const handleLogin = () => {
+//     //     Router.push('/CircCad');
+//     // };
+
+//     return (
+//         <div className={styles.container}>
+//             <div className={styles.logo}>
+//                 <Image alt="" src={LogoLogin} />
+//             </div>
+//             {/* <IoMoon className={styles.icon}/> */}
+//             <div className={styles.form_login}>
+//                 <Image className={styles.logoSintec1Icon} alt="" src={Logo} />
+//                 <div className={styles.containerInputs}>
+//                     <FormControl isRequired >
+//                         <FormLabel mb={0}>Nome Completo:</FormLabel>
+//                         <Input type='number'
+//                             variant='filled'
+//                             placeholder='Filled'
+//                             type='tel'
+//                             placeholder='Digite seu email aqui!'
+//                             backgroundColor='#ffffff'
+//                             borderColor='gray.200'
+//                             width='450px'
+//                             marginBottom='20px'
+//                             mb={4} />
+//                     </FormControl>
+//                     <FormControl isRequired >
+//                         <FormLabel mb={0}>Login da Rede:</FormLabel>
+//                         <Input type='number'
+//                             variant='filled'
+//                             placeholder='Filled'
+//                             type='tel'
+//                             placeholder='Digite seu email aqui!'
+//                             backgroundColor='#ffffff'
+//                             borderColor='gray.200'
+//                             width='450px'
+//                             marginBottom='20px'
+//                             mb={4} />
+//                     </FormControl>
+//                     <FormControl isRequired >
+//                         <FormLabel mb={0}>Senha:</FormLabel>
+//                         <InputGroup mb={6}>
+//                             <Input
+//                                 variant='filled'
+//                                 placeholder='Filled'
+//                                 type='password'
+//                                 placeholder='Digite sua senha aqui!'
+//                                 backgroundColor='#ffffff'
+//                                 borderColor='gray.200'
+//                                 pr='4.5rem'
+//                                 type={show ? 'text' : 'password'}
+//                                 width='450px'
+//                             />
+//                             <InputRightElement width='4.5rem'>
+//                                 <Button h='1.75rem' size='sm' onClick={handleClick}>
+//                                     {show ? 'Hide' : 'Show'}
+//                                 </Button>
+//                             </InputRightElement>
+//                         </InputGroup>
+//                     </FormControl>
+//                     <Link href="/CircCad" alignSelf={'center'}>
+//                         <Button
+//                             as="a"
+//                             leftIcon={<FiLogIn />}
+//                             backgroundColor='cyan.300'
+//                             variant='solid'
+//                             color='white'
+//                             width='212px'
+//                             height='32px'
+//                         // onClick={handleLogin}
+//                         >
+//                             Login
+//                         </Button>
+//                     </Link>
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
