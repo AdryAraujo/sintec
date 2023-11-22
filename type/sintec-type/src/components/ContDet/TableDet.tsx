@@ -4,7 +4,7 @@ import styles from '../../styles/Table.module.css'
 export default function TableDet() {
     return (
         <TableContainer
-            // width={'full'}
+            width={'full'}
             // marginTop={'20px'}
             // marginRight={'15px'}
             // backgroundColor={'white'}

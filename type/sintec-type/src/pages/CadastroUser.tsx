@@ -9,8 +9,6 @@ import TableDeta from '../components/TableDeta';
 import { IoIosAddCircleOutline } from "react-icons/io";
 
 export default function Detalhamento() {
-    const [show, setShow] = React.useState(false)
-    const handleClick = () => setShow(!show)
     return (
         <Flex
             className={styles.containerTotal}
@@ -29,7 +27,10 @@ export default function Detalhamento() {
                         margin={5}
                         fontSize='4xl'>Cadastro de Usuários</Text>
                     <Flex
-                        mt={3}>
+                        mt={3}
+                        justifyContent={'center'}
+                        alignItems={'center'}
+                        display={'flex'}>
                         <FormControl isRequired >
                         <FormLabel mb={0}>Nome Completo:</FormLabel>
                         <Input type='number'
@@ -43,42 +44,38 @@ export default function Detalhamento() {
                             marginBottom='20px'
                             mb={4}
                             mr={2} />
-                    </FormControl>
-                    <FormControl isRequired >
-                        <FormLabel mb={0}>Login da Rede:</FormLabel>
-                        <Input type='number'
-                            variant='filled'
-                            placeholder='Filled'
-                            type='tel'
-                            placeholder='Digite seu email aqui!'
-                            backgroundColor='#ffffff'
-                            borderColor='gray.200'
-                            width='450px'
-                            marginBottom='20px'
-                            mb={4}
-                            mr={2} />
-                    </FormControl>
-                    <FormControl isRequired >
-                        <FormLabel mb={0}>Senha:</FormLabel>
-                        <InputGroup mb={6}>
-                            <Input
+                        </FormControl>
+                        <FormControl isRequired >
+                            <FormLabel mb={0}>Login da Rede:</FormLabel>
+                            <Input type='number'
                                 variant='filled'
                                 placeholder='Filled'
-                                type='password'
-                                placeholder='Digite sua senha aqui!'
+                                type='tel'
+                                placeholder='Digite seu email aqui!'
                                 backgroundColor='#ffffff'
                                 borderColor='gray.200'
-                                pr='4.5rem'
-                                type={show ? 'text' : 'password'}
                                 width='450px'
-                            />
-                            <InputRightElement width='4.5rem'>
-                                <Button h='1.75rem' size='sm' onClick={handleClick}>
-                                    {show ? 'Hide' : 'Show'}
-                                </Button>
-                            </InputRightElement>
-                        </InputGroup>
-                    </FormControl>
+                                marginBottom='20px'
+                                mb={4}
+                                mr={2} />
+                        </FormControl>
+                        <FormControl isRequired >
+                            <FormLabel mb={0}>Senha:</FormLabel>
+                            <InputGroup >
+                                <Input
+                                    variant='filled'
+                                    placeholder='Filled'
+                                    type='password'
+                                    placeholder='Digite sua senha aqui!'
+                                    backgroundColor='#ffffff'
+                                    borderColor='gray.200'
+                                    pr='4.5rem'
+                                    type={'password'}
+                                    width='450px'
+                                    mb={4}
+                                />
+                            </InputGroup>
+                        </FormControl>
                     </Flex>
                     <Button
                         leftIcon={<IoIosAddCircleOutline />}
@@ -86,7 +83,6 @@ export default function Detalhamento() {
                         width='212px'
                         height='32px'
                         variant='outline'
-
                         colorScheme='blue.600'
                         alignSelf={'center'}
                     >Cadastrar</Button>
