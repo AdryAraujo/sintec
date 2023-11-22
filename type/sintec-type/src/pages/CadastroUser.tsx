@@ -8,7 +8,7 @@ import Rotas from '../components/Rotas';
 import TableDeta from '../components/TableDeta';
 import { IoIosAddCircleOutline } from "react-icons/io";
 
-export default function Detalhamento() {
+export default function CadastroUser() {
     return (
         <Flex
             className={styles.containerTotal}

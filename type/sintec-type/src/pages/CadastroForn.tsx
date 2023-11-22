@@ -1,16 +1,13 @@
-import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
-import styles from "../styles/Container.module.css";
-import React from 'react';
-import { Flex, Text } from '@chakra-ui/react';
+import { Button, Flex, FormControl, FormLabel, Input, InputGroup, Text } from "@chakra-ui/react";
 import { FiSkipBack } from 'react-icons/fi';
+import { IoIosAddCircleOutline } from "react-icons/io";
 import Sidebar from '../components/Navbar/Sidebar';
 import Rotas from '../components/Rotas';
 import TableDeta from '../components/TableDeta';
-import { IoIosAddCircleOutline } from "react-icons/io";
-import { BsCpuFill, BsEmojiAngryFill } from "react-icons/bs";
-import { NOMEM } from "dns";
+import styles from "../styles/Container.module.css";
 
-export default function Detalhamento() {
+export default function CadastroForn() {
+    
     return (
         <Flex
             className={styles.containerTotal}
