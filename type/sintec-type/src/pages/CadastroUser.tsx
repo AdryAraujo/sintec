@@ -31,33 +31,31 @@ export default function Detalhamento() {
                         justifyContent={'center'}
                         alignItems={'center'}
                         display={'flex'}>
-                        <FormControl isRequired >
+                        <FormControl isRequired mr={2}>
                         <FormLabel mb={0}>Nome Completo:</FormLabel>
-                        <Input type='number'
+                        <Input
                             variant='filled'
                             placeholder='Filled'
-                            type='tel'
-                            placeholder='Digite seu email aqui!'
+                            type='text'
+                            placeholder='Digite seu nome aqui!'
                             backgroundColor='#ffffff'
                             borderColor='gray.200'
-                            width='450px'
+                            width='full'
                             marginBottom='20px'
-                            mb={4}
-                            mr={2} />
+                            mb={4}/>
                         </FormControl>
-                        <FormControl isRequired >
+                        <FormControl isRequired mr={2}>
                             <FormLabel mb={0}>Login da Rede:</FormLabel>
-                            <Input type='number'
+                            <Input
                                 variant='filled'
                                 placeholder='Filled'
-                                type='tel'
-                                placeholder='Digite seu email aqui!'
+                                type='text'
+                                placeholder='Digite seu login aqui!'
                                 backgroundColor='#ffffff'
                                 borderColor='gray.200'
-                                width='450px'
+                                width='full'
                                 marginBottom='20px'
-                                mb={4}
-                                mr={2} />
+                                mb={4}/>
                         </FormControl>
                         <FormControl isRequired >
                             <FormLabel mb={0}>Senha:</FormLabel>
@@ -71,7 +69,7 @@ export default function Detalhamento() {
                                     borderColor='gray.200'
                                     pr='4.5rem'
                                     type={'password'}
-                                    width='450px'
+                                    width='full'
                                     mb={4}
                                 />
                             </InputGroup>
