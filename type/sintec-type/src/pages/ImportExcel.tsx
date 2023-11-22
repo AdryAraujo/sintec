@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import Data from '../components/Importarcao/Data'; // Certifique-se de ajustar o caminho conforme necessário
 import * as XLSX from 'xlsx';
-import { Table, Tbody, Th, Thead, Tr } from '@chakra-ui/react';
+import { Button, Flex, Input, Table, TableContainer, Tbody, Text, Th, Thead, Tr } from '@chakra-ui/react';
+import { FiSend } from 'react-icons/fi';
+import Sidebar from '@/components/Navbar/Sidebar';
+import Rotas from '../components/Rotas';
+import styles from '../styles/Container.module.css'
+import style from '../styles/Table.module.css'
+
 
 const App: React.FC = () => {
     // on change states
@@ -27,7 +33,7 @@ const App: React.FC = () => {
                     setExcelFile(e.target?.result as ArrayBuffer);
                 };
             } else {
-                setExcelFileError('Please select only Excel (xlsx) file types');
+                setExcelFileError('Por favor, selecione um arquivo .xlsx');
                 setExcelFile(null);
             }
         } else {
@@ -50,66 +56,83 @@ const App: React.FC = () => {
     };
 
     return (
-        <div className="container">
-            {/* upload file section */}
-            <div className="form">
-                <form
-                    className="form-group"
-                    autoComplete="off"
-                    onSubmit={handleSubmit}
+        <Flex
+            className={styles.containerTotal}
+        >
+            <Sidebar />
+            <Flex
+                className={styles.containerPrincipal}
+            >
+                <Rotas />
+                <Flex
+                    paddingInline={'15px'}
+                    className={styles.containerTable}
                 >
-                    <label>
-                        <h5>Upload Excel file</h5>
-                    </label>
-                    <br />
-                    <input
-                        type="file"
-                        className="form-control"
-                        onChange={handleFile}
-                        required
-                    />
-                    {excelFileError && (
-                        <div className="text-danger" style={{ marginTop: 5 + 'px' }}>
-                            {excelFileError}
-                        </div>
-                    )}
-                    <button
-                        type="submit"
-                        className="btn btn-success"
-                        style={{ marginTop: 5 + 'px' }}
-                    >
-                        Submit
-                    </button>
-                </form>
-            </div>
-
-            <br />
-            <hr />
-
-            {/* view file section */}
-            <h5>View Excel file</h5>
-            <div className="viewer">
-                {excelData === null && <>No file selected</>}
-                {excelData !== null && (
-                    <Table>
-                        <Thead>
-                            <Tr>
-                                <Th >ID</Th>
-                                <Th >First Name</Th>
-                                <Th >Last Name</Th>
-                                <Th >Gender</Th>
-                                <Th >Country</Th>
-                                <Th >Age</Th>
-                                <Th >Date</Th>
-                            </Tr>
-                        </Thead>
-                        <Tbody>
-                            <Data excelData={excelData} />
-                        </Tbody>
-                    </Table>
-                )}
-            </div>
-        </div>
+                    <Text
+                        alignSelf={'center'}
+                        margin={5}
+                        fontSize='4xl'>Detalhamento das Contas</Text>
+                    <div className="form">
+                        <form
+                            className="form-group"
+                            autoComplete="off"
+                            onSubmit={handleSubmit}
+                        >
+                            <label>
+                                <h5>Upload Excel file</h5>
+                            </label>
+                            <Input
+                                type="file"
+                                onChange={handleFile}
+                                required
+                            />
+                            {excelFileError && (
+                                <div className="text-danger" style={{ marginTop: 5 + 'px' }}>
+                                    {excelFileError}
+                                </div>
+                            )}
+                            <Button
+                                type="submit"
+                                leftIcon={<FiSend />}
+                                backgroundColor='cyan.300'
+                                variant='solid'
+                                color='white'
+                                height='32px'
+                            >
+                                Submit
+                            </Button>
+                        </form>
+                    </div>
+                    {/* view file section */}
+                    <div className="viewer">
+                        {excelData === null && <>No file selected</>}
+                        {excelData !== null && (
+                            <TableContainer
+                                width={'full'}
+                                className={style.containerTable}
+                            >
+                                <Table>
+                                    <Thead>
+                                        <Tr>
+                                            <Th >ID</Th>
+                                            <Th >First Name</Th>
+                                            <Th >Last Name</Th>
+                                            <Th >Gender</Th>
+                                            <Th >Country</Th>
+                                            <Th >Age</Th>
+                                            <Th >Date</Th>
+                                        </Tr>
+                                    </Thead>
+                                    <Tbody>
+                                        <Data excelData={excelData} />
+                                    </Tbody>
+                                </Table>
+                            </TableContainer>
+                        )}
+                    </div>
+                </Flex>
+            </Flex>
+        </Flex >
     );
 };
 
