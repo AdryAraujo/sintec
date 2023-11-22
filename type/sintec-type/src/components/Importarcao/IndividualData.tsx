@@ -1,3 +1,4 @@
+import { Th } from '@chakra-ui/react';
 import React from 'react';
 
 interface IndividualDataProps {
@@ -14,13 +15,13 @@ interface IndividualDataProps {
 const IndividualData: React.FC<IndividualDataProps> = ({ individualExcelData }) => {
   return (
     <>
-      <th>{individualExcelData.Id}</th>
-      <th>{individualExcelData.FirstName}</th>
-      <th>{individualExcelData.LastName}</th>
-      <th>{individualExcelData.Gender}</th>
-      <th>{individualExcelData.Country}</th>
-      <th>{individualExcelData.Age}</th>
-      <th>{individualExcelData.Date}</th>
+      <Th>{individualExcelData.Id}</Th>
+      <Th>{individualExcelData.FirstName}</Th>
+      <Th>{individualExcelData.LastName}</Th>
+      <Th>{individualExcelData.Gender}</Th>
+      <Th>{individualExcelData.Country}</Th>
+      <Th>{individualExcelData.Age}</Th>
+      <Th>{individualExcelData.Date}</Th>
     </>
   );
 };
