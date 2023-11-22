@@ -35,45 +35,44 @@ export default function Detalhamento() {
                         display={'flex'}>
                         <FormControl isRequired mr={2} >
                             <FormLabel mb={0}>Nome do Fornecedor:</FormLabel>
-                            <Input type='number'
+                            <Input
                                 variant='filled'
                                 placeholder='Filled'
-                                type='tel'
+                                type='text'
                                 placeholder='Digite seu email aqui!'
                                 backgroundColor='#ffffff'
                                 borderColor='gray.200'
                                 width='full'
                                 marginBottom='20px'
                                 mb={4}
-                                />
+                            />
                         </FormControl>
                         <FormControl isRequired mr={2}>
                             <FormLabel mb={0}>CNPJ:</FormLabel>
                             <Input type='number'
                                 variant='filled'
                                 placeholder='Filled'
-                                type='tel'
                                 placeholder='Digite seu email aqui!'
                                 backgroundColor='#ffffff'
                                 borderColor='gray.200'
                                 width='full'
                                 marginBottom='20px'
                                 mb={4}
-                                />
+                            />
                         </FormControl>
                         <FormControl isRequired mr={2}>
                             <FormLabel mb={0}>N. Inst. Estadual:</FormLabel>
-                            <Input type='number'
+                            <Input
+                                type='number'
                                 variant='filled'
                                 placeholder='Filled'
-                                type='tel'
                                 placeholder='Digite seu email aqui!'
                                 backgroundColor='#ffffff'
                                 borderColor='gray.200'
                                 width='full'
                                 marginBottom='20px'
                                 mb={4}
-                                 />
+                            />
                         </FormControl>
                         <FormControl isRequired mr={2}>
                             <FormLabel mb={0}>Email:</FormLabel>
@@ -81,30 +80,29 @@ export default function Detalhamento() {
                                 <Input
                                     variant='filled'
                                     placeholder='Filled'
-                                    type='password'
+                                    type='email'
                                     placeholder='Digite sua senha aqui!'
                                     backgroundColor='#ffffff'
                                     borderColor='gray.200'
                                     pr='4.5rem'
-                                    type={'password'}
                                     width='full'
                                     mb={4}
-                                    />
+                                />
                             </InputGroup>
                         </FormControl>
                         <FormControl isRequired>
                             <FormLabel mb={0}>Telefone:</FormLabel>
-                            <Input type='number'
+                            <Input
                                 variant='filled'
                                 placeholder='Filled'
-                                type='tel'
+                                type='number'
                                 placeholder='Digite seu email aqui!'
                                 backgroundColor='#ffffff'
                                 borderColor='gray.200'
                                 width='full'
                                 marginBottom='20px'
                                 mb={4}
-                                />
+                            />
                         </FormControl>
                     </Flex>
                     <Flex
@@ -114,23 +112,22 @@ export default function Detalhamento() {
                         display={'flex'}>
                         <FormControl isRequired mr={2}>
                             <FormLabel mb={0}>Nome Representante:</FormLabel>
-                            <Input type='number'
+                            <Input
                                 variant='filled'
                                 placeholder='Filled'
-                                type='tel'
+                                type='text'
                                 placeholder='Digite seu email aqui!'
                                 backgroundColor='#ffffff'
                                 borderColor='gray.200'
                                 width='full'
                                 marginBottom='20px'
-                                mb={4}/>
+                                mb={4} />
                         </FormControl>
                         <FormControl isRequired mr={2}>
                             <FormLabel mb={0}>CPF:</FormLabel>
                             <Input type='number'
                                 variant='filled'
                                 placeholder='Filled'
-                                type='tel'
                                 placeholder='Digite seu email aqui!'
                                 backgroundColor='#ffffff'
                                 borderColor='gray.200'
@@ -141,42 +138,41 @@ export default function Detalhamento() {
                         </FormControl>
                         <FormControl isRequired mr={2}>
                             <FormLabel mb={0}>Celular:</FormLabel>
-                            <Input type='number'
+                            <Input
                                 variant='filled'
                                 placeholder='Filled'
-                                type='tel'
+                                type='number'
                                 placeholder='Digite seu email aqui!'
                                 backgroundColor='#ffffff'
                                 borderColor='gray.200'
                                 width='full'
                                 marginBottom='20px'
-                                mb={4}/>
+                                mb={4} />
                         </FormControl>
                         <FormControl isRequired mr={2}>
                             <FormLabel mb={0}>CEP:</FormLabel>
                             <Input type='number'
                                 variant='filled'
                                 placeholder='Filled'
-                                type='tel'
                                 placeholder='Digite seu email aqui!'
                                 backgroundColor='#ffffff'
                                 borderColor='gray.200'
                                 width='full'
                                 marginBottom='20px'
-                                mb={4}/>
+                                mb={4} />
                         </FormControl>
                         <FormControl isRequired >
                             <FormLabel mb={0}>Logradouro:</FormLabel>
-                            <Input type='number'
+                            <Input
                                 variant='filled'
                                 placeholder='Filled'
-                                type='tel'
+                                type='text'
                                 placeholder='Digite seu email aqui!'
                                 backgroundColor='#ffffff'
                                 borderColor='gray.200'
                                 width='full'
                                 marginBottom='20px'
-                                mb={4}/>
+                                mb={4} />
                         </FormControl>
                     </Flex>
                     <Button
