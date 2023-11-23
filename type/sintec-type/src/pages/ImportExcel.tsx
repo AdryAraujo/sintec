@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Data from '../components/Importarcao/Data'; // Certifique-se de ajustar o caminho conforme necessário
+import Data from '../components/Importarcao/Data';
 import * as XLSX from 'xlsx';
 import { Button, Flex, Input, Table, TableContainer, Tbody, Text, Th, Thead, Tr } from '@chakra-ui/react';
 import { FiSend } from 'react-icons/fi';
@@ -71,20 +71,20 @@ const App: React.FC = () => {
                     <Text
                         alignSelf={'center'}
                         margin={5}
-                        fontSize='4xl'>Detalhamento das Contas</Text>
-                    <div className="form">
+                        fontSize='4xl'>Importação de Contas</Text>
+                    <Flex
+                    border={'1px solid black'}
+                    display={'flex'}>
                         <form
-                            className="form-group"
                             autoComplete="off"
                             onSubmit={handleSubmit}
                         >
-                            <label>
-                                <h5>Upload Excel file</h5>
-                            </label>
                             <Input
                                 type="file"
                                 onChange={handleFile}
                                 required
+                                border={'red'}
+                                borderRadius={'12px'}
                             />
                             {excelFileError && (
                                 <div className="text-danger" style={{ marginTop: 5 + 'px' }}>
@@ -98,11 +98,12 @@ const App: React.FC = () => {
                                 variant='solid'
                                 color='white'
                                 height='32px'
+                                justifySelf={'center'}
                             >
                                 Submit
                             </Button>
                         </form>
-                    </div>
+                    </Flex>
                     {/* view file section */}
                     <div className="viewer">
                         {excelData === null && <>No file selected</>}
@@ -111,16 +112,18 @@ const App: React.FC = () => {
                                 width={'full'}
                                 className={style.containerTable}
                             >
-                                <Table>
+                                <Table size='sm'>
                                     <Thead>
                                         <Tr>
-                                            <Th >ID</Th>
-                                            <Th >First Name</Th>
-                                            <Th >Last Name</Th>
-                                            <Th >Gender</Th>
-                                            <Th >Country</Th>
-                                            <Th >Age</Th>
-                                            <Th >Date</Th>
+                                            <Th >Circuito</Th>
+                                            <Th >Contrato</Th>
+                                            <Th >Orgão</Th>
+                                            <Th >Unidade</Th>
+                                            <Th >Cidade</Th>
+                                            <Th >Velocidade</Th>
+                                            <Th >Mensalidade</Th>
+                                            <Th >Data_fatura</Th>
+                                            <Th >Vencimento</Th>
                                         </Tr>
                                     </Thead>
                                     <Tbody>
