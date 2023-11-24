@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Data from '../components/Importarcao/Data';
+import Data from '../components/Importacao/Data';
 import * as XLSX from 'xlsx';
 import { Button, Flex, Input, Table, TableContainer, Tbody, Text, Th, Thead, Tr } from '@chakra-ui/react';
 import { FiSend } from 'react-icons/fi';

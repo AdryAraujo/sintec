@@ -15,22 +15,6 @@ interface DataProps {
     Vencimento: string;
   }>;
 }
-
-// const formatDate = (dateString: string): string => {
-//   if (!dateString) return ""; // Verifica se a string é vazia ou null
-
-//   const date = new Date(dateString);
-//   if (isNaN(date.getTime())) return ""; // Verifica se a data é inválida
-
-//   const dia: number = date.getDate();
-//   const mes: number = date.getMonth() + 1;
-//   const ano: number = date.getFullYear();
-  
-//   const formattedDate = `${dia.toString().padStart(2, '0')}/${mes.toString().padStart(2, '0')}/${ano.toString().padStart(4, '0')}`;
-
-//   return formattedDate;
-// };
-
 const Data: React.FC<DataProps> = ({ excelData }) => {
   return (
     <>
