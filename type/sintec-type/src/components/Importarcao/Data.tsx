@@ -16,20 +16,20 @@ interface DataProps {
   }>;
 }
 
-const formatDate = (dateString: string): string => {
-  if (!dateString) return ""; // Verifica se a string é vazia ou null
+// const formatDate = (dateString: string): string => {
+//   if (!dateString) return ""; // Verifica se a string é vazia ou null
 
-  const date = new Date(dateString);
-  if (isNaN(date.getTime())) return ""; // Verifica se a data é inválida
+//   const date = new Date(dateString);
+//   if (isNaN(date.getTime())) return ""; // Verifica se a data é inválida
 
-  const dia: number = date.getDate();
-  const mes: number = date.getMonth() + 1;
-  const ano: number = date.getFullYear();
+//   const dia: number = date.getDate();
+//   const mes: number = date.getMonth() + 1;
+//   const ano: number = date.getFullYear();
   
-  const formattedDate = `${dia.toString().padStart(2, '0')}/${mes.toString().padStart(2, '0')}/${ano.toString().padStart(4, '0')}`;
+//   const formattedDate = `${dia.toString().padStart(2, '0')}/${mes.toString().padStart(2, '0')}/${ano.toString().padStart(4, '0')}`;
 
-  return formattedDate;
-};
+//   return formattedDate;
+// };
 
 const Data: React.FC<DataProps> = ({ excelData }) => {
   return (
@@ -39,8 +39,8 @@ const Data: React.FC<DataProps> = ({ excelData }) => {
           <IndividualData
             individualExcelData={{
               ...individualExcelData,
-              Data_fatura: formatDate(individualExcelData.Data_fatura),
-              Vencimento: formatDate(individualExcelData.Vencimento),
+              Data_fatura:(individualExcelData.Data_fatura),
+              Vencimento: (individualExcelData.Vencimento),
             }}
           />
         </Tr>
