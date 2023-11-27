@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import Data from '../components/Importacao/Data';
 import * as XLSX from 'xlsx';
-import { Button, Flex, Input, Table, TableContainer, Tbody, Text, Th, Thead, Tr } from '@chakra-ui/react';
+import { Button, Flex, Input, InputGroup, InputLeftElement, Table, TableContainer, Tbody, Text, Th, Thead, Tr } from '@chakra-ui/react';
 import { FiSend } from 'react-icons/fi';
 import Sidebar from '@/components/Navbar/Sidebar';
 import Rotas from '../components/Rotas';
 import styles from '../styles/Container.module.css'
 import style from '../styles/Table.module.css'
+import { IoIosEye } from 'react-icons/io';
 
 
 const App: React.FC = () => {
@@ -67,25 +68,31 @@ const App: React.FC = () => {
                 <Flex
                     paddingInline={'15px'}
                     className={styles.containerTable}
+                    alignItems={'center'}
+                    justifyItems={'center'}
                 >
                     <Text
                         alignSelf={'center'}
                         margin={5}
                         fontSize='4xl'>Importação de Contas</Text>
                     <Flex
-                    border={'1px solid black'}
-                    display={'flex'}>
+                        alignItems="center"
+                        justifyContent="center">
                         <form
                             autoComplete="off"
                             onSubmit={handleSubmit}
                         >
-                            <Input
+                            <InputGroup>
+                                <Input
+                                className={style.input_file}
                                 type="file"
                                 onChange={handleFile}
                                 required
-                                border={'red'}
-                                borderRadius={'12px'}
-                            />
+                                placeholder="Escolher"
+                                border={'none'}
+                                />
+                            </InputGroup>
+
                             {excelFileError && (
                                 <div className="text-danger" style={{ marginTop: 5 + 'px' }}>
                                     {excelFileError}
@@ -93,46 +100,60 @@ const App: React.FC = () => {
                             )}
                             <Button
                                 type="submit"
-                                leftIcon={<FiSend />}
-                                backgroundColor='cyan.300'
+                                leftIcon={<IoIosEye />}
+                                backgroundColor='cyan.500'
                                 variant='solid'
                                 color='white'
                                 height='32px'
-                                justifySelf={'center'}
+                                ml={8}
+                                mr={8}
+                                mb={2}
                             >
-                                Submit
+                                Pré-Vizualizar
                             </Button>
+                            <Button
+                            type="submit"
+                            leftIcon={<FiSend />}
+                            backgroundColor='blue.600'
+                            variant='solid'
+                            color='white'
+                            height='32px'
+                            mb={2}
+                        >
+                            Enviar
+                        </Button>
                         </form>
                     </Flex>
                     {/* view file section */}
-                    <div className="viewer">
-                        {excelData === null && <>No file selected</>}
-                        {excelData !== null && (
-                            <TableContainer
-                                width={'full'}
-                                className={style.containerTable}
-                            >
-                                <Table size='sm'>
-                                    <Thead>
-                                        <Tr>
-                                            <Th >Circuito</Th>
-                                            <Th >Contrato</Th>
-                                            <Th >Orgão</Th>
-                                            <Th >Unidade</Th>
-                                            <Th >Cidade</Th>
-                                            <Th >Velocidade</Th>
-                                            <Th >Mensalidade</Th>
-                                            <Th >Data_fatura</Th>
-                                            <Th >Vencimento</Th>
-                                        </Tr>
-                                    </Thead>
-                                    <Tbody>
-                                        <Data excelData={excelData} />
-                                    </Tbody>
-                                </Table>
-                            </TableContainer>
-                        )}
-                    </div>
+                    {excelData === null && <></>}
+                    {excelData !== null && (
+                        <TableContainer
+                            className={style.containerTable}
+                            height={'80%'}
+                            overflowX={'auto'}
+                            overflowY={'auto'}
+                            marginBottom={'20px'}
+                        >
+                            <Table size='sm'>
+                                <Thead>
+                                    <Tr>
+                                        <Th >Circuito</Th>
+                                        <Th >Contrato</Th>
+                                        <Th >Orgão</Th>
+                                        <Th >Unidade</Th>
+                                        <Th >Cidade</Th>
+                                        <Th >Velocidade</Th>
+                                        <Th >Mensalidade</Th>
+                                        <Th >Data_fatura</Th>
+                                        <Th >Vencimento</Th>
+                                    </Tr>
+                                </Thead>
+                                <Tbody>
+                                    <Data excelData={excelData} />
+                                </Tbody>
+                            </Table>
+                        </TableContainer>
+                    )}
                 </Flex>
             </Flex>
         </Flex >
