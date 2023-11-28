@@ -59,37 +59,39 @@ const App: React.FC = () => {
     return (
         <Flex
             className={styles.containerTotal}
+            border={ '1px solid red'}
         >
-            <Sidebar />
+            <Sidebar/>
             <Flex
                 className={styles.containerPrincipal}
+                border={ '1px solid black'}
             >
                 <Rotas />
                 <Flex
                     paddingInline={'15px'}
                     className={styles.containerTable}
-                    alignItems={'center'}
-                    justifyItems={'center'}
+                    border={ '1px solid yellow'}
                 >
                     <Text
                         alignSelf={'center'}
                         margin={5}
                         fontSize='4xl'>Importação de Contas</Text>
                     <Flex
-                        alignItems="center"
-                        justifyContent="center">
+                        alignItems={'center'}
+                        flexDirection={'column'}
+                        border={ '1px solid blue'}>
                         <form
                             autoComplete="off"
                             onSubmit={handleSubmit}
                         >
                             <InputGroup>
                                 <Input
-                                className={style.input_file}
-                                type="file"
-                                onChange={handleFile}
-                                required
-                                placeholder="Escolher"
-                                border={'none'}
+                                    className={style.input_file}
+                                    type="file"
+                                    onChange={handleFile}
+                                    required
+                                    placeholder="Escolher"
+                                    border={'none'}
                                 />
                             </InputGroup>
 
@@ -112,29 +114,28 @@ const App: React.FC = () => {
                                 Pré-Vizualizar
                             </Button>
                             <Button
-                            type="submit"
-                            leftIcon={<FiSend />}
-                            backgroundColor='blue.600'
-                            variant='solid'
-                            color='white'
-                            height='32px'
-                            mb={2}
-                        >
-                            Enviar
-                        </Button>
+                                type="submit"
+                                leftIcon={<FiSend />}
+                                backgroundColor='blue.600'
+                                variant='solid'
+                                color='white'
+                                height='32px'
+                                mb={2}
+                            >
+                                Enviar
+                            </Button>
                         </form>
                     </Flex>
                     {/* view file section */}
-                    {excelData === null && <></>}
                     {excelData !== null && (
                         <TableContainer
                             className={style.containerTable}
-                            height={'80%'}
                             overflowX={'auto'}
                             overflowY={'auto'}
-                            marginBottom={'20px'}
                         >
-                            <Table size='sm'>
+                            <Table
+                               
+                                size='sm'>
                                 <Thead>
                                     <Tr>
                                         <Th >Circuito</Th>
@@ -149,11 +150,12 @@ const App: React.FC = () => {
                                     </Tr>
                                 </Thead>
                                 <Tbody>
-                                    <Data excelData={excelData} />
+                                    <Data excelData={excelData}/>
                                 </Tbody>
                             </Table>
                         </TableContainer>
                     )}
+
                 </Flex>
             </Flex>
         </Flex >

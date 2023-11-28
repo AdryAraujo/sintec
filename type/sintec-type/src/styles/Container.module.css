@@ -11,10 +11,10 @@
 
 .containerPrincipal{
     border-radius:12px;
-    width:100%;
-    height:800px;
+    height:auto;
     flex-direction:column;
     margin-inline: 35px;
+    width: 100%;
 }
 
 .containerTable{

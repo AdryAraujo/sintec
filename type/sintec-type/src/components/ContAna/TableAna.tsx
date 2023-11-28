@@ -11,6 +11,8 @@ export default function TableAna() {
             // backgroundColor={'white'}
             // borderRadius={'12px'}
             className={styles.containerTable}
+            overflowX={'auto'}
+            overflowY={'auto'}
         >
             <Table>
                 <Thead>
@@ -23,42 +25,42 @@ export default function TableAna() {
                     </Tr>
                 </Thead>
                 <Tbody>
-                            <Tr>
-                                <Td >10/2023</Td>
-                                <Td>Telefonia Fixa</Td>
-                                <Td >123456789123</Td>
-                                <Td>Administrativo</Td>
-                                <Td >12345678</Td>
-                            </Tr>
-                            <Tr>
-                                <Td >10/2023</Td>
-                                <Td>Telefonia Fixa</Td>
-                                <Td >123456789123</Td>
-                                <Td>Administrativo</Td>
-                                <Td >12345678</Td>
-                            </Tr>
-                            <Tr>
-                                <Td >10/2023</Td>
-                                <Td>Telefonia Fixa</Td>
-                                <Td >123456789123</Td>
-                                <Td>Administrativo</Td>
-                                <Td >12345678</Td>
-                            </Tr>
-                            <Tr>
-                                <Td >10/2023</Td>
-                                <Td>Telefonia Fixa</Td>
-                                <Td >123456789123</Td>
-                                <Td>Administrativo</Td>
-                                <Td >12345678</Td>
-                            </Tr>
-                            <Tr>
-                                <Td >10/2023</Td>
-                                <Td>Telefonia Fixa</Td>
-                                <Td >123456789123</Td>
-                                <Td>Administrativo</Td>
-                                <Td >12345678</Td>
-                            </Tr>
-                        </Tbody>
+                    <Tr>
+                        <Td >10/2023</Td>
+                        <Td>Telefonia Fixa</Td>
+                        <Td >123456789123</Td>
+                        <Td>Administrativo</Td>
+                        <Td >12345678</Td>
+                    </Tr>
+                    <Tr>
+                        <Td >10/2023</Td>
+                        <Td>Telefonia Fixa</Td>
+                        <Td >123456789123</Td>
+                        <Td>Administrativo</Td>
+                        <Td >12345678</Td>
+                    </Tr>
+                    <Tr>
+                        <Td >10/2023</Td>
+                        <Td>Telefonia Fixa</Td>
+                        <Td >123456789123</Td>
+                        <Td>Administrativo</Td>
+                        <Td >12345678</Td>
+                    </Tr>
+                    <Tr>
+                        <Td >10/2023</Td>
+                        <Td>Telefonia Fixa</Td>
+                        <Td >123456789123</Td>
+                        <Td>Administrativo</Td>
+                        <Td >12345678</Td>
+                    </Tr>
+                    <Tr>
+                        <Td >10/2023</Td>
+                        <Td>Telefonia Fixa</Td>
+                        <Td >123456789123</Td>
+                        <Td>Administrativo</Td>
+                        <Td >12345678</Td>
+                    </Tr>
+                </Tbody>
             </Table>
         </TableContainer>
     )

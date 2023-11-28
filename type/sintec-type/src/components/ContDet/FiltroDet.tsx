@@ -9,13 +9,14 @@ export default function FiltroDet() {
         <Flex
             flexDir="column"
             width={'240px'}
-            height={'600px'}
+            height={'100%'}
             padding={'12px'}
             border='1px solid cyan.100'
             borderRadius={'12px'}
             marginInline={'20px'}
             marginTop={'20px'}
-            backgroundColor={'white'}
+            backgroundColor={'black'}
+            marginBottom={'-20px'}
         >
             <FormControl>
                 <FormLabel mt={3} padding={0} mb={0}>Fornecedor:</FormLabel>

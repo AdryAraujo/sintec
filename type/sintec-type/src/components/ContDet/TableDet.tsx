@@ -5,11 +5,9 @@ export default function TableDet() {
     return (
         <TableContainer
             width={'full'}
-            // marginTop={'20px'}
-            // marginRight={'15px'}
-            // backgroundColor={'white'}
-            // borderRadius={'12px'}
             className={styles.containerTable}
+            overflowX={'auto'}
+            overflowY={'auto'}
         >
             <Table>
                 <Thead>
@@ -75,7 +73,7 @@ export default function TableDet() {
                         <Td isNumeric>R$ 61,62</Td>
                         <Td isNumeric>100mb/s</Td>
                     </Tr>
-                   
+
                 </Tbody>
             </Table>
         </TableContainer>

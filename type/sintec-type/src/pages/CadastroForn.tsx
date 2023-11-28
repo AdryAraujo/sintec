@@ -7,7 +7,7 @@ import TableDeta from '../components/TableDeta';
 import styles from "../styles/Container.module.css";
 
 export default function CadastroForn() {
-    
+
     return (
         <Flex
             className={styles.containerTotal}
@@ -181,7 +181,7 @@ export default function CadastroForn() {
                         colorScheme='blue.600'
                         alignSelf={'center'}
                     >Cadastrar</Button>
-                    <TableDeta />
+                    <TableDeta/>
                     <Button
                         leftIcon={<FiSkipBack />}
                         color='blue.600'
