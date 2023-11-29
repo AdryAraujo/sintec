@@ -2,20 +2,14 @@ import { Button, Flex, FormControl, FormLabel, Input, Select, Text } from '@chak
 import React from 'react';
 import { FiX } from 'react-icons/fi';
 import { IoSearch } from 'react-icons/io5';
+import styles from '../../styles/Filtro.module.css'
 
 export default function FiltroCirc() {
     return (
 
         <Flex
+            className={styles.containerFiltro}
             flexDir="column"
-            width={'240px'}
-            height={'570px'}
-            padding={'12px'}
-            border='1px solid cyan.100'
-            borderRadius={'12px'}
-            marginInline={'20px'}
-            marginTop={'20px'}
-            backgroundColor={'white'}
         >
             <FormControl>
                 <FormLabel mb={0} mt={4}>Fornecedor:</FormLabel>
@@ -60,7 +54,5 @@ export default function FiltroCirc() {
                 colorScheme='red'
             >Limpar</Button>
         </Flex>
-
-
     )
 }
