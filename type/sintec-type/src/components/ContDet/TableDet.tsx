@@ -9,6 +9,8 @@ export default function TableDet() {
             marginTop={'20px'}
             marginRight={'15px'}
             borderRadius={'12px'}
+            width={'full'}
+
         >
             <TableContainer
                 className={styles.tabela}

@@ -1,5 +1,5 @@
-import { Flex, Text } from '@chakra-ui/react';
-import React from 'react';
+import { Box, Flex, Text } from '@chakra-ui/react';
+import React, { useState } from 'react';
 import FiltroCirc from '../components/CircCad/FiltroCirc';
 import Rotas from '../components/Rotas';
 import Sidebar from '../components/Navbar/Sidebar';
@@ -7,16 +7,19 @@ import TableCirc from '../components/CircCad/TableCirc';
 import styles from '../styles/Container.module.css'
 
 export default function CircCad() {
+    const [navSize, changeNavSize] = useState<"small" | "large">("large");
     return (
         <Flex
             className={styles.containerTotal}
         >
             <Sidebar />
-            <Flex
+            <Box
+                w={navSize === "small" ? "70%" : "95%"}
                 className={styles.containerPrincipal}
             >
                 <Rotas />
                 <Flex
+                
                     className={styles.containerTable}
                 >
                     <Text
@@ -28,7 +31,7 @@ export default function CircCad() {
                         <TableCirc />
                     </Flex>
                 </Flex>
-            </Flex>
+            </Box>
         </Flex>
 
     )

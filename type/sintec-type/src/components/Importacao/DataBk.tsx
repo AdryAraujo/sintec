@@ -1,5 +1,5 @@
 import React from 'react';
-import IndividualData from './IndividualData';
+import IndividualData from './IndividualDataBk';
 import { Tr } from '@chakra-ui/react';
 
 interface DataProps {

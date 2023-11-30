@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import Data from '../components/Importacao/Data';
+import Data from '../components/Importacao/DataBk';
 import * as XLSX from 'xlsx';
-import { Button, Flex, Input, InputGroup, InputLeftElement, Table, TableContainer, Tbody, Text, Th, Thead, Tr } from '@chakra-ui/react';
+import { Box, Button, Flex, Input, InputGroup, InputLeftElement, Table, TableContainer, Tbody, Text, Th, Thead, Tr } from '@chakra-ui/react';
 import { FiSend } from 'react-icons/fi';
 import Sidebar from '@/components/Navbar/Sidebar';
 import Rotas from '../components/Rotas';
-import styles from '../styles/Container.module.css'
-import style from '../styles/Table.module.css'
+import styles from '../styles/Container.module.css';
+import style from '../styles/Table.module.css';
 import { IoIosEye } from 'react-icons/io';
 
 
@@ -56,6 +56,8 @@ const App: React.FC = () => {
         }
     };
 
+    // const [navSize, changeNavSize] = useState<"small" | "large">("large");
+
     return (
         <Flex
             className={styles.containerTotal}
@@ -69,6 +71,7 @@ const App: React.FC = () => {
                 <Rotas />
                 <Flex
                     paddingInline={'15px'}
+                    // w={navSize === "small" ? "70%" : "95%"}
                     className={styles.containerTable}
                     border={ '1px solid yellow'}
                 >
@@ -128,10 +131,16 @@ const App: React.FC = () => {
                     </Flex>
                     {/* view file section */}
                     {excelData !== null && (
+                         <Box className={style.containerTable}
+                         maxH={'70%'}
+                         overflowY="auto" overflowX="auto"
+                         marginTop={'20px'}
+                         marginRight={'15px'}
+                         borderRadius={'12px'}
+                     >
                         <TableContainer
-                            className={style.containerTable}
-                            overflowX={'auto'}
-                            overflowY={'auto'}
+                            className={style.tabela}
+                         
                         >
                             <Table
                                
@@ -154,7 +163,9 @@ const App: React.FC = () => {
                                 </Tbody>
                             </Table>
                         </TableContainer>
+                        </Box>
                     )}
+
 
                 </Flex>
             </Flex>

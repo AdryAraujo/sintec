@@ -1,11 +1,10 @@
 .containerTotal{
     align-items: center;
     display: flex;
-    margin-inline: 50px;
-    margin-top: 15px;
+    /* margin:20px; */
+    /* margin-left: 20px; */
     border:1px solid #E2E8F0;
     border-radius:12px;
-    width:95%;
     height:100%;
 }
 
@@ -14,7 +13,7 @@
     height:auto;
     flex-direction:column;
     margin-inline: 35px;
-    width: 100%;
+    width: 95%;
 }
 
 .containerTable{

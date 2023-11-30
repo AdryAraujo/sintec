@@ -39,10 +39,10 @@ export default function Sidebar() {
 
   return (
     <Flex
-      h={navSize === "small" ? "898px" : "100%"}
+      h= "898px"
       boxShadow="0 4px 12px 0 rgba(0, 0, 0, 0.05)"
       borderRadius={navSize === "small" ? "12px" : "12px"}
-      w={navSize === "small" ? "4%" : "30%"}
+      w={navSize === "small" ? "70px" : "250px"}
       flexDir="column"
       justifyContent="space-between"
       backgroundColor='cyan.100'

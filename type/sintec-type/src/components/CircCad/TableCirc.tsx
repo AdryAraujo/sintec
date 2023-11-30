@@ -5,11 +5,13 @@ import styles from '../../styles/Table.module.css'
 export default function TableCirc() {
     return (
         <Box className={styles.containerTable}
-            maxH={'70%'}
-            overflowY="auto" overflowX="auto"
+            height={'70%'}
+            overflowY="auto"
+            overflowX="auto"
             marginTop={'20px'}
             marginRight={'15px'}
             borderRadius={'12px'}
+            width={'full'}
         >
             <TableContainer
                 className={styles.tabela}
