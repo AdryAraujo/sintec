@@ -4,9 +4,10 @@ import React from 'react';
 import { Flex, Text } from '@chakra-ui/react';
 import { FiSkipBack } from 'react-icons/fi';
 import Sidebar from '../components/Navbar/Sidebar';
-import Rotas from '../components/Rotas';
+import Rotas from '../components/Routes/RotasCirc';
 import TableUser from '../components/Cadastros/TableUser';
 import { IoIosAddCircleOutline } from "react-icons/io";
+import RotasUser from "@/components/Routes/RotasUser";
 
 export default function CadastroUser() {
     return (
@@ -17,7 +18,7 @@ export default function CadastroUser() {
             <Flex
                 className={styles.containerPrincipal}
             >
-                <Rotas />
+                <RotasUser />
                 <Flex
                     paddingInline={'15px'}
                     className={styles.containerTable}

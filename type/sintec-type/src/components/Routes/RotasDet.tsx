@@ -1,19 +1,19 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import React from 'react';
 
-export default function CircCad() {
+export default function RotasDet() {
     return (
         <Breadcrumb>
             <BreadcrumbItem>
-                <BreadcrumbLink href='/CircCad'>Home</BreadcrumbLink>
+                <BreadcrumbLink href='#'>Home</BreadcrumbLink>
             </BreadcrumbItem>
 
             <BreadcrumbItem>
-                <BreadcrumbLink href='#'>Docs</BreadcrumbLink>
+                <BreadcrumbLink href='#'>Contas</BreadcrumbLink>
             </BreadcrumbItem>
 
             <BreadcrumbItem>
-                <BreadcrumbLink href='#'>Breadcrumb</BreadcrumbLink>
+                <BreadcrumbLink href='/ContDet'>Contas Detalhado</BreadcrumbLink>
             </BreadcrumbItem>
         </Breadcrumb>
     )

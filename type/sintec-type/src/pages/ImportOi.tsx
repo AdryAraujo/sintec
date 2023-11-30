@@ -4,7 +4,7 @@ import * as XLSX from 'xlsx';
 import { Box, Button, Flex, Input, InputGroup, InputLeftElement, Table, TableContainer, Tbody, Text, Th, Thead, Tr } from '@chakra-ui/react';
 import { FiSend } from 'react-icons/fi';
 import Sidebar from '@/components/Navbar/Sidebar';
-import Rotas from '../components/Rotas';
+import Rotas from '../components/Routes/RotasCirc';
 import styles from '../styles/Container.module.css'
 import style from '../style/Table.module.css'
 import { IoIosEye } from 'react-icons/io';

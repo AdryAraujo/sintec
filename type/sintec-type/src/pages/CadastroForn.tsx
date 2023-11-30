@@ -2,10 +2,11 @@ import { Button, Flex, FormControl, FormLabel, Input, InputGroup, Text } from "@
 import { FiSkipBack } from 'react-icons/fi';
 import { IoIosAddCircleOutline } from "react-icons/io";
 import Sidebar from '../components/Navbar/Sidebar';
-import Rotas from '../components/Rotas';
+import Rotas from '../components/Routes/RotasCirc';
 import TableDeta from '../components/TableDeta';
 import styles from "../styles/Container.module.css";
 import TableForn from "@/components/Cadastros/TableForn";
+import RotasForn from "@/components/Routes/RotasForn";
 
 export default function CadastroForn() {
 
@@ -17,7 +18,7 @@ export default function CadastroForn() {
             <Flex
                 className={styles.containerPrincipal}
             >
-                <Rotas />
+                <RotasForn />
                 <Flex
                     paddingInline={'15px'}
                     className={styles.containerTable}

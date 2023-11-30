@@ -1,10 +1,11 @@
 import { Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 import FiltroAna from '../components/ContAna/FiltroAna';
-import Rotas from '../components/Rotas';
+import Rotas from '../components/Routes/RotasCirc';
 import Sidebar from '../components/Navbar/Sidebar';
 import TableAna from '../components/ContAna/TableAna';
 import styles from '../styles/Container.module.css'
+import RotasAna from '@/components/Routes/RotasAna';
 
 
 export default function ContAna() {
@@ -16,7 +17,7 @@ export default function ContAna() {
             <Flex
                 className={styles.containerPrincipal}
             >
-                <Rotas />
+                <RotasAna />
                 <Flex
                     className={styles.containerTable}
                 >
