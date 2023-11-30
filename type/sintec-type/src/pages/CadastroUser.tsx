@@ -5,7 +5,7 @@ import { Flex, Text } from '@chakra-ui/react';
 import { FiSkipBack } from 'react-icons/fi';
 import Sidebar from '../components/Navbar/Sidebar';
 import Rotas from '../components/Rotas';
-import TableDeta from '../components/TableDeta';
+import TableUser from '../components/Cadastros/TableUser';
 import { IoIosAddCircleOutline } from "react-icons/io";
 
 export default function CadastroUser() {
@@ -84,7 +84,7 @@ export default function CadastroUser() {
                         colorScheme='blue.600'
                         alignSelf={'center'}
                     >Cadastrar</Button>
-                    <TableDeta />
+                    <TableUser />
                     <Button
                         leftIcon={<FiSkipBack />}
                         color='blue.600'

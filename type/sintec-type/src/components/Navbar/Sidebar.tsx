@@ -52,6 +52,7 @@ export default function Sidebar() {
         w="100%"
         alignItems={navSize === "small" ? "center" : "flex-start"}
         as="nav"
+        overflowY={'auto'}
       >
         <IconButton
           background="none"

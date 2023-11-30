@@ -5,6 +5,7 @@ import Sidebar from '../components/Navbar/Sidebar';
 import Rotas from '../components/Rotas';
 import TableDeta from '../components/TableDeta';
 import styles from "../styles/Container.module.css";
+import TableForn from "@/components/Cadastros/TableForn";
 
 export default function CadastroForn() {
 
@@ -181,7 +182,7 @@ export default function CadastroForn() {
                         colorScheme='blue.600'
                         alignSelf={'center'}
                     >Cadastrar</Button>
-                    <TableDeta/>
+                    <TableForn/>
                     <Button
                         leftIcon={<FiSkipBack />}
                         color='blue.600'
