@@ -12,16 +12,16 @@ export default function CadastroForn() {
 
     return (
         <Flex
-            className={styles.containerTotal}
+            className={'containerTotal'}
         >
             <Sidebar />
             <Flex
-                className={styles.containerPrincipal}
+                className={'containerPrincipal'}
             >
                 <RotasForn />
                 <Flex
                     paddingInline={'15px'}
-                    className={styles.containerTable}
+                    className={'containerTable'}
                 >
                     <Text
                         alignSelf={'center'}

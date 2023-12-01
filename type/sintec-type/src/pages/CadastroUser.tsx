@@ -1,10 +1,8 @@
-import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
-import styles from "../styles/Container.module.css";
+import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, Select } from "@chakra-ui/react";
 import React from 'react';
 import { Flex, Text } from '@chakra-ui/react';
 import { FiSkipBack } from 'react-icons/fi';
 import Sidebar from '../components/Navbar/Sidebar';
-import Rotas from '../components/Routes/RotasCirc';
 import TableUser from '../components/Cadastros/TableUser';
 import { IoIosAddCircleOutline } from "react-icons/io";
 import RotasUser from "@/components/Routes/RotasUser";
@@ -12,16 +10,16 @@ import RotasUser from "@/components/Routes/RotasUser";
 export default function CadastroUser() {
     return (
         <Flex
-            className={styles.containerTotal}
+            className={'containerTotal'}
         >
             <Sidebar />
             <Flex
-                className={styles.containerPrincipal}
+                className={'containerPrincipal'}
             >
                 <RotasUser />
                 <Flex
                     paddingInline={'15px'}
-                    className={styles.containerTable}
+                    className={'containerTable'}
                 >
                     <Text
                         alignSelf={'center'}
@@ -33,17 +31,17 @@ export default function CadastroUser() {
                         alignItems={'center'}
                         display={'flex'}>
                         <FormControl isRequired mr={2}>
-                        <FormLabel mb={0}>Nome Completo:</FormLabel>
-                        <Input
-                            variant='filled'
-                            placeholder='Filled'
-                            type='text'
-                            placeholder='Digite seu nome aqui!'
-                            backgroundColor='#ffffff'
-                            borderColor='gray.200'
-                            width='full'
-                            marginBottom='20px'
-                            mb={4}/>
+                            <FormLabel mb={0}>Nome Completo:</FormLabel>
+                            <Input
+                                variant='filled'
+                                placeholder='Filled'
+                                type='text'
+                                placeholder='Digite seu nome aqui!'
+                                backgroundColor='#ffffff'
+                                borderColor='gray.200'
+                                width='full'
+                                marginBottom='20px'
+                                mb={4} />
                         </FormControl>
                         <FormControl isRequired mr={2}>
                             <FormLabel mb={0}>Login da Rede:</FormLabel>
@@ -56,9 +54,9 @@ export default function CadastroUser() {
                                 borderColor='gray.200'
                                 width='full'
                                 marginBottom='20px'
-                                mb={4}/>
+                                mb={4} />
                         </FormControl>
-                        <FormControl isRequired >
+                        <FormControl isRequired mr={2}>
                             <FormLabel mb={0}>Senha:</FormLabel>
                             <InputGroup >
                                 <Input
@@ -75,6 +73,19 @@ export default function CadastroUser() {
                                 />
                             </InputGroup>
                         </FormControl>
+                        <FormControl isRequired >
+                            <FormLabel mb={0}>Perfil:</FormLabel>
+                            <Select 
+                            placeholder='Selecione uma opção'
+                            backgroundColor='#ffffff'
+                            borderColor='gray.200' 
+                            width='full'
+                            mb={4}>
+                                <option>Estagiário</option>
+                                <option>Administrador</option>
+                                <option>Operador</option>
+                            </Select>
+                        </FormControl>
                     </Flex>
                     <Button
                         leftIcon={<IoIosAddCircleOutline />}
@@ -86,17 +97,6 @@ export default function CadastroUser() {
                         alignSelf={'center'}
                     >Cadastrar</Button>
                     <TableUser />
-                    <Button
-                        leftIcon={<FiSkipBack />}
-                        color='blue.600'
-                        width='212px'
-                        height='32px'
-                        variant='outline'
-                        mb={3}
-                        colorScheme='blue.600'
-                        mt={7}
-                        alignSelf={'center'}
-                    >Voltar</Button>
                 </Flex>
             </Flex>
         </Flex>
@@ -113,14 +113,14 @@ export default function CadastroUser() {
 //     // };
 
 //     return (
-//         <div className={styles.container}>
-//             <div className={styles.logo}>
+//         <div className={container}>
+//             <div className={logo}>
 //                 <Image alt="" src={LogoLogin} />
 //             </div>
-//             {/* <IoMoon className={styles.icon}/> */}
-//             <div className={styles.form_login}>
-//                 <Image className={styles.logoSintec1Icon} alt="" src={Logo} />
-//                 <div className={styles.containerInputs}>
+//             {/* <IoMoon className={icon}/> */}
+//             <div className={form_login}>
+//                 <Image className={logoSintec1Icon} alt="" src={Logo} />
+//                 <div className={containerInputs}>
 //                     <FormControl isRequired >
 //                         <FormLabel mb={0}>Nome Completo:</FormLabel>
 //                         <Input type='number'
