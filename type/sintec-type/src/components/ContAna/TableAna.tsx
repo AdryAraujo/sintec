@@ -1,10 +1,9 @@
 import { Box, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 import React from 'react';
-import styles from '../../styles/Table.module.css'
 
 export default function TableAna() {
     return (
-        <Box className={styles.containerTable}
+        <Box className={'containerTabela'}
             maxH={'70%'}
             overflowY="auto" overflowX="auto"
             marginTop={'20px'}
@@ -13,7 +12,7 @@ export default function TableAna() {
             width={'full'}
         >
             <TableContainer
-                className={styles.tabela}
+                className={'tabela'}
             >
                 <Table>
                     <Thead>

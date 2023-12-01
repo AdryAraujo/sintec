@@ -18,6 +18,7 @@ import {
   FiGlobe,
   FiHome,
   FiMenu,
+  FiPlusCircle,
   FiUser,
 } from 'react-icons/fi';
 import {
@@ -33,6 +34,7 @@ import {
 import NavItem from './NavItem';
 import Link from 'next/link';
 import { IoIosLogOut } from "react-icons/io";
+import style from '../../styles/SideBar.module.css'
 
 export default function Sidebar() {
   const [navSize, changeNavSize] = useState<"small" | "large">("large");
@@ -53,6 +55,17 @@ export default function Sidebar() {
         alignItems={navSize === "small" ? "center" : "flex-start"}
         as="nav"
         overflowY={'auto'}
+        css={{
+          '&::-webkit-scrollbar': {
+            width: '5px', // Largura da barra de rolagem
+          },
+          '&::-webkit-scrollbar-track': {
+            background: '#f1f1f1', // Cor de fundo da trilha
+          },
+          '&::-webkit-scrollbar-thumb': {
+            background: '#888', // Cor do pega da barra de rolagem
+          },
+        }}
       >
         <IconButton
           background="none"
@@ -72,6 +85,7 @@ export default function Sidebar() {
         <NavItem navSize={navSize} icon={IoReceiptOutline} title="Contas Detalhados"   />
         <NavItem navSize={navSize} icon={FiFileText} title="Contas Analítico"   />
         <NavItem navSize={navSize} icon={HiOutlineDocumentSearch} title="Circuitos Cadastrados" />
+        <NavItem navSize={navSize} icon={FiPlusCircle} title="Cadastrar Fornecedor" />
         <Divider display={navSize === "small" ? "none" : "flex"} borderColor={'gray.400'} />
         <NavItem navSize={navSize} icon={IoTodayOutline} title="Cadastrar Reunião"  />
         <NavItem navSize={navSize} icon={FiUser} title="Consultar Servidor"  />

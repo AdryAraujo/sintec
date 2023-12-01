@@ -3,22 +3,21 @@ import React from 'react';
 import { FiSkipBack } from 'react-icons/fi';
 import Sidebar from '../components/Navbar/Sidebar';
 import Rotas from '../components/Routes/RotasCirc';
-import TableDeta from '../components/TableDeta';
-import styles from '../styles/Container.module.css'
+import TableDeta from '../components/ContDet/TableDet';
 
 export default function Detalhamento() {
     return (
         <Flex
-            className={styles.containerTotal}
+            className={'containerTotal'}
         >
             <Sidebar />
             <Flex
-                className={styles.containerPrincipal}
+                className={'containerPrincipal'}
             >
                 <Rotas />
                 <Flex
                     paddingInline={'15px'}
-                    className={styles.containerTable}
+                    className={'containerTable'}
                 >
                     <Text
                         alignSelf={'center'}

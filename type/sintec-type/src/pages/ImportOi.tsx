@@ -56,8 +56,6 @@ const App: React.FC = () => {
         }
     };
 
-    const [navSize, changeNavSize] = useState<"small" | "large">("large");
-
     return (
         <Flex
             className={styles.containerTotal}
@@ -71,7 +69,6 @@ const App: React.FC = () => {
                 <Rotas />
                 <Flex
                     paddingInline={'15px'}
-                    w={navSize === "small" ? "70%" : "95%"}
                     className={styles.containerTable}
                     border={ '1px solid yellow'}
                 >
@@ -144,7 +141,6 @@ const App: React.FC = () => {
                             overflowY={'auto'}
                         >
                             <Table
-                               
                                 size='sm'>
                                 <Thead>
                                     <Tr>
@@ -166,8 +162,6 @@ const App: React.FC = () => {
                         </TableContainer>
                         </Box>
                     )}
-
-
                 </Flex>
             </Flex>
         </Flex >

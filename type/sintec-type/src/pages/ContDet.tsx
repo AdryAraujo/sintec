@@ -4,21 +4,20 @@ import TableDet from '../components/ContDet/TableDet';
 import Sidebar from '../components/Navbar/Sidebar';
 import Rotas from '../components/Routes/RotasCirc';
 import FiltroDet from '../components/ContDet/FiltroDet';
-import styles from '../styles/Container.module.css'
 import RotasDet from '@/components/Routes/RotasDet';
 
 export default function ContDet() {
     return (
         <Flex            
-            className={styles.containerTotal}
+            className={'containerTotal'}
         >
             <Sidebar />
             <Flex               
-                className={styles.containerPrincipal}
+                className={'containerPrincipal'}
             >
                 <RotasDet />
                 <Flex                    
-                    className={styles.containerTable}
+                    className={'containerTable'}
                 >
                     <Text
                         alignSelf={'center'}

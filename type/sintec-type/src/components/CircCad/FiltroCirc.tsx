@@ -2,13 +2,12 @@ import { Button, Flex, FormControl, FormLabel, Input, Select, Text } from '@chak
 import React from 'react';
 import { FiX } from 'react-icons/fi';
 import { IoSearch } from 'react-icons/io5';
-import styles from '../../styles/Filtro.module.css'
 
 export default function FiltroCirc() {
     return (
 
         <Flex
-            className={styles.containerFiltro}
+            className={'containerFiltro'}
             flexDir="column"
         >
             <FormControl>

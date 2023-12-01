@@ -8,7 +8,7 @@ export default function FiltroDet() {
     return (
 
         <Flex
-            className={styles.containerFiltro}
+            className={'containerFiltro'}
             flexDir="column"
         >
             <FormControl>

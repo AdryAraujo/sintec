@@ -5,8 +5,6 @@ import { Box, Button, Flex, Input, InputGroup, InputLeftElement, Table, TableCon
 import { FiSend } from 'react-icons/fi';
 import Sidebar from '@/components/Navbar/Sidebar';
 import Rotas from '../components/Routes/RotasCirc';
-import styles from '../styles/Container.module.css';
-import style from '../styles/Table.module.css';
 import { IoIosEye } from 'react-icons/io';
 
 
@@ -60,19 +58,19 @@ const App: React.FC = () => {
 
     return (
         <Flex
-            className={styles.containerTotal}
+            className={'containerTotal'}
             border={ '1px solid red'}
         >
             <Sidebar/>
             <Flex
-                className={styles.containerPrincipal}
+                className={'containerPrincipal'}
                 border={ '1px solid black'}
             >
                 <Rotas />
                 <Flex
                     paddingInline={'15px'}
                     // w={navSize === "small" ? "70%" : "95%"}
-                    className={styles.containerTable}
+                    className={'containerTable'}
                     border={ '1px solid yellow'}
                 >
                     <Text
@@ -89,7 +87,7 @@ const App: React.FC = () => {
                         >
                             <InputGroup>
                                 <Input
-                                    className={style.input_file}
+                                    // className={style.input_file}
                                     type="file"
                                     onChange={handleFile}
                                     required
@@ -131,7 +129,7 @@ const App: React.FC = () => {
                     </Flex>
                     {/* view file section */}
                     {excelData !== null && (
-                         <Box className={style.containerTable}
+                         <Box className={'containerTabela'}
                          maxH={'70%'}
                          overflowY="auto" overflowX="auto"
                          marginTop={'20px'}
@@ -139,7 +137,7 @@ const App: React.FC = () => {
                          borderRadius={'12px'}
                      >
                         <TableContainer
-                            className={style.tabela}
+                            className={'tabela'}
                          
                         >
                             <Table
