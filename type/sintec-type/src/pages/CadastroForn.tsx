@@ -238,17 +238,6 @@ export default function CadastroForn() {
                         alignSelf={'center'}
                     >Cadastrar</Button>
                     <TableForn/>
-                    <Button
-                        leftIcon={<FiSkipBack />}
-                        color='blue.600'
-                        width='212px'
-                        height='32px'
-                        variant='outline'
-                        mb={3}
-                        colorScheme='blue.600'
-                        mt={7}
-                        alignSelf={'center'}
-                    >Voltar</Button>
                 </Flex>
             </Flex>
         </Flex>

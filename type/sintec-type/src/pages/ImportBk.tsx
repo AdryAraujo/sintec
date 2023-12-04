@@ -59,19 +59,16 @@ const App: React.FC = () => {
     return (
         <Flex
             className={'containerTotal'}
-            border={ '1px solid red'}
         >
             <Sidebar/>
             <Flex
                 className={'containerPrincipal'}
-                border={ '1px solid black'}
             >
                 <Rotas />
                 <Flex
                     paddingInline={'15px'}
                     // w={navSize === "small" ? "70%" : "95%"}
                     className={'containerTable'}
-                    border={ '1px solid yellow'}
                 >
                     <Text
                         alignSelf={'center'}
@@ -79,8 +76,7 @@ const App: React.FC = () => {
                         fontSize='4xl'>Importação de Contas</Text>
                     <Flex
                         alignItems={'center'}
-                        flexDirection={'column'}
-                        border={ '1px solid blue'}>
+                        flexDirection={'column'}>
                         <form
                             autoComplete="off"
                             onSubmit={handleSubmit}
