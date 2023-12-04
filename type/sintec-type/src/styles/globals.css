@@ -65,3 +65,14 @@
 ::-webkit-scrollbar-thumb {
   background: #888; /* Cor do pega da barra de rolagem */
 }
+
+.menu-button {
+  transition: background-color 0.3s;
+  padding: 10px;
+  border-radius: 8px;
+  width: auto; /* ou qualquer outra largura desejada */
+}
+
+.menu-button:hover {
+  background-color: white;
+}

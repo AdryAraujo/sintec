@@ -81,23 +81,23 @@ export default function Sidebar() {
         />
         <NavItem navSize={navSize} icon={FiHome} title="Home" description="This is the description for the dashboard." href={''} />
         <Divider display={navSize === "small" ? "none" : "flex"} borderColor={'gray.400'} />
-        <NavItem navSize={navSize} icon={FiDownload} title="Importar Contas"  />
-        <NavItem navSize={navSize} icon={IoReceiptOutline} title="Contas Detalhados"   />
-        <NavItem navSize={navSize} icon={FiFileText} title="Contas Analítico"   />
-        <NavItem navSize={navSize} icon={HiOutlineDocumentSearch} title="Circuitos Cadastrados" />
-        <NavItem navSize={navSize} icon={FiPlusCircle} title="Cadastrar Fornecedor" />
+        <NavItem navSize={navSize} icon={FiDownload} title="Importar Contas" href={'/ImportBk'}/>
+        <NavItem navSize={navSize} icon={IoReceiptOutline} title="Contas Detalhados" href={'/ContDet'}/>
+        <NavItem navSize={navSize} icon={FiFileText} title="Contas Analítico"  href={'/ContAna'} />
+        <NavItem navSize={navSize} icon={HiOutlineDocumentSearch} title="Circuitos Cadastrados" href={'/CircCad'} />
+        <NavItem navSize={navSize} icon={FiPlusCircle} title="Cadastrar Fornecedor" href={'/CadastroForn'} />
         <Divider display={navSize === "small" ? "none" : "flex"} borderColor={'gray.400'} />
-        <NavItem navSize={navSize} icon={IoTodayOutline} title="Cadastrar Reunião"  />
-        <NavItem navSize={navSize} icon={FiUser} title="Consultar Servidor"  />
-        <NavItem navSize={navSize} icon={IoPeopleOutline} title="Equipe Diretiva"  />
+        <NavItem navSize={navSize} icon={IoTodayOutline} title="Cadastrar Reunião" href={''} />
+        <NavItem navSize={navSize} icon={FiUser} title="Consultar Servidor" href={''} />
+        <NavItem navSize={navSize} icon={IoPeopleOutline} title="Equipe Diretiva" href={''} />
         <Divider display={navSize === "small" ? "none" : "flex"} borderColor={'gray.400'} />
-        <NavItem navSize={navSize} icon={IoPersonCircleOutline} title="Administrar Perfil"  />
-        <NavItem navSize={navSize} icon={BsPersonAdd} title="Novo Usuário"  />
-        <NavItem navSize={navSize} icon={FiGlobe} title="Monitorar Rede"  />
-        <NavItem navSize={navSize} icon={BsPersonVcard} title="Listar Todos Usuários"  />
-        <NavItem navSize={navSize} icon={IoKeyOutline} title="Lista de Credenciais"  />
+        <NavItem navSize={navSize} icon={IoPersonCircleOutline} title="Administrar Perfil" href={''} />
+        <NavItem navSize={navSize} icon={BsPersonAdd} title="Novo Usuário" href={''} />
+        <NavItem navSize={navSize} icon={FiGlobe} title="Monitorar Rede" href={''} />
+        <NavItem navSize={navSize} icon={BsPersonVcard} title="Listar Todos Usuários" href={''} />
+        <NavItem navSize={navSize} icon={IoKeyOutline} title="Lista de Credenciais" href={''} />
         <Divider display={navSize === "small" ? "none" : "flex"} borderColor={'gray.400'}/>
-        <NavItem navSize={navSize} icon={IoIosLogOut} title="Sair"  />
+        <NavItem navSize={navSize} icon={IoIosLogOut} title="Sair" href={''} />
       </Flex>
       <Flex
         p="5%"
