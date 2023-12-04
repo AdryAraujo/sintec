@@ -4,7 +4,7 @@ import React from 'react';
 export default function TableCirc() {
     return (
         <Box className={'containerTabela'}
-            height={'70%'}
+            height={'80%'}
             overflowY="auto"
             overflowX="auto"
             marginTop={'20px'}
