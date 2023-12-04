@@ -3,20 +3,25 @@ import React from 'react';
 import LogoLogin from "../assets/logoLogin.svg"
 import Image from "next/image";
 import Logo from "../assets/logo_sintec.svg"
-import { Button, ButtonGroup, Input, InputGroup, InputLeftElement, InputRightElement, Link, Stack } from "@chakra-ui/react";
-import { HiOutlineMail, HiMiniMoon } from "react-icons/hi";
+import { Button, ButtonGroup, Input, InputGroup, InputLeftElement, Link, InputRightElement, Stack, Icon } from "@chakra-ui/react";
+import { HiOutlineMail, HiMiniMoon, HiEyeOff, HiEye } from "react-icons/hi";
 import { IoKeyOutline, IoMoon } from "react-icons/io5";
 import { FiLogIn } from "react-icons/fi";
 import { Router } from "next/router";
+import { useRouter } from 'next/router';
+import { useState } from "react";
+
+
+
 
 
 export default function Login() {
-
-    const [show, setShow] = React.useState(false)
-    const handleClick = () => setShow(!show)
-    // const handleLogin = () => {
-    //     Router.push('/CircCad');
-    // };
+    const router = useRouter();
+    const [show, setShow] = useState(false);
+    const handleClick = () => setShow(!show);
+    const handleLogin = () => {
+        router.push('/CircCad');
+    };
 
     return (
         <div className={styles.container}>
@@ -56,30 +61,28 @@ export default function Login() {
                             type={show ? 'text' : 'password'}
                             width='450px'
                         />
-                        <InputRightElement width='4.5rem'>
-                            <Button h='1.75rem' size='sm' onClick={handleClick}>
-                                {show ? 'Hide' : 'Show'}
+                        <InputRightElement width="2.8rem">
+                            <Button h="1.75rem" size="sm" onClick={handleClick}>
+                                <Icon as={show ? HiEyeOff : HiEye} />
                             </Button>
                         </InputRightElement>
                     </InputGroup>
-                    <Link className={styles.esqueceuSuaSenha}
+                    <Link className={styles.esqueceuSuaSenha} href={''}
                         color='#6750a4'
                         marginBottom='20px'
                     >Esqueceu sua senha?</Link>
-                    <Link href="/CircCad" alignSelf={'center'}>
-                        <Button
-                            as="a"
-                            leftIcon={<FiLogIn />}
-                            backgroundColor='cyan.300'
-                            variant='solid'
-                            color='white'
-                            width='212px'
-                            height='32px'
-                            // onClick={handleLogin}
-                        >
-                            Login
-                        </Button>
-                    </Link>
+                    <Button
+                        leftIcon={<FiLogIn />}
+                        backgroundColor='cyan.300'
+                        variant='solid'
+                        color='white'
+                        width='212px'
+                        height='32px'
+                        onClick={handleLogin}
+                        alignSelf={'center'}
+                    >
+                        Login
+                    </Button>
                 </div>
             </div>
         </div>
