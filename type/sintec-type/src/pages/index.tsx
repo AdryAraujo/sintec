@@ -1,10 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '@/styles/Home.module.css'
-import Login from  './Login'
-import Cadastro from './CadastroUser'
-import Sidebar from '@/components/Navbar/Sidebar'
-import CircCad from './CircCad'
+import Login from './Login'
 
 export default function Home() {
   return (
@@ -15,7 +10,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Cadastro/>
+      <Login/>
     </>
   )
 }

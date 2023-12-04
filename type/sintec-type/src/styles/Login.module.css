@@ -1,32 +1,33 @@
 .container{
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerLogo{
+    display: flex;
     border: 1px solid #E2E8F0;
     border-radius: 12px;
-    width: 1280px;
-    height: 900px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 300px;
-    /* flex-direction: column; */
+    width: auto;
+    height: 100%;
+    margin-top: 60px;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 .logo{
     background-color: #76E4F7;
-    width: 435px;
-    height: 899px;
+    width: auto;
+    height: 800px;
     align-items: center;
     justify-content: center;
     display: flex;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
+    padding-inline: 20px;
 }
 
 .form_login{
-    /* position: absolute; */
-    /* top: 245px;
-    left: 575px; */
     width: 573px;
     height: 412px;
     border-radius: 12px;
@@ -34,19 +35,9 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* margin-right: 80px; */
-    margin-left: 140px;
+    margin-inline: 60px;
+    padding-top: 30px;
 }
-
-.logoSintec1Icon {
-    /* position: absolute;
-    top: 56px;
-    left: 206px;
-    width: 181px;
-    height: 77px;
-    overflow: hidden; */
-    margin-top: 40px;
-  }
 
 .esqueceuSuaSenha {
     font-size: 12px;
@@ -59,12 +50,7 @@
   }
 
 .containerInputs{
-    /* padding: 80px; */
     margin-top: 80px;
     flex-direction: column;
     display: flex;
 }
-
-/* .icon{
-    align-items: top !important;
-} */
