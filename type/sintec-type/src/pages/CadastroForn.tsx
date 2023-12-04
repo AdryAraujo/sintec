@@ -105,7 +105,6 @@ export default function CadastroForn() {
                         </FormControl>
                     </Flex>
                     <Flex
-                        mt={3}
                         justifyContent={'center'}
                         alignItems={'center'}
                         display={'flex'}>
@@ -171,6 +170,61 @@ export default function CadastroForn() {
                                 borderColor='gray.200'
                                 width='full'
                                 marginBottom='20px'
+                                mb={4} />
+                        </FormControl>
+                    </Flex>
+                    <Flex
+                        justifyContent={'center'}
+                        alignItems={'center'}
+                        display={'flex'}>
+                        <FormControl isRequired mr={2}>
+                            <FormLabel mb={0}>País:</FormLabel>
+                            <Input
+                                variant='filled'
+                                placeholder='Filled'
+                                type='text'
+                                placeholder='Digite o nome do Representante aqui!'
+                                backgroundColor='#ffffff'
+                                borderColor='gray.200'
+                                width='full'
+                                marginBottom='20px'
+                                mb={4} />
+                        </FormControl>
+                        <FormControl isRequired mr={2}>
+                            <FormLabel mb={0}>Estado:</FormLabel>
+                            <Input type='number'
+                                variant='filled'
+                                placeholder='Filled'
+                                placeholder='Digite seu CPF aqui!'
+                                backgroundColor='#ffffff'
+                                borderColor='gray.200'
+                                width='full'
+                                marginBottom='20px'
+                                mb={4}
+                                mr={2} />
+                        </FormControl>
+                        <FormControl isRequired mr={2}>
+                            <FormLabel mb={0}>Cidade:</FormLabel>
+                            <Input
+                                variant='filled'
+                                placeholder='Filled'
+                                type='number'
+                                placeholder='Digite seu celular aqui!'
+                                backgroundColor='#ffffff'
+                                borderColor='gray.200'
+                                width='full'
+                                marginBottom='20px'
+                                mb={4} />
+                        </FormControl>
+                        <FormControl isRequired>
+                            <FormLabel mb={0}>Bairro:</FormLabel>
+                            <Input type='number'
+                                variant='filled'
+                                placeholder='Filled'
+                                placeholder='Digite seu CEP aqui!'
+                                backgroundColor='#ffffff'
+                                borderColor='gray.200'
+                                width='full'
                                 mb={4} />
                         </FormControl>
                     </Flex>
