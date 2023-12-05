@@ -28,7 +28,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/components/Importacao/IndividualDataOitsx"  ],
+, "src/components/Importacao/IndividualDataOi.tsx", "src/components/Importacao/DataOi.tsx"  ],
   "exclude": [
     "node_modules"
   ]

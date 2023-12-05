@@ -35,6 +35,7 @@ import NavItem from './NavItem';
 import Link from 'next/link';
 import { IoIosLogOut } from "react-icons/io";
 import style from '../../styles/SideBar.module.css'
+import { LuFileDown } from "react-icons/lu";
 
 export default function Sidebar() {
   const [navSize, changeNavSize] = useState<"small" | "large">("large");
@@ -55,17 +56,6 @@ export default function Sidebar() {
         alignItems={navSize === "small" ? "center" : "flex-start"}
         as="nav"
         overflowY={'auto'}
-        css={{
-          '&::-webkit-scrollbar': {
-            width: '5px', // Largura da barra de rolagem
-          },
-          '&::-webkit-scrollbar-track': {
-            background: '#f1f1f1', // Cor de fundo da trilha
-          },
-          '&::-webkit-scrollbar-thumb': {
-            background: '#888', // Cor do pega da barra de rolagem
-          },
-        }}
       >
         <IconButton
           background="none"
@@ -81,20 +71,20 @@ export default function Sidebar() {
         />
         <NavItem navSize={navSize} icon={FiHome} title="Home" description="This is the description for the dashboard." href={''} />
         <Divider display={navSize === "small" ? "none" : "flex"} borderColor={'gray.400'} />
-        <NavItem navSize={navSize} icon={FiDownload} title="Importar Contas" href={'/ImportBk'}/>
+        <NavItem navSize={navSize} icon={FiDownload} title="Importar Contas BK" href={'/ImportBk'}/>
+        <NavItem navSize={navSize} icon={LuFileDown} title="Importar Contas Oi" href={'/ImportBk'}/>
         <NavItem navSize={navSize} icon={IoReceiptOutline} title="Contas Detalhados" href={'/ContDet'}/>
         <NavItem navSize={navSize} icon={FiFileText} title="Contas Analítico"  href={'/ContAna'} />
         <NavItem navSize={navSize} icon={HiOutlineDocumentSearch} title="Circuitos Cadastrados" href={'/CircCad'} />
-        <NavItem navSize={navSize} icon={FiPlusCircle} title="Cadastrar Fornecedor" href={'/CadastroForn'} />
+        <NavItem navSize={navSize} icon={BsPersonAdd} title="Cadastrar Fornecedor" href={'/CadastroForn'} />
         <Divider display={navSize === "small" ? "none" : "flex"} borderColor={'gray.400'} />
         <NavItem navSize={navSize} icon={IoTodayOutline} title="Cadastrar Reunião" href={''} />
         <NavItem navSize={navSize} icon={FiUser} title="Consultar Servidor" href={''} />
         <NavItem navSize={navSize} icon={IoPeopleOutline} title="Equipe Diretiva" href={''} />
         <Divider display={navSize === "small" ? "none" : "flex"} borderColor={'gray.400'} />
         <NavItem navSize={navSize} icon={IoPersonCircleOutline} title="Administrar Perfil" href={''} />
-        <NavItem navSize={navSize} icon={BsPersonAdd} title="Novo Usuário" href={''} />
+        <NavItem navSize={navSize} icon={BsPersonVcard} title="Gerenciar Usuário" href={'/CadastroUser'} />
         <NavItem navSize={navSize} icon={FiGlobe} title="Monitorar Rede" href={''} />
-        <NavItem navSize={navSize} icon={BsPersonVcard} title="Listar Todos Usuários" href={''} />
         <NavItem navSize={navSize} icon={IoKeyOutline} title="Lista de Credenciais" href={''} />
         <Divider display={navSize === "small" ? "none" : "flex"} borderColor={'gray.400'}/>
         <NavItem navSize={navSize} icon={IoIosLogOut} title="Sair" href={''} />
