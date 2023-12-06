@@ -22,9 +22,26 @@ const Home: React.FC = () => {
     }
   };
   return (
-    <Box>
-      <Input type='file' accept='.csv' onChange={lerDadosArquivo} />
-        <Table size='sm' className={'tabela'}>
+    <Box
+      // marginTop={'20px'}
+      // marginRight={'15px'}
+      borderRadius={'12px'}
+      width={'full'}
+      height={'700px'}
+    >
+      <Input type='file' accept='.csv' onChange={lerDadosArquivo}/>
+      <Box className={'containerTabela'}
+        overflowY="auto"
+        overflowX="auto"
+        borderRadius={'12px'}
+        width={'full'}
+        marginLeft={'15px'}
+        maxHeight={'85%'}
+        marginTop={'20px'}
+        marginRight={'15px'}
+        maxWidth={'98%'}
+      >
+        <Table size='sm' className={'tabela'} >
           <Thead>
             <Tr>
               <Th>Site</Th>
@@ -84,7 +101,6 @@ const Home: React.FC = () => {
             {dados.map((linha, index) => (
               <Tr key={index}>
                 <Td>{linha['Site    ']}</Td>
-                {/* <Td>{linha['Site.replace(/\s/g, '')']}</Td> */}
                 <Td>{linha['NomeCliente                                       ']}</Td>
                 <Td>{linha['Finalidade                                        ']}</Td>
                 <Td>{linha['Contrato']}</Td>
@@ -139,6 +155,8 @@ const Home: React.FC = () => {
             ))}
           </Tbody>
         </Table>
+
+      </Box>
     </Box>
   )
 }
