@@ -132,12 +132,8 @@ const App: React.FC = () => {
                          marginRight={'15px'}
                          borderRadius={'12px'}
                      >
-                        <TableContainer
-                            className={'tabela'}
-                         
-                        >
                             <Table
-                               
+                               className={'tabela'}
                                 size='sm'>
                                 <Thead>
                                     <Tr>
@@ -156,7 +152,6 @@ const App: React.FC = () => {
                                     <Data excelData={excelData}/>
                                 </Tbody>
                             </Table>
-                        </TableContainer>
                         </Box>
                     )}
 
