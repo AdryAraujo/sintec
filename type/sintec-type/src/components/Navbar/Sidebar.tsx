@@ -72,7 +72,7 @@ export default function Sidebar() {
         <NavItem navSize={navSize} icon={FiHome} title="Home" description="This is the description for the dashboard." href={''} />
         <Divider display={navSize === "small" ? "none" : "flex"} borderColor={'gray.400'} />
         <NavItem navSize={navSize} icon={FiDownload} title="Importar Contas BK" href={'/ImportBk'}/>
-        <NavItem navSize={navSize} icon={LuFileDown} title="Importar Contas Oi" href={'/ImportBk'}/>
+        <NavItem navSize={navSize} icon={LuFileDown} title="Importar Contas Oi" href={'/ImportOi'}/>
         <NavItem navSize={navSize} icon={IoReceiptOutline} title="Contas Detalhados" href={'/ContDet'}/>
         <NavItem navSize={navSize} icon={FiFileText} title="Contas Analítico"  href={'/ContAna'} />
         <NavItem navSize={navSize} icon={HiOutlineDocumentSearch} title="Circuitos Cadastrados" href={'/CircCad'} />

@@ -54,8 +54,6 @@ const App: React.FC = () => {
         }
     };
 
-    // const [navSize, changeNavSize] = useState<"small" | "large">("large");
-
     return (
         <Flex
             className={'containerTotal'}
@@ -67,7 +65,6 @@ const App: React.FC = () => {
                 <Rotas />
                 <Flex
                     paddingInline={'15px'}
-                    // w={navSize === "small" ? "70%" : "95%"}
                     className={'containerTable'}
                 >
                     <Text
@@ -83,7 +80,6 @@ const App: React.FC = () => {
                         >
                             <InputGroup>
                                 <Input
-                                    // className={style.input_file}
                                     type="file"
                                     onChange={handleFile}
                                     required

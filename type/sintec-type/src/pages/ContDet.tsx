@@ -2,7 +2,6 @@ import { Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 import TableDet from '../components/ContDet/TableDet';
 import Sidebar from '../components/Navbar/Sidebar';
-import Rotas from '../components/Routes/RotasCirc';
 import FiltroDet from '../components/ContDet/FiltroDet';
 import RotasDet from '@/components/Routes/RotasDet';
 
