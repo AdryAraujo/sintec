@@ -1,7 +1,7 @@
 // import express from 'express';
-// import { AppDataSource } from './data-source';
+// import { PostgresDataSource } from './config/DataSource'
 
-// AppDataSource.initialize().then(()=>{
+// PostgresDataSource.initialize().then(()=>{
 //     const app = express()
 //     app.use(express.json())
 //     app.get('/', (req, res) =>{
@@ -41,3 +41,26 @@ const app = new App().app
 app.listen(port, ()=>{
     console.log('Server rodando com sucesso!')
 })
+
+// import { DataSource } from "typeorm"
+// import { User } from "./entity/User"
+
+// const PostgresDataSource = new DataSource({
+//     type: "postgres",
+//     host: "172.25.76.71",
+//     port: 5432,
+//     username: "prg_adryelle",
+//     password: "Vs@B66Q9Sa6q",
+//     database: "dbsintec",
+//     entities: [User],
+//     synchronize: true,
+//     logging: false,
+// })
+
+// PostgresDataSource.initialize()
+//     .then(() => {
+//         console.log("Data Source has been initialized!")
+//     })
+//     .catch((err) => {
+//         console.error("Error during Data Source initialization", err)
+//     })
