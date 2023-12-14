@@ -89,7 +89,8 @@ interface IUsuarioRepo {
         try{
             return await Usuario.findAll()
         }catch(error){
-            throw new Error("");
+            console.log(error)
+            throw new Error("lalala");
         }
     }
   }

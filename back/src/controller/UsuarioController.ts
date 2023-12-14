@@ -62,6 +62,7 @@ class UsuarioController {
                 status: "Internal Server Error!",
                 message: "Internal Server Error!"
             })
+            console.log(err)
         }
     }
 
@@ -77,7 +78,7 @@ class UsuarioController {
             })
         } catch (err) {
             res.status(500).json({
-                status: "Internal Server Error!",
+                status: "testandooooo!",
                 message: "Internal Server Error!"
             })
         }

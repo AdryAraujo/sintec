@@ -1,7 +1,8 @@
 import { Model, Table, Column, DataType } from "sequelize-typescript";
 
 @Table({
-  tableName: "tb_usuario",
+  tableName: 'tb_usuario',
+  timestamps: false
 })
 export class Usuario extends Model {
   public static USUARIO_TABLE_NAME = "tb_usuario" as string;
@@ -54,6 +55,7 @@ export class Usuario extends Model {
   @Column({
     type: DataType.BIGINT,
     field: Usuario.USUARIO_CD_USER_INCLUSAO_USUARIO,
+    allowNull: true,
   })
   cd_user_inclusao_usuario!: number;
 
@@ -74,6 +76,7 @@ export class Usuario extends Model {
   @Column({
     type: DataType.BIGINT,
     field: Usuario.USUARIO_CD_USER_ALTERACAO_USUARIO,
+    allowNull: true,
   })
   cd_user_alteracao_usuario!: number;
 }
