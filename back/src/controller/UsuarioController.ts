@@ -9,9 +9,7 @@ class UsuarioController {
             const new_usuario = new Usuario();
             new_usuario.login_rede = req.body.login_rede;
             new_usuario.nm_usuario = req.body.nm_usuario;
-            new_usuario.login_rede = req.body.login_rede;
             new_usuario.senha_rede = req.body.senha_rede;
-            new_usuario.nm_usuario = req.body.nm_usuario;
             new_usuario.fl_usuario_ativo = req.body.fl_usuario_ativo;
             new_usuario.cd_user_inclusao_usuario = req.body.cd_user_inclusao_usuario;
             new_usuario.dt_alteracao_usuario = req.body.dt_alteracao_usuario;
@@ -91,11 +89,9 @@ class UsuarioController {
             const new_usuario = new Usuario();
 
             new_usuario.cd_usuario = cd_usuario;
-            new_usuario.login_rede = req.body.login_rede;
             new_usuario.nm_usuario = req.body.nm_usuario;
             new_usuario.login_rede = req.body.login_rede;
             new_usuario.senha_rede = req.body.senha_rede;
-            new_usuario.nm_usuario = req.body.nm_usuario;
             new_usuario.fl_usuario_ativo = req.body.fl_usuario_ativo;
             new_usuario.cd_user_inclusao_usuario = req.body.cd_user_inclusao_usuario;
             new_usuario.dt_alteracao_usuario = req.body.dt_alteracao_usuario;

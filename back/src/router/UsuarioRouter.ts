@@ -1,12 +1,11 @@
 import BaseRoutes from "./base/BaseRouter";
 import UsuarioController from "../controller/UsuarioController";
-import valcd_usuarioate from "../helper/validate";
 import { createUsuarioSchema, updateUsuarioSchema } from "../schema/UsuarioSchema";
 import validate from "../helper/validate";
 
 class UsuarioRoutes extends BaseRoutes {
   public routes(): void {
-    this.router.post("", valcd_usuarioate(createUsuarioSchema), UsuarioController.create);
+    this.router.post("", validate(createUsuarioSchema), UsuarioController.create);
     this.router.patch(
       "/:cd_usuario",
       validate(updateUsuarioSchema),

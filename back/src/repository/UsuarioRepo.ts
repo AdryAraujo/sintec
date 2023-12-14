@@ -39,7 +39,6 @@ interface IUsuarioRepo {
             new_usuario.nm_usuario = usuario.nm_usuario;
             new_usuario.login_rede = usuario.login_rede;
             new_usuario.senha_rede = usuario.senha_rede;
-            new_usuario.nm_usuario = usuario.nm_usuario;
             new_usuario.fl_usuario_ativo = usuario.fl_usuario_ativo;
             new_usuario.cd_user_inclusao_usuario = usuario.cd_user_inclusao_usuario;
             new_usuario.dt_alteracao_usuario = usuario.dt_alteracao_usuario;
