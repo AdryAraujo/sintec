@@ -19,14 +19,12 @@ export class Usuario extends Model {
   @Column({
     type: DataType.STRING(100),
     field: Usuario.USUARIO_LOGIN_REDE,
-    allowNull: true,
   })
   login_rede!: string | null;
 
   @Column({
     type: DataType.STRING,
     field: Usuario.USUARIO_SENHA_REDE,
-    allowNull: true,
   })
   senha_rede!: string | null;
 

@@ -4,12 +4,12 @@ import jwt from "jsonwebtoken";
 interface Payload {
     login_rede: string,
     nm_usuario: string,
-    cd_usuario: string,
-    fl_usuario_ativo: string,
-    cd_user_inclusao_usuario: string,
-    dt_alteracao_usuario: string,
-    dt_inclusao_usuario: string,
-    cd_user_alteracao_usuario: string
+    cd_usuario: number,
+    fl_usuario_ativo: boolean,
+    cd_user_inclusao_usuario: number,
+    dt_alteracao_usuario: Date,
+    dt_inclusao_usuario: Date,
+    cd_user_alteracao_usuario: number
 }
 
 class Authentication {
@@ -27,12 +27,12 @@ class Authentication {
   public static generateToken(
     login_rede: string,
     nm_usuario: string,
-    cd_usuario: string,
-    fl_usuario_ativo: string,
-    cd_user_inclusao_usuario: string,
-    dt_alteracao_usuario: string,
-    dt_inclusao_usuario: string,
-    cd_user_alteracao_usuario: string
+    cd_usuario: number,
+    fl_usuario_ativo: boolean,
+    cd_user_inclusao_usuario: number,
+    dt_alteracao_usuario: Date,
+    dt_inclusao_usuario: Date,
+    cd_user_alteracao_usuario: number
   ): string {
     const secretKey: string = process.env.JWT_SECRET_KEY || "my-secret";
     const payload: Payload = {
