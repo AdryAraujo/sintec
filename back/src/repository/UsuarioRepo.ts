@@ -6,11 +6,12 @@ interface IUsuarioRepo {
     delete(usuarioId: number): Promise<void>;
     retrieveById(usuarioId: number): Promise<Usuario>;
     retrieveAll(): Promise<Usuario[]>;
-  }
+    findByLogin_rede(login_rede: string): Promise<Usuario>;
+}
 
-  export class UsuarioRepo implements IUsuarioRepo{
+export class UsuarioRepo implements IUsuarioRepo {
     async save(usuario: Usuario): Promise<void> {
-        try{
+        try {
             await Usuario.create({
                 login_rede: usuario.login_rede,
                 senha_rede: usuario.senha_rede,
@@ -21,19 +22,19 @@ interface IUsuarioRepo {
                 dt_inclusao_usuario: usuario.dt_inclusao_usuario,
                 cd_user_alteracao_usuario: usuario.cd_user_alteracao_usuario
             })
-        }catch (error){
+        } catch (error) {
             throw new Error("Falha ao criar um usuario!");
         }
     }
 
     async update(usuario: Usuario): Promise<void> {
-        try{
+        try {
             const new_usuario = await Usuario.findOne({
-                where:{
+                where: {
                     cd_usuario: usuario.cd_usuario,
                 },
             })
-            if(!new_usuario){
+            if (!new_usuario) {
                 throw new Error("Erro");
             }
             new_usuario.nm_usuario = usuario.nm_usuario;
@@ -46,51 +47,66 @@ interface IUsuarioRepo {
             new_usuario.cd_user_alteracao_usuario = usuario.cd_user_alteracao_usuario;
 
             await new_usuario.save();
-        } catch(error){
+        } catch (error) {
             throw new Error("");
         }
     }
 
     async delete(usuarioId: number): Promise<void> {
-        try{
+        try {
             const new_usuario = await Usuario.findOne({
-                where:{
+                where: {
                     cd_usuario: usuarioId,
                 },
             })
-            if(!new_usuario){
+            if (!new_usuario) {
                 throw new Error("Erro");
             }
 
             await new_usuario.destroy()
-        }catch(error){
+        } catch (error) {
             throw new Error("");
         }
     }
 
     async retrieveById(usuarioId: number): Promise<Usuario> {
-        try{
+        try {
             const new_usuario = await Usuario.findOne({
-                where:{
+                where: {
                     cd_usuario: usuarioId,
                 },
             })
-            if(!new_usuario){
+            if (!new_usuario) {
                 throw new Error("Erro");
             }
 
             return new_usuario
-        }catch(error){
+        } catch (error) {
             throw new Error("");
         }
     }
 
     async retrieveAll(): Promise<Usuario[]> {
-        try{
+        try {
             return await Usuario.findAll()
-        }catch(error){
+        } catch (error) {
             console.log(error)
             throw new Error("lalala");
         }
     }
-  }
+
+    async findByLogin_rede(login_rede: string): Promise<Usuario> {
+        try {
+            const new_usuario = await Usuario.findOne({
+                where: { login_rede: login_rede },
+            });
+            if (!new_usuario) {
+                throw new Error("Usuario not found!");
+            }
+            return new_usuario;
+        } catch (error) {
+            throw new Error("Failed to feacth data by login_rede!");
+        }
+    }
+
+}
