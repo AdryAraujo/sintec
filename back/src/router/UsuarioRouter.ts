@@ -14,6 +14,7 @@ class UsuarioRoutes extends BaseRoutes {
     this.router.delete("/:cd_usuario", UsuarioController.delete);
     this.router.get("", UsuarioController.findAll);
     this.router.get("/:cd_usuario", UsuarioController.findById);
+    this.router.get("", UsuarioController.)
   }
 }
 
