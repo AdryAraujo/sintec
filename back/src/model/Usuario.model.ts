@@ -20,20 +20,19 @@ export class Usuario extends Model {
     type: DataType.STRING(100),
     field: Usuario.USUARIO_LOGIN_REDE,
   })
-  login_rede!: string | null;
+  login_rede!: string;
 
   @Column({
     type: DataType.STRING,
     field: Usuario.USUARIO_SENHA_REDE,
   })
-  senha_rede!: string | null;
+  senha_rede!: string;
 
   @Column({
     type: DataType.STRING(200),
     field: Usuario.USUARIO_NM_USUARIO,
-    allowNull: true,
   })
-  nm_usuario!: string | null;
+  nm_usuario!: string;
 
   @Column({
     type: DataType.BIGINT,
@@ -48,7 +47,7 @@ export class Usuario extends Model {
     field: Usuario.USUARIO_FL_USUARIO_ATIVO,
     allowNull: true,
   })
-  fl_usuario_ativo!: boolean | null;
+  fl_usuario_ativo!: boolean;
 
   @Column({
     type: DataType.BIGINT,
@@ -62,14 +61,14 @@ export class Usuario extends Model {
     field: Usuario.USUARIO_DT_ALTERACAO_USUARIO,
     allowNull: true,
   })
-  dt_alteracao_usuario!: Date | null;
+  dt_alteracao_usuario!: Date;
 
   @Column({
     type: DataType.DATEONLY,
     field: Usuario.USUARIO_DT_INCLUSAO_USUARIO,
     allowNull: true,
   })
-  dt_inclusao_usuario!: Date | null;
+  dt_inclusao_usuario!: Date;
 
   @Column({
     type: DataType.BIGINT,
