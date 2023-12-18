@@ -49,10 +49,12 @@ class UsuarioController {
             message: "Successfully registerd users!",
           });
         } catch (error) {
+            console.log(error);
           return res.status(500).json({
             status: "Internal server Error!",
-            message: "Internal server Error!",
+            message: "error 500!",
           });
+         
         }
       }
 

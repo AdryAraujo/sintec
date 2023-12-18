@@ -70,6 +70,7 @@ export class AuthenticationService implements IAuthenticationService {
 
             await new UsuarioRepo().save(new_usuario);
         } catch (error) {
+            console.log(error)
             throw new Error("Error login!");
         }
     }
