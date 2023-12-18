@@ -5,7 +5,8 @@ import validate from "../helper/validate";
 
 class UsuarioRoutes extends BaseRoutes {
   public routes(): void {
-    this.router.post("", validate(createUsuarioSchema), UsuarioController.create);
+    this.router.post("/login", UsuarioController.login);
+    this.router.post("/register", UsuarioController.register);
     this.router.patch(
       "/:cd_usuario",
       validate(updateUsuarioSchema),
@@ -14,7 +15,6 @@ class UsuarioRoutes extends BaseRoutes {
     this.router.delete("/:cd_usuario", UsuarioController.delete);
     this.router.get("", UsuarioController.findAll);
     this.router.get("/:cd_usuario", UsuarioController.findById);
-    this.router.get("", UsuarioController.)
   }
 }
 
