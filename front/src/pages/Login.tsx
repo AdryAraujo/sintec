@@ -10,14 +10,27 @@ import { FiLogIn } from "react-icons/fi";
 import { Router } from "next/router";
 import { useRouter } from 'next/router';
 import { useState } from "react";
+import { login } from '../services/api';
 
 export default function Login() {
     const router = useRouter();
     const [show, setShow] = useState(false);
     const handleClick = () => setShow(!show);
-    const handleLogin = () => {
-        router.push('/CircCad');
-    };
+    // const handleLogin = () => {
+    //     router.push('/CircCad');
+    // };
+   
+    const [loginData, setLoginData] = useState({ login_rede: '', senha_rede: '' });
+
+    const handleLogin = async () => {
+        try {
+            const response = await login(loginData.login_rede, loginData.senha_rede);
+            // Armazenar o token retornado no armazenamento local
+        } catch (error) {
+            // Lidar com erros de autenticação
+        }
+    }
+    }
 
     return (
         <Flex className={styles.container}>
@@ -41,7 +54,8 @@ export default function Login() {
                                 backgroundColor='#ffffff'
                                 borderColor='gray.200'
                                 width='450px'
-                                marginBottom='20px' />
+                                marginBottom='20px'
+                                value={loginData.login_rede} onChange={(e) => setLoginData({ ...loginData, login_rede: e.target.value })} />
                         </InputGroup>
                         <InputGroup size='md'>
                             <InputLeftElement pointerEvents='none'>
@@ -57,6 +71,7 @@ export default function Login() {
                                 pr='4.5rem'
                                 type={show ? 'text' : 'password'}
                                 width='450px'
+                                value={loginData.senha_rede} onChange={(e) => setLoginData({ ...loginData, senha_rede: e.target.value })}
                             />
                             <InputRightElement width="2.8rem">
                                 <Button h="1.75rem" size="sm" onClick={handleClick}>
@@ -75,8 +90,8 @@ export default function Login() {
                             color='white'
                             width='212px'
                             height='32px'
-                            onClick={handleLogin}
                             alignSelf={'center'}
+                            onClick={handleLogin}
                         >
                             Login
                         </Button>

@@ -3,7 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import { login, register } from '../services/api';
 
 type User = {
-  // Defina a estrutura do objeto de usuário aqui
+  cd_usuario: number,
+  login_rede: string,
+  nm_usuario: string,
+  senha_rede: string,
+  fl_usuario_ativo: boolean,
+  cd_user_inclusao_usuario: number,
+  dt_alteracao_usuario: Date,
+  dt_inclusao_usuario: Date,
+  cd_user_alteracao_usuario: number
 };
 
 type AuthContextType = {
@@ -17,10 +25,10 @@ type AuthContextType = {
 
 const AuthContext = createContext<AuthContextType>({
   user: null,
-  setUser: () => {},
-  login: async () => {},
-  register: async () => {},
-  logout: () => {},
+  setUser: () => { },
+  login: async () => { },
+  register: async () => { },
+  logout: () => { },
   isAuthenticated: false,
 });
 
