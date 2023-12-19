@@ -1,15 +1,15 @@
 import { Usuario } from "../model/Usuario.model";
 
-interface IUsuarioRepo {
-    save(usuario: Usuario): Promise<void>;
-    update(usuario: Usuario): Promise<void>;
-    delete(usuarioId: number): Promise<void>;
-    retrieveById(usuarioId: number): Promise<Usuario>;
-    retrieveAll(): Promise<Usuario[]>;
-    findByLogin_rede(login_rede: string): Promise<Usuario>;
-}
+// interface IUsuarioRepo {
+//     save(usuario: Usuario): Promise<void>;
+//     update(usuario: Usuario): Promise<void>;
+//     delete(usuarioId: number): Promise<void>;
+//     retrieveById(usuarioId: number): Promise<Usuario>;
+//     retrieveAll(): Promise<Usuario[]>;
+//     findByLogin_rede(login_rede: string): Promise<Usuario>;
+// }
 
-export class UsuarioRepo implements IUsuarioRepo {
+export class UsuarioRepo{
     static async save(usuario: Usuario): Promise<void> {
         try {
             await Usuario.create({

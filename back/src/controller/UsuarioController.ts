@@ -155,17 +155,19 @@ class UsuarioController {
         try {
           // Verify and decode the JWT
           const decodedToken = Authentication.validateToken(token)
-          // Authenticate the user based on the decoded token
-          const user = UsuarioRepo.findByLogin_rede(decodedToken.login_rede);
-      
-          if (!user) {
-            return res.status(401).json({ error: 'Invalid token' });
+          if (decodedToken){
+             // Authenticate the user based on the decoded token
+            const user = UsuarioRepo.findByLogin_rede(decodedToken.login_rede);
+            if (!user) {
+              return res.status(401).json({ error: 'Invalid token' });
+            }
+        
+            // Return user data
+            res.json({ user });
           }
-      
-          // Return user data
-          res.json({ user });
+         
         } catch (error) {
-          console.error('JWT verification error:', error.message);
+          console.log(error);
           return res.status(401).json({ error: 'Invalid token' });
         }
       };
