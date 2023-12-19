@@ -2,6 +2,9 @@ import { Request, Response } from "express"
 import { Usuario } from "../model/Usuario.model"
 import { UsuarioRepo } from "../repository/UsuarioRepo";
 import { AuthenticationService } from "../service/Authentication";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import Authentication from "../utils/Authentication";
 
 
 class UsuarioController {
@@ -62,7 +65,7 @@ class UsuarioController {
         try {
 
             let cd_usuario = parseInt(req.params["cd_usuario"])
-            await new UsuarioRepo().delete(cd_usuario)
+            await UsuarioRepo.delete(cd_usuario)
 
             res.status(200).json({
                 status: "Ok!",
@@ -78,7 +81,7 @@ class UsuarioController {
 
     async findAll(req: Request, res: Response) {
         try {
-            const new_usuario = await new UsuarioRepo().retrieveAll()
+            const new_usuario = await UsuarioRepo.retrieveAll()
 
             res.status(200).json({
                 status: "Ok!",
@@ -97,7 +100,7 @@ class UsuarioController {
     async findById(req: Request, res: Response) {
         try {
             let cd_usuario = parseInt(req.params["cd_usuario"])
-            const new_usuario = await new UsuarioRepo().retrieveById(cd_usuario)
+            const new_usuario = await UsuarioRepo.retrieveById(cd_usuario)
 
             res.status(200).json({
                 status: "Ok!",
@@ -127,7 +130,7 @@ class UsuarioController {
             new_usuario.dt_inclusao_usuario = req.body.dt_inclusao_usuario;
             new_usuario.cd_user_alteracao_usuario = req.body.cd_user_alteracao_usuario;
 
-            await new UsuarioRepo().update(new_usuario);
+            await UsuarioRepo.update(new_usuario);
 
             res.status(200).json({
                 status: "Ok!",
@@ -141,6 +144,31 @@ class UsuarioController {
         }
     }
 
+    async identify(req: Request, res: Response) {
+        // Get the token from the Authorization header
+        const token = req.headers.authorization;
+      
+        if (!token) {
+          return res.status(401).json({ error: 'Authorization header is missing' });
+        }
+      
+        try {
+          // Verify and decode the JWT
+          const decodedToken = Authentication.validateToken(token)
+          // Authenticate the user based on the decoded token
+          const user = UsuarioRepo.findByLogin_rede(decodedToken.login_rede);
+      
+          if (!user) {
+            return res.status(401).json({ error: 'Invalid token' });
+          }
+      
+          // Return user data
+          res.json({ user });
+        } catch (error) {
+          console.error('JWT verification error:', error.message);
+          return res.status(401).json({ error: 'Invalid token' });
+        }
+      };
 }
 
 export default new UsuarioController()

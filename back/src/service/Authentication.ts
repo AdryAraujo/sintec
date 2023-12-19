@@ -18,7 +18,7 @@ interface IAuthenticationService {
 
 export class AuthenticationService implements IAuthenticationService {
     async login(login_rede: string, senha_rede: string): Promise<string> {
-        const usuario = await new UsuarioRepo().findByLogin_rede(login_rede);
+        const usuario = await UsuarioRepo.findByLogin_rede(login_rede);
 
         if (!usuario) {
             throw new Error("Bad Request!");
@@ -68,7 +68,7 @@ export class AuthenticationService implements IAuthenticationService {
             new_usuario.dt_inclusao_usuario = dt_inclusao_usuario,
             new_usuario.cd_user_alteracao_usuario = cd_user_alteracao_usuario
 
-            await new UsuarioRepo().save(new_usuario);
+            await UsuarioRepo.save(new_usuario);
         } catch (error) {
             console.log(error)
             throw new Error("Error login!");

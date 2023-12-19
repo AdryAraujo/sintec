@@ -10,7 +10,7 @@ interface IUsuarioRepo {
 }
 
 export class UsuarioRepo implements IUsuarioRepo {
-    async save(usuario: Usuario): Promise<void> {
+    static async save(usuario: Usuario): Promise<void> {
         try {
             await Usuario.create({
                 login_rede: usuario.login_rede,
@@ -27,7 +27,7 @@ export class UsuarioRepo implements IUsuarioRepo {
         }
     }
 
-    async update(usuario: Usuario): Promise<void> {
+    static async update(usuario: Usuario): Promise<void> {
         try {
             const new_usuario = await Usuario.findOne({
                 where: {
@@ -52,7 +52,7 @@ export class UsuarioRepo implements IUsuarioRepo {
         }
     }
 
-    async delete(usuarioId: number): Promise<void> {
+    static async delete(usuarioId: number): Promise<void> {
         try {
             const new_usuario = await Usuario.findOne({
                 where: {
@@ -69,7 +69,7 @@ export class UsuarioRepo implements IUsuarioRepo {
         }
     }
 
-    async retrieveById(usuarioId: number): Promise<Usuario> {
+    static async retrieveById(usuarioId: number): Promise<Usuario> {
         try {
             const new_usuario = await Usuario.findOne({
                 where: {
@@ -86,7 +86,7 @@ export class UsuarioRepo implements IUsuarioRepo {
         }
     }
 
-    async retrieveAll(): Promise<Usuario[]> {
+    static async retrieveAll(): Promise<Usuario[]> {
         try {
             return await Usuario.findAll()
         } catch (error) {
@@ -95,7 +95,7 @@ export class UsuarioRepo implements IUsuarioRepo {
         }
     }
 
-    async findByLogin_rede(login_rede: string): Promise<Usuario> {
+    static async findByLogin_rede(login_rede: string): Promise<Usuario> {
         try {
             const new_usuario = await Usuario.findOne({
                 where: { login_rede: login_rede },
