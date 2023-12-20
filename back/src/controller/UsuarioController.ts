@@ -161,7 +161,6 @@ class UsuarioController {
             if (!user) {
               return res.status(401).json({ error: 'Invalid token' });
             }
-        
             // Return user data
             res.json({ user });
           }
