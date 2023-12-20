@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login, register } from '../services/api';
+import {api} from '../services/api';
 
 type User = {
   cd_usuario: number,
@@ -40,7 +41,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     function initAuth() {
-      const storedUser = localStorage.getItem('user');
+      const storedUser = localStorage.getItem('token');
       if (storedUser) {
         setUser(JSON.parse(storedUser));
         navigate('/');
@@ -52,18 +53,36 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   async function handleLogin(login_rede: string, senha_rede: string) {
     const response = await login(login_rede, senha_rede);
+    const token = response.data.result.token
     if (response.status === 200) {
-      localStorage.setItem('user', JSON.stringify(response.data));
-      setUser(response.data);
+      api.defaults.headers['Authorization'] = 'Bearer ${token}';
+      localStorage.setItem('token', token)
+      setUser(token);
+      navigate('/CircCad');
     }
     return response;
   }
 
   async function handleRegister(login_rede: string, senha_rede: string) {
     const response = await register(login_rede, senha_rede);
+    const token = response.data.result.token
+
     if (response.status === 200) {
-      localStorage.setItem('user', JSON.stringify(response.data));
-      setUser(response.data);
+      localStorage.setItem('token', token)
+      setUser(token);
+      navigate('/CircCad');
+    }
+    return response;
+  }
+
+  async function handleIdentify(){
+    const response = await identify(login_rede, senha_rede);
+    const token = response.data.result.token
+
+    if (response.status === 200) {
+      localStorage.setItem('token', token)
+      setUser(token);
+      navigate('/CircCad');
     }
     return response;
   }
@@ -71,12 +90,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   function handleLogout() {
     localStorage.removeItem('user');
     setUser(null);
+    navigate('/Login');
   }
 
   const isAuthenticated = user !== null;
 
   return (
-    <AuthContext.Provider value={{ user, setUser, login: handleLogin, register: handleRegister, logout: handleLogout, isAuthenticated }}>
+    <AuthContext.Provider value={{
+      user,
+      setUser,
+      login: handleLogin,
+      register: handleRegister,
+      logout: handleLogout,
+      isAuthenticated,
+    }}>
       {children}
     </AuthContext.Provider>
   );
