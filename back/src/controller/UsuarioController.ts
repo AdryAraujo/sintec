@@ -5,6 +5,7 @@ import { AuthenticationService } from "../service/Authentication";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import Authentication from "../utils/Authentication";
+import { error } from "console";
 
 
 class UsuarioController {
@@ -98,6 +99,7 @@ class UsuarioController {
     }
 
     async findById(req: Request, res: Response) {
+      console.log(req)
         try {
             let cd_usuario = parseInt(req.params["cd_usuario"])
             const new_usuario = await UsuarioRepo.retrieveById(cd_usuario)
@@ -145,25 +147,32 @@ class UsuarioController {
     }
 
     async identify(req: Request, res: Response) {
-        // Get the token from the Authorization header
+      console.log(req)
+      console.log("passou")
+        // Obtenha o token do cabeçalho de autorização
         const token = req.headers.authorization;
-      
+        console.log(token)
         if (!token) {
           return res.status(401).json({ error: 'Authorization header is missing' });
         }
-      
+        // const decodedToken = Authentication.validateToken(token)
+        // console.log(decodedToken)
+
         try {
-          // Verify and decode the JWT
+          // Verifique e decodifique o JWT
           const decodedToken = Authentication.validateToken(token)
-          if (decodedToken){
-             // Authenticate the user based on the decoded token
-            const user = UsuarioRepo.findByLogin_rede(decodedToken.login_rede);
-            if (!user) {
-              return res.status(401).json({ error: 'Invalid token' });
-            }
-            // Return user data
-            res.json({ user });
-          }
+          console.log("decoded",decodedToken)
+          // if (decodedToken){
+          //   // Autentique o usuário com base no token decodificado
+          //   const user = UsuarioRepo.findByLogin_rede(decodedToken.login_rede);
+          //   console.log("login ", decodedToken.login_rede)
+          //   if (!user) {
+          //     return res.status(401).json({ error: 'Invalid token' });
+          //   }
+          //   // Retornar dados do usuário
+           
+          // }
+          res.json(decodedToken?.cd_usuario);
          
         } catch (error) {
           console.log(error);

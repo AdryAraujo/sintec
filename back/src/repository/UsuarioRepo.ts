@@ -95,7 +95,7 @@ export class UsuarioRepo{
         }
     }
 
-    static async findByLogin_rede(login_rede: string): Promise<Usuario> {
+    static async findByLogin_rede(login_rede: any): Promise<Usuario> {
         try {
             const new_usuario = await Usuario.findOne({
                 where: { login_rede: login_rede },
@@ -103,7 +103,8 @@ export class UsuarioRepo{
             if (!new_usuario) {
                 throw new Error("Usuario not found!");
             }
-            return new_usuario;
+            console.log("user", new_usuario.dataValues)
+            return new_usuario.dataValues;
         } catch (error) {
             throw new Error("Failed to feacth data by login_rede!");
         }

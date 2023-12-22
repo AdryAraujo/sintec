@@ -52,8 +52,11 @@ class Authentication {
 
   public static validateToken(token: string): Payload | null {
     try {
+      console.log("utils", token)
       const secretKey: string = process.env.JWT_SECRET_KEY || "my-secret";
-      return jwt.verify(token, secretKey) as Payload;
+      const bearer = token.split(' ')
+      console.log("split ", bearer[1])
+      return jwt.verify(bearer[1], secretKey) as Payload;
     } catch (err) {
       return null;
     }

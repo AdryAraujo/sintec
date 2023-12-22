@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login, register } from '../services/api';
+import { identify, login, register } from '../services/api';
 import {api} from '../services/api';
 
 type User = {
@@ -75,17 +75,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return response;
   }
 
-  async function handleIdentify(){
-    const response = await identify(login_rede, senha_rede);
-    const token = response.data.result.token
-
-    if (response.status === 200) {
-      localStorage.setItem('token', token)
-      setUser(token);
-      navigate('/CircCad');
-    }
-    return response;
-  }
+  
 
   function handleLogout() {
     localStorage.removeItem('user');
