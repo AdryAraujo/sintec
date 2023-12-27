@@ -1,6 +1,7 @@
 import { Sequelize } from "sequelize-typescript";
 import * as dotenv from "dotenv";
 import { Usuario } from "../model/Usuario.model";
+import { Conta } from "../model/Conta.model";
 dotenv.config();
 
 class Database {
@@ -24,7 +25,7 @@ class Database {
       host: this.POSTGRES_HOST,
       port: this.POSTGRES_PORT,
       dialect: "postgres",
-      models: [Usuario]
+      models: [Usuario, Conta]
     });
 
     await this.sequelize
