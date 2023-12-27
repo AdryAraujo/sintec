@@ -75,7 +75,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return response;
   }
 
-  
+  async function handleIdentify(token: string) {
+    try {
+      const response = await identify(token);
+      if (response) {
+        // Faça o que for necessário com a resposta da identificação do usuário
+        // Por exemplo, você pode atualizar o estado do usuário com as informações retornadas
+        setUser(response.data); // Certifique-se de que a estrutura da resposta corresponda à definição do tipo User
+      }
+      // Lide com a resposta de identificação conforme necessário
+      return response;
+    } catch (error) {
+      console.error('Erro ao identificar o usuário:', error);
+      throw error;
+    }
+  }
 
   function handleLogout() {
     localStorage.removeItem('user');

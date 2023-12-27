@@ -17,5 +17,5 @@ export async function register(login_rede: string, senha_rede: string) {
 }
 
 export async function identify() {
-    return api.get(`identify`);
+    return api.get(`/identify`);
 }
