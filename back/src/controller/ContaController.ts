@@ -5,7 +5,7 @@ import { ContaRepo } from "../repository/ContaRepo";
 class ContaController {
   async create(req: Request, res: Response) {
     try {
-      const { name, description } = req.body;
+      const { dt_venc, vlr_conta, nr_conta, cd_conta, dt_mes_ref, nm_uni_consu, cd_user_alteracao, fl_ativo, nr_periodo, vlr_total, cd_user_inclusao } = req.body;
 
       const new_conta = new Conta();
       new_conta.dt_venc = dt_venc;
@@ -19,7 +19,7 @@ class ContaController {
       new_conta.fl_ativo = fl_ativo;
       new_conta.nr_periodo = nr_periodo;
       new_conta.vlr_total = vlr_total;
-      await new ContaRepo().save(new_conta);
+      await ContaRepo.save(new_conta);
 
       return res.status(200).json({
         status: "Ok!",
@@ -36,7 +36,7 @@ class ContaController {
 
   async getAll(req: Request, res: Response) {
     try {
-      const resp_data = await new ContaRepo().getAll();
+      const resp_data = await ContaRepo.getAll();
 
       return res.status(200).json({
         status: "Ok!",
