@@ -115,8 +115,9 @@ class ContaController {
         message: "Successfully updated Usuario data!",
       });
     } catch (err) {
+      console.log("erro update", err)
       res.status(500).json({
-        status: "Internal Server Error!",
+        status: "error",
         message: "Internal Server Error!",
       });
     }

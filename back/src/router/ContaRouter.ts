@@ -1,5 +1,4 @@
 import ContaController from "../controller/ContaController";
-import { auth } from "../middleware/AuthMiddleware";
 import BaseRoutes from "./base/BaseRouter";
 
 class ContaRoutes extends BaseRoutes {
