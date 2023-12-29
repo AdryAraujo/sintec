@@ -39,7 +39,7 @@ export class Conta extends Model {
         type: DataType.STRING(200),
         field: Conta.CONTA_NR_CONTA,
     })
-    nr_conta!: string;
+    nr_conta!: number;
 
     @Column({
         type: DataType.BIGINT,

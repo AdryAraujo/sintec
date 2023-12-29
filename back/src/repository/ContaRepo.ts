@@ -1,6 +1,6 @@
 import { Conta } from "../model/Conta.model";
 
-export class ContaRepo{
+export class ContaRepo {
     static async save(conta: Conta): Promise<void> {
         try {
             await Conta.create({
@@ -59,6 +59,32 @@ export class ContaRepo{
             }
 
             return new_conta
+        } catch (error) {
+            throw new Error("");
+        }
+    }
+
+    static async update(conta: Conta): Promise<void> {
+        try {
+            const new_conta = await Conta.findOne({
+                where: {
+                    cd_conta: conta.cd_conta,
+                },
+            })
+            if (!new_conta) {
+                throw new Error("Erro");
+            }
+            new_conta.dt_venc = conta.dt_venc;
+            new_conta.vlr_conta = conta.vlr_conta;
+            new_conta.nr_conta = conta.nr_conta;
+            new_conta.dt_mes_ref = conta.dt_mes_ref;
+            new_conta.nm_uni_consu = conta.nm_uni_consu;
+            new_conta.cd_user_alteracao = conta.cd_user_alteracao;
+            new_conta.cd_user_inclusao = conta.cd_user_inclusao;
+            new_conta.fl_ativo = conta.fl_ativo;
+            new_conta.nr_periodo = conta.nr_periodo;
+            new_conta.vlr_total = conta.vlr_total;
+            await new_conta.save();
         } catch (error) {
             throw new Error("");
         }

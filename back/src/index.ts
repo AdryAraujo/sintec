@@ -1,6 +1,7 @@
 import express, { Application, Request, Response } from "express";
 import Database from "./config/database";
 import UsuarioRouter from "./router/UsuarioRouter";
+import ContaRouter from "./router/ContaRouter";
 
 class App {
   public app: Application;
@@ -27,6 +28,8 @@ class App {
       res.send("welcome home");
     });
     this.app.use("/api/usuario", UsuarioRouter);
+    this.app.use("/api/conta", ContaRouter);
+
   }
 }
 
