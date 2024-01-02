@@ -97,22 +97,22 @@ class ContaController {
       const new_conta = new Conta();
 
       new_conta.cd_conta = cd_conta;     
-      new_conta.dt_venc = req.body.conta.dt_venc;
-      new_conta.vlr_conta = req.body.conta.vlr_conta;
-      new_conta.nr_conta = req.body.conta.nr_conta;
-      new_conta.dt_mes_ref = req.body.conta.dt_mes_ref;
-      new_conta.nm_uni_consu = req.body.conta.nm_uni_consu;
-      new_conta.cd_user_alteracao = req.body.conta.cd_user_alteracao;
-      new_conta.cd_user_inclusao = req.body.conta.cd_user_inclusao;
-      new_conta.fl_ativo = req.body.conta.fl_ativo;
-      new_conta.nr_periodo = req.body.conta.nr_periodo;
-      new_conta.vlr_total = req.body.conta.vlr_total;
+      new_conta.dt_venc = req.body.dt_venc;
+      new_conta.vlr_conta = req.body.vlr_conta;
+      new_conta.nr_conta = req.body.nr_conta;
+      new_conta.dt_mes_ref = req.body.dt_mes_ref;
+      new_conta.nm_uni_consu = req.body.nm_uni_consu;
+      new_conta.cd_user_alteracao = req.body.cd_user_alteracao;
+      new_conta.cd_user_inclusao = req.body.cd_user_inclusao;
+      new_conta.fl_ativo = req.body.fl_ativo;
+      new_conta.nr_periodo = req.body.nr_periodo;
+      new_conta.vlr_total = req.body.vlr_total;
 
       await ContaRepo.update(new_conta);
 
       res.status(200).json({
         status: "Ok!",
-        message: "Successfully updated Usuario data!",
+        message: "Conta alterada com sucesso!",
       });
     } catch (err) {
       console.log("erro update", err)
