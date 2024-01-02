@@ -115,7 +115,6 @@ class ContaController {
         message: "Conta alterada com sucesso!",
       });
     } catch (err) {
-      console.log("erro update", err)
       res.status(500).json({
         status: "error",
         message: "Internal Server Error!",
