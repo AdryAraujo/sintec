@@ -1,5 +1,4 @@
 import { Model, Table, Column, DataType } from "sequelize-typescript";
-import { Pais } from "./Pais.model";
 import { Municipio } from "./Municipio.model";
 
 @Table({
@@ -66,5 +65,4 @@ export class Bairro extends Model {
           key: 'cd_municipio'}
     })
     tb_municipio_cd_municipio_fk!: number;
-
 }
