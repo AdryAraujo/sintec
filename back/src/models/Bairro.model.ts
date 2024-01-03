@@ -1,0 +1,70 @@
+import { Model, Table, Column, DataType } from "sequelize-typescript";
+import { Pais } from "./Pais.model";
+import { Municipio } from "./Municipio.model";
+
+@Table({
+    tableName: 'tb_bairro',
+    timestamps: false
+})
+export class Bairro extends Model {
+    public static BAIRRO_TABLE_NAME = "tb_bairro" as string;
+    public static BAIRRO_nm_bairro = "nm_bairro" as string;
+    public static BAIRRO_CD_bairro = "cd_bairro" as string;
+    public static BAIRRO_CD_USER_ALTERACAO = "cd_user_alteracao" as string;
+    public static BAIRRO_CD_USER_INCLUSAO = "cd_user_inclusao" as string;
+    public static BAIRRO_FL_BAIRRO_ATIVO = "fl_bairro_ativo" as string;
+    public static BAIRRO_TB_municipio_CD_municipio_FK = "tb_municipio_cd_municipio_fk" as string;
+   
+    @Column({
+        type: DataType.STRING(100),
+        field: Bairro.BAIRRO_nm_bairro,
+    })
+    nm_bairro!: string;
+
+    @Column({
+        type: DataType.BIGINT,
+        primaryKey: true,
+        autoIncrement: true,
+        field: Bairro.BAIRRO_CD_bairro,
+    })
+    cd_bairro!: number;
+
+    @Column({
+        type: DataType.BIGINT,
+        field: Bairro.BAIRRO_CD_USER_ALTERACAO,
+    })
+    cd_user_alteracao!: number;
+
+    @Column({
+        type: DataType.BIGINT,
+        field: Bairro.BAIRRO_CD_USER_INCLUSAO,
+    })
+    cd_user_inclusao!: number;
+
+    @Column({
+        type: DataType.BOOLEAN,
+        field: Bairro.BAIRRO_FL_BAIRRO_ATIVO,
+    })
+    fl_bairro_ativo!: boolean;
+
+    @Column({
+        allowNull: false,
+        type: DataType.DATE
+      })
+    createdAt!: Date;
+
+    @Column({
+        allowNull: false,
+        type: DataType.DATE
+      })
+    updatedAt!: Date;
+
+    @Column({
+        type: DataType.BIGINT,
+        references: {
+          model: Municipio,
+          key: 'cd_municipio'}
+    })
+    tb_municipio_cd_municipio_fk!: number;
+
+}

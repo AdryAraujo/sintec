@@ -1,4 +1,5 @@
 import { Model, Table, Column, DataType } from "sequelize-typescript";
+import { Estado } from "./Estado.model";
 
 @Table({
     tableName: 'tb_municipio',
