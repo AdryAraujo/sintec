@@ -1,4 +1,4 @@
-import { Conta } from "../model/Conta.model";
+import { Conta } from "../models/Conta.model";
 
 export class ContaRepo {
     static async save(conta: Conta): Promise<void> {

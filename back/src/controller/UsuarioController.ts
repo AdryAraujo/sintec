@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { Usuario } from "../model/Usuario.model"
+import { Usuario } from "../models/Usuario.model"
 import { UsuarioRepo } from "../repository/UsuarioRepo";
 import { AuthenticationService } from "../service/Authentication";
 import bcrypt from "bcrypt";

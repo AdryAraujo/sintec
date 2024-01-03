@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Conta } from "../model/Conta.model";
+import { Conta } from "../models/Conta.model";
 import { ContaRepo } from "../repository/ContaRepo";
 
 class ContaController {

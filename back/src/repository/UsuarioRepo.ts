@@ -1,4 +1,4 @@
-import { Usuario } from "../model/Usuario.model";
+import { Usuario } from "../models/Usuario.model";
 
 export class UsuarioRepo{
     static async save(usuario: Usuario): Promise<void> {

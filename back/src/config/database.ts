@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize-typescript";
 import * as dotenv from "dotenv";
-import { Usuario } from "../model/Usuario.model";
-import { Conta } from "../model/Conta.model";
+import { Usuario } from "../models/Usuario.model";
+import { Conta } from "../models/Conta.model";
 dotenv.config();
 
 class Database {
