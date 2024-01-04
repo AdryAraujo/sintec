@@ -1,4 +1,4 @@
-import { Model, Table, Column, DataType } from "sequelize-typescript";
+import { Model, Table, Column, DataType, ForeignKey } from "sequelize-typescript";
 import { Contrato } from "./Contrato.model";
 
 @Table({
@@ -93,11 +93,7 @@ export class Conta extends Model {
     })
     fl_ativo!: boolean;
 
-    @Column({
-        type: DataType.BIGINT,
-        references: {
-          model: Contrato,
-          key: 'cd_contrato'}
-    })
-    tb_contrato_cd_contrato_fk!: number;
+    @ForeignKey(() => Contrato)
+    @Column
+    tb_contrato_cd_contrato_fk: number;
 }

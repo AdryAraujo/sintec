@@ -19,7 +19,7 @@ export class Contrato extends Model {
     public static CONTRATO_FL_contrato_ATIVO = "fl_contrato_ativo" as string;
     public static CONTRATO_nr_contrato = "nr_contrato" as string;
     public static CONTRATO_FL_RENOVACAO = "fl_renovacao" as string;
-    public static CONTRATO_TB_FORNECEDOR_CD_FORNECEDOR_FK = "tb_fornecedor_cd_fornrcedor_fk" as string;
+    public static CONTRATO_TB_FORNECEDOR_CD_FORNECEDOR_FK = "tb_fornecedor_cd_fornecedor_fk" as string;
    
     @Column({
         type: DataType.STRING,
@@ -101,12 +101,12 @@ export class Contrato extends Model {
       })
     updatedAt!: Date;
 
-    @Column({
-        type: DataType.BIGINT,
-        references: {
-          model: Fornecedor,
-          key: 'cd_fornecedor'}
-    })
-    tb_fornecedor_cd_fornecedor_fk!: number;
+    // @Column({
+    //     type: DataType.BIGINT,
+    //     references: {
+    //       model: Fornecedor,
+    //       key: 'cd_fornecedor'}
+    // })
+    // tb_fornecedor_cd_fornecedor_fk!: number;
 
 }
