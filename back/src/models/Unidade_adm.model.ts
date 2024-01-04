@@ -5,68 +5,67 @@ import { Municipio } from "./Municipio.model";
     tableName: 'tb_unidade_administrativa',
     timestamps: false
 })
-export class Fornecedor extends Model {
-    public static FORNECEDOR_TABLE_NAME = "tb_unidade_administrativa" as string;
-    public static FORNECEDOR_nm_unidade = "nm_unidade" as string;
-    public static FORNECEDOR_nm_logradouro = "nm_logradouro" as string;
-    public static FORNECEDOR_cd_estrutura_adm_siga = "cd_estrutura_adm_siga" as string;
-    public static FORNECEDOR_CD_unidade = "cd_unidade" as string;
-    public static FORNECEDOR_cd_cep = "cd_cep" as string;
-    public static FORNECEDOR_cd_inep = "cd_inep" as string;
-    public static FORNECEDOR_nm_email = "nm_email" as string;
-    public static FORNECEDOR_nm_dre = "nm_dre" as string;
-    public static FORNECEDOR_nm_sigla_unidade = "nm_sigla_unidade" as string;
-    public static FORNECEDOR_nm_tp_unidade = "nm_tp_unidade" as string;
-    public static FORNECEDOR_CD_USER_ALTERACAO = "cd_user_alteracao" as string;
-    public static FORNECEDOR_CD_USER_INCLUSAO = "cd_user_inclusao" as string;
-    public static FORNECEDOR_FL_unidade_adm_ATIVO = "fl_unidade_adm_ativo" as string;
-    public static FORNECEDOR_nr_telefone1 = "nr_telefone1" as string;
-    public static FORNECEDOR_nr_logradouro = "nr_logradouro" as string;
-    public static FORNECEDOR_NR_INST_ESTADUAL = "nr_inst_estadual" as string;
-    public static FORNECEDOR_NR_CELULAR = "nr_celular" as string;
-    public static FORNECEDOR_NR_TELEFONE2 = "nr_telefone2" as string;
-    public static FORNECEDOR_NM_complemento = "nm_complemento" as string;
-    public static FORNECEDOR_TB_MUNICIPIO_CD_MUNICIPIO_FK = "tb_municipio_cd_municipio_fk" as string;
+export class Unidade_adm extends Model {
+    public static UNIDADE_ADM_TABLE_NAME = "tb_unidade_administrativa" as string;
+    public static UNIDADE_ADM_nm_unidade = "nm_unidade" as string;
+    public static UNIDADE_ADM_nm_logradouro = "nm_logradouro" as string;
+    public static UNIDADE_ADM_cd_estrutura_adm_siga = "cd_estrutura_adm_siga" as string;
+    public static UNIDADE_ADM_CD_unidade = "cd_unidade" as string;
+    public static UNIDADE_ADM_cd_cep = "cd_cep" as string;
+    public static UNIDADE_ADM_cd_inep = "cd_inep" as string;
+    public static UNIDADE_ADM_nm_email = "nm_email" as string;
+    public static UNIDADE_ADM_nm_dre = "nm_dre" as string;
+    public static UNIDADE_ADM_nm_sigla_unidade = "nm_sigla_unidade" as string;
+    public static UNIDADE_ADM_nm_tp_unidade = "nm_tp_unidade" as string;
+    public static UNIDADE_ADM_CD_USER_ALTERACAO = "cd_user_alteracao" as string;
+    public static UNIDADE_ADM_CD_USER_INCLUSAO = "cd_user_inclusao" as string;
+    public static UNIDADE_ADM_FL_unidade_adm_ATIVO = "fl_unidade_adm_ativo" as string;
+    public static UNIDADE_ADM_nr_telefone1 = "nr_telefone1" as string;
+    public static UNIDADE_ADM_nr_logradouro = "nr_logradouro" as string;
+    public static UNIDADE_ADM_NR_CELULAR = "nr_celular" as string;
+    public static UNIDADE_ADM_NR_TELEFONE2 = "nr_telefone2" as string;
+    public static UNIDADE_ADM_NM_complemento = "nm_complemento" as string;
+    public static UNIDADE_ADM_TB_MUNICIPIO_CD_MUNICIPIO_FK = "tb_municipio_cd_municipio_fk" as string;
    
     @Column({
-        type: DataType.STRING(10),
-        field: Fornecedor.FORNECEDOR_nm_dre,
+        type: DataType.STRING(100),
+        field: Unidade_adm.UNIDADE_ADM_nm_dre,
     })
     nm_dre!: string;
 
     @Column({
         type: DataType.STRING(10),
-        field: Fornecedor.FORNECEDOR_nm_sigla_unidade,
+        field: Unidade_adm.UNIDADE_ADM_nm_sigla_unidade,
     })
     nm_sigla_unidade!: string;
 
     @Column({
         type: DataType.STRING(50),
-        field: Fornecedor.FORNECEDOR_nm_tp_unidade,
+        field: Unidade_adm.UNIDADE_ADM_nm_tp_unidade,
     })
     nm_tp_unidade!: string;
 
     @Column({
         type: DataType.STRING(15),
-        field: Fornecedor.FORNECEDOR_cd_inep,
+        field: Unidade_adm.UNIDADE_ADM_cd_inep,
     })
     cd_inep!: string;
     
     @Column({
         type: DataType.STRING,
-        field: Fornecedor.FORNECEDOR_nm_unidade,
+        field: Unidade_adm.UNIDADE_ADM_nm_unidade,
     })
     nm_unidade!: string;
 
     @Column({
         type: DataType.STRING,
-        field: Fornecedor.FORNECEDOR_nm_logradouro,
+        field: Unidade_adm.UNIDADE_ADM_nm_logradouro,
     })
     nm_logradouro!: string;
 
     @Column({
         type: DataType.INTEGER,
-        field: Fornecedor.FORNECEDOR_cd_estrutura_adm_siga,
+        field: Unidade_adm.UNIDADE_ADM_cd_estrutura_adm_siga,
     })
     cd_estrutura_adm_siga!: number;
 
@@ -74,43 +73,43 @@ export class Fornecedor extends Model {
         type: DataType.BIGINT,
         primaryKey: true,
         autoIncrement: true,
-        field: Fornecedor.FORNECEDOR_CD_unidade,
+        field: Unidade_adm.UNIDADE_ADM_CD_unidade,
     })
     cd_unidade!: number;
 
     @Column({
         type: DataType.STRING(8),
-        field: Fornecedor.FORNECEDOR_cd_cep,
+        field: Unidade_adm.UNIDADE_ADM_cd_cep,
     })
     cd_cep!: string;
 
     @Column({
         type: DataType.STRING(100),
-        field: Fornecedor.FORNECEDOR_nm_email,
+        field: Unidade_adm.UNIDADE_ADM_nm_email,
     })
     nm_email!: string;
 
     @Column({
         type: DataType.BIGINT,
-        field: Fornecedor.FORNECEDOR_CD_USER_ALTERACAO,
+        field: Unidade_adm.UNIDADE_ADM_CD_USER_ALTERACAO,
     })
     cd_user_alteracao!: number;
 
     @Column({
         type: DataType.BIGINT,
-        field: Fornecedor.FORNECEDOR_CD_USER_INCLUSAO,
+        field: Unidade_adm.UNIDADE_ADM_CD_USER_INCLUSAO,
     })
     cd_user_inclusao!: number;
 
     @Column({
         type: DataType.STRING(11),
-        field: Fornecedor.FORNECEDOR_nr_telefone1,
+        field: Unidade_adm.UNIDADE_ADM_nr_telefone1,
     })
     nr_telefone1!: string;
 
     @Column({
         type: DataType.BOOLEAN,
-        field: Fornecedor.FORNECEDOR_FL_unidade_adm_ATIVO,
+        field: Unidade_adm.UNIDADE_ADM_FL_unidade_adm_ATIVO,
     })
     fl_unidade_adm_ativo!: boolean;
 
@@ -136,31 +135,25 @@ export class Fornecedor extends Model {
 
     @Column({
         type: DataType.STRING(11),
-        field: Fornecedor.FORNECEDOR_NR_CELULAR,
+        field: Unidade_adm.UNIDADE_ADM_NR_CELULAR,
     })
     nr_celular!: string;
 
     @Column({
-        type: DataType.STRING(11),
-        field: Fornecedor.FORNECEDOR_NR_INST_ESTADUAL,
-    })
-    nr_inst_estadual!: string;
-
-    @Column({
         type: DataType.STRING(100),
-        field: Fornecedor.FORNECEDOR_NM_complemento,
+        field: Unidade_adm.UNIDADE_ADM_NM_complemento,
     })
     nm_complemento!: string;
 
     @Column({
         type: DataType.STRING(5),
-        field: Fornecedor.FORNECEDOR_nr_logradouro,
+        field: Unidade_adm.UNIDADE_ADM_nr_logradouro,
     })
     nr_logradouro!: string;
 
     @Column({
         type: DataType.STRING(11),
-        field: Fornecedor.FORNECEDOR_NR_TELEFONE2,
+        field: Unidade_adm.UNIDADE_ADM_NR_TELEFONE2,
     })
     nr_telefone2!: string;
 }

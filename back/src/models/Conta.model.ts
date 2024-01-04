@@ -1,4 +1,5 @@
 import { Model, Table, Column, DataType } from "sequelize-typescript";
+import { Contrato } from "./Contrato.model";
 
 @Table({
     tableName: 'tb_conta',
@@ -20,6 +21,7 @@ export class Conta extends Model {
     public static CONTA_FL_ATIVO = "fl_ativo" as string;
     public static CONTA_NR_PERIODO = "nr_periodo" as string;
     public static CONTA_VLR_TOTAL = "vlr_total" as string;
+    public static CONTA_TB_CONTRATO_CD_CONTRATO_FK = "tb_contrato_cd_contrato_fk" as string;
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
 
@@ -61,20 +63,6 @@ export class Conta extends Model {
     })
     nm_uni_consu!: string;
 
-    // @Column({
-    //     type: DataType.DATEONLY,
-    //     field: Conta.CONTA_DT_ALTERACAO,
-    //     allowNull: true,
-    // })
-    // dt_alteracao!: Date;
-
-    // @Column({
-    //     type: DataType.DATEONLY,
-    //     field: Conta.CONTA_DT_INCLUSAO,
-    //     allowNull: true,
-    // })
-    // dt_inclusao!: Date;
-
     @Column({
         type: DataType.BIGINT,
         field: Conta.CONTA_CD_USER_ALTERACAO,
@@ -104,4 +92,12 @@ export class Conta extends Model {
         field: Conta.CONTA_FL_ATIVO,
     })
     fl_ativo!: boolean;
+
+    @Column({
+        type: DataType.BIGINT,
+        references: {
+          model: Contrato,
+          key: 'cd_contrato'}
+    })
+    tb_contrato_cd_contrato_fk!: number;
 }
