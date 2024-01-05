@@ -1,4 +1,4 @@
-import { Model, Table, Column, DataType } from "sequelize-typescript";
+import { Model, Table, Column, DataType, ForeignKey } from "sequelize-typescript";
 import { Municipio } from "./Municipio.model";
 
 @Table({
@@ -124,7 +124,7 @@ export class Unidade_adm extends Model {
         type: DataType.DATE
       })
     updatedAt!: Date;
-
+    @ForeignKey(() => Municipio)
     @Column({
         type: DataType.BIGINT,
         references: {

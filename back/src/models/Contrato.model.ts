@@ -1,4 +1,4 @@
-import { Model, Table, Column, DataType } from "sequelize-typescript";
+import { Model, Table, Column, DataType, ForeignKey } from "sequelize-typescript";
 import { Fornecedor } from "./Fornecedor.model";
 
 @Table({
@@ -101,12 +101,8 @@ export class Contrato extends Model {
       })
     updatedAt!: Date;
 
-    // @Column({
-    //     type: DataType.BIGINT,
-    //     references: {
-    //       model: Fornecedor,
-    //       key: 'cd_fornecedor'}
-    // })
-    // tb_fornecedor_cd_fornecedor_fk!: number;
+    @ForeignKey(() => Fornecedor)
+    @Column
+    tb_fornecedor_cd_fornecedor_fk!: number;
 
 }

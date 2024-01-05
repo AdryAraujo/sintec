@@ -8,7 +8,7 @@ class ContaController {
       const { dt_venc, vlr_conta, nr_conta, 
               cd_conta, dt_mes_ref, nm_uni_consu, 
               cd_user_alteracao, fl_ativo, nr_periodo, 
-              vlr_total, cd_user_inclusao } = req.body;
+              vlr_total, cd_user_inclusao, tb_contrato_cd_contrato_fk } = req.body;
 
       const new_conta = new Conta();
       new_conta.dt_venc = dt_venc;
@@ -22,6 +22,7 @@ class ContaController {
       new_conta.fl_ativo = fl_ativo;
       new_conta.nr_periodo = nr_periodo;
       new_conta.vlr_total = vlr_total;
+      new_conta.tb_contrato_cd_contrato_fk = tb_contrato_cd_contrato_fk;
       await ContaRepo.save(new_conta);
 
       return res.status(200).json({
@@ -31,8 +32,8 @@ class ContaController {
     } catch (error) {
       console.log(error)
       return res.status(500).json({
-        status: "Internal server error!",
-        message: "Internal server error!",
+        status: "Erro ao Inserir linha no banco",
+        message: "Erro ao Inserir linha no banco",
       });
     }
   }
@@ -107,6 +108,7 @@ class ContaController {
       new_conta.fl_ativo = req.body.fl_ativo;
       new_conta.nr_periodo = req.body.nr_periodo;
       new_conta.vlr_total = req.body.vlr_total;
+      new_conta.tb_contrato_cd_contrato_fk = req.body.tb_contrato_cd_contrato_fk;
 
       await ContaRepo.update(new_conta);
 

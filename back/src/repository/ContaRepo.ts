@@ -15,6 +15,7 @@ export class ContaRepo {
                 fl_ativo: conta.fl_ativo,
                 nr_periodo: conta.nr_periodo,
                 vlr_total: conta.vlr_total,
+                tb_contrato_cd_contrato_fk: conta.tb_contrato_cd_contrato_fk,
             });
         } catch (error) {
             console.log(error)
@@ -84,6 +85,7 @@ export class ContaRepo {
             new_conta.fl_ativo = conta.fl_ativo;
             new_conta.nr_periodo = conta.nr_periodo;
             new_conta.vlr_total = conta.vlr_total;
+            new_conta.tb_contrato_cd_contrato_fk = conta.tb_contrato_cd_contrato_fk;
             await new_conta.save();
         } catch (error) {
             throw new Error("");
