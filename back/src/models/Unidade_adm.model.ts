@@ -10,7 +10,7 @@ export class Unidade_adm extends Model {
     public static UNIDADE_ADM_nm_unidade = "nm_unidade" as string;
     public static UNIDADE_ADM_nm_logradouro = "nm_logradouro" as string;
     public static UNIDADE_ADM_cd_estrutura_adm_siga = "cd_estrutura_adm_siga" as string;
-    public static UNIDADE_ADM_CD_unidade = "cd_unidade" as string;
+    public static UNIDADE_ADM_CD_unidade_pk = "cd_unidade_pk" as string;
     public static UNIDADE_ADM_cd_cep = "cd_cep" as string;
     public static UNIDADE_ADM_cd_inep = "cd_inep" as string;
     public static UNIDADE_ADM_nm_email = "nm_email" as string;
@@ -25,7 +25,7 @@ export class Unidade_adm extends Model {
     public static UNIDADE_ADM_NR_CELULAR = "nr_celular" as string;
     public static UNIDADE_ADM_NR_TELEFONE2 = "nr_telefone2" as string;
     public static UNIDADE_ADM_NM_complemento = "nm_complemento" as string;
-    public static UNIDADE_ADM_TB_MUNICIPIO_CD_MUNICIPIO_FK = "tb_municipio_cd_municipio_fk" as string;
+    public static UNIDADE_ADM_CD_MUNICIPIO_FK = "cd_municipio_fk" as string;
    
     @Column({
         type: DataType.STRING(100),
@@ -73,9 +73,9 @@ export class Unidade_adm extends Model {
         type: DataType.BIGINT,
         primaryKey: true,
         autoIncrement: true,
-        field: Unidade_adm.UNIDADE_ADM_CD_unidade,
+        field: Unidade_adm.UNIDADE_ADM_CD_unidade_pk,
     })
-    cd_unidade!: number;
+    cd_unidade_pk!: number;
 
     @Column({
         type: DataType.STRING(8),
@@ -131,7 +131,7 @@ export class Unidade_adm extends Model {
           model: Municipio,
           key: 'cd_municipio'}
     })
-    tb_municipio_cd_municipio_fk!: number;
+    cd_municipio_fk!: number;
 
     @Column({
         type: DataType.STRING(11),

@@ -65,8 +65,8 @@ class UsuarioController {
     async delete(req: Request, res: Response) {
         try {
 
-            let cd_usuario = parseInt(req.params["cd_usuario"])
-            await UsuarioRepo.delete(cd_usuario)
+            let cd_usuario_pk = parseInt(req.params["cd_usuario_pk"])
+            await UsuarioRepo.delete(cd_usuario_pk)
 
             res.status(200).json({
                 status: "Ok!",
@@ -101,8 +101,8 @@ class UsuarioController {
     async findById(req: Request, res: Response) {
       console.log(req)
         try {
-            let cd_usuario = parseInt(req.params["cd_usuario"])
-            const new_usuario = await UsuarioRepo.retrieveById(cd_usuario)
+            let cd_usuario_pk = parseInt(req.params["cd_usuario_pk"])
+            const new_usuario = await UsuarioRepo.retrieveById(cd_usuario_pk)
 
             res.status(200).json({
                 status: "Ok!",
@@ -119,10 +119,10 @@ class UsuarioController {
 
     async update(req: Request, res: Response) {
         try {
-            let cd_usuario = parseInt(req.params["cd_usuario"]);
+            let cd_usuario_pk = parseInt(req.params["cd_usuario_pk"]);
             const new_usuario = new Usuario();
 
-            new_usuario.cd_usuario = cd_usuario;
+            new_usuario.cd_usuario_pk = cd_usuario_pk;
             new_usuario.nm_usuario = req.body.nm_usuario;
             new_usuario.login_rede = req.body.login_rede;
             new_usuario.senha_rede = req.body.senha_rede;
@@ -172,7 +172,7 @@ class UsuarioController {
           //   // Retornar dados do usuário
            
           // }
-          res.json(decodedToken?.cd_usuario);
+          res.json(decodedToken?.cd_usuario_pk);
          
         } catch (error) {
           console.log(error);

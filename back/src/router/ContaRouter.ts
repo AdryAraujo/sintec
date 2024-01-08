@@ -8,12 +8,12 @@ class ContaRoutes extends BaseRoutes {
         this.router.post("/create", ContaController.create);
         this.router.get("/", ContaController.getAll);
         this.router.patch(
-            "/:cd_conta",
+            "/:cd_conta_pk",
             validate(updateContaSchema),
             ContaController.update
           );
-        this.router.delete("/:cd_conta", ContaController.delete);
-        this.router.get("/procurar/:cd_conta", ContaController.findById);
+        this.router.delete("/:cd_conta_pk", ContaController.delete);
+        this.router.get("/procurar/:cd_conta_pk", ContaController.findById);
     }
 }
 

@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 interface Payload {
     login_rede: string,
     nm_usuario: string,
-    cd_usuario: number,
+    cd_usuario_pk: number,
     fl_usuario_ativo: boolean,
     cd_user_inclusao_usuario: number,
     dt_alteracao_usuario: Date,
@@ -27,7 +27,7 @@ class Authentication {
   public static generateToken(
     login_rede: string,
     nm_usuario: string,
-    cd_usuario: number,
+    cd_usuario_pk: number,
     fl_usuario_ativo: boolean,
     cd_user_inclusao_usuario: number,
     dt_alteracao_usuario: Date,
@@ -38,7 +38,7 @@ class Authentication {
     const payload: Payload = {
         login_rede: login_rede,
         nm_usuario: nm_usuario,
-        cd_usuario: cd_usuario,
+        cd_usuario_pk: cd_usuario_pk,
         fl_usuario_ativo: fl_usuario_ativo,
         cd_user_inclusao_usuario: cd_user_inclusao_usuario,
         dt_alteracao_usuario: dt_alteracao_usuario,

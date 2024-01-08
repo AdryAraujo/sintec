@@ -6,15 +6,15 @@ class ContaController {
   async create(req: Request, res: Response) {
     try {
       const { dt_venc, vlr_conta, nr_conta, 
-              cd_conta, dt_mes_ref, nm_uni_consu, 
+              cd_conta_pk, dt_mes_ref, nm_uni_consu, 
               cd_user_alteracao, fl_ativo, nr_periodo, 
-              vlr_total, cd_user_inclusao, tb_contrato_cd_contrato_fk } = req.body;
+              vlr_total, cd_user_inclusao, cd_contrato_fk } = req.body;
 
       const new_conta = new Conta();
       new_conta.dt_venc = dt_venc;
       new_conta.vlr_conta = vlr_conta;
       new_conta.nr_conta = nr_conta;
-      new_conta.cd_conta = cd_conta;
+      new_conta.cd_conta_pk = cd_conta_pk;
       new_conta.dt_mes_ref = dt_mes_ref;
       new_conta.nm_uni_consu = nm_uni_consu;
       new_conta.cd_user_alteracao = cd_user_alteracao;
@@ -22,7 +22,7 @@ class ContaController {
       new_conta.fl_ativo = fl_ativo;
       new_conta.nr_periodo = nr_periodo;
       new_conta.vlr_total = vlr_total;
-      new_conta.tb_contrato_cd_contrato_fk = tb_contrato_cd_contrato_fk;
+      new_conta.cd_contrato_fk = cd_contrato_fk;
       await ContaRepo.save(new_conta);
 
       return res.status(200).json({
@@ -58,8 +58,8 @@ class ContaController {
   async delete(req: Request, res: Response) {
     try {
 
-      let cd_conta = parseInt(req.params["cd_conta"])
-      await ContaRepo.delete(cd_conta)
+      let cd_conta_pk = parseInt(req.params["cd_conta_pk"])
+      await ContaRepo.delete(cd_conta_pk)
 
       res.status(200).json({
         status: "Ok!",
@@ -76,8 +76,8 @@ class ContaController {
   async findById(req: Request, res: Response) {
     console.log(req)
     try {
-      let cd_conta = parseInt(req.params["cd_conta"])
-      const new_conta = await ContaRepo.getById(cd_conta)
+      let cd_conta_pk = parseInt(req.params["cd_conta_pk"])
+      const new_conta = await ContaRepo.getById(cd_conta_pk)
 
       res.status(200).json({
         status: "Ok!",
@@ -94,10 +94,10 @@ class ContaController {
 
   async update(req: Request, res: Response) {
     try {
-      let cd_conta = parseInt(req.params["cd_conta"]);
+      let cd_conta_pk = parseInt(req.params["cd_conta_pk"]);
       const new_conta = new Conta();
 
-      new_conta.cd_conta = cd_conta;     
+      new_conta.cd_conta_pk = cd_conta_pk;     
       new_conta.dt_venc = req.body.dt_venc;
       new_conta.vlr_conta = req.body.vlr_conta;
       new_conta.nr_conta = req.body.nr_conta;
@@ -108,7 +108,7 @@ class ContaController {
       new_conta.fl_ativo = req.body.fl_ativo;
       new_conta.nr_periodo = req.body.nr_periodo;
       new_conta.vlr_total = req.body.vlr_total;
-      new_conta.tb_contrato_cd_contrato_fk = req.body.tb_contrato_cd_contrato_fk;
+      new_conta.cd_contrato_fk = req.body.cd_contrato_fk;
 
       await ContaRepo.update(new_conta);
 

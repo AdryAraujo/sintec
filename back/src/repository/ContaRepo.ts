@@ -7,7 +7,7 @@ export class ContaRepo {
                 dt_venc: conta.dt_venc,
                 vlr_conta: conta.vlr_conta,
                 nr_conta: conta.nr_conta,
-                cd_conta: conta.cd_conta,
+                cd_conta_pk: conta.cd_conta_pk,
                 dt_mes_ref: conta.dt_mes_ref,
                 nm_uni_consu: conta.nm_uni_consu,
                 cd_user_alteracao: conta.cd_user_alteracao,
@@ -15,7 +15,7 @@ export class ContaRepo {
                 fl_ativo: conta.fl_ativo,
                 nr_periodo: conta.nr_periodo,
                 vlr_total: conta.vlr_total,
-                tb_contrato_cd_contrato_fk: conta.tb_contrato_cd_contrato_fk,
+                cd_contrato_fk: conta.cd_contrato_fk,
             });
         } catch (error) {
             console.log(error)
@@ -35,7 +35,7 @@ export class ContaRepo {
         try {
             const new_conta = await Conta.findOne({
                 where: {
-                    cd_conta: contaId,
+                    cd_conta_pk: contaId,
                 },
             })
             if (!new_conta) {
@@ -52,7 +52,7 @@ export class ContaRepo {
         try {
             const new_conta = await Conta.findOne({
                 where: {
-                    cd_conta: contaId,
+                    cd_conta_pk: contaId,
                 },
             })
             if (!new_conta) {
@@ -69,7 +69,7 @@ export class ContaRepo {
         try {
             const new_conta = await Conta.findOne({
                 where: {
-                    cd_conta: conta.cd_conta,
+                    cd_conta_pk: conta.cd_conta_pk,
                 },
             })
             if (!new_conta) {
@@ -85,7 +85,7 @@ export class ContaRepo {
             new_conta.fl_ativo = conta.fl_ativo;
             new_conta.nr_periodo = conta.nr_periodo;
             new_conta.vlr_total = conta.vlr_total;
-            new_conta.tb_contrato_cd_contrato_fk = conta.tb_contrato_cd_contrato_fk;
+            new_conta.cd_contrato_fk = conta.cd_contrato_fk;
             await new_conta.save();
         } catch (error) {
             throw new Error("");

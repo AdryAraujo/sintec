@@ -11,7 +11,7 @@ export class Fornecedor extends Model {
     public static FORNECEDOR_nm_fornecedor = "nm_fornecedor" as string;
     public static FORNECEDOR_nm_logradouro = "nm_logradouro" as string;
     public static FORNECEDOR_nr_cnpj = "nr_cnpj" as string;
-    public static FORNECEDOR_CD_fornecedor = "cd_fornecedor" as string;
+    public static FORNECEDOR_CD_fornecedor_pk = "cd_fornecedor_pk" as string;
     public static FORNECEDOR_cd_cep = "cd_cep" as string;
     public static FORNECEDOR_nm_email = "nm_email" as string;
     public static FORNECEDOR_CD_USER_ALTERACAO = "cd_user_alteracao" as string;
@@ -23,7 +23,7 @@ export class Fornecedor extends Model {
     public static FORNECEDOR_NR_CELULAR = "nr_celular" as string;
     public static FORNECEDOR_NR_TELEFONE = "nr_telefone" as string;
     public static FORNECEDOR_NM_REPRESENTANTE = "nm_representante" as string;
-    public static FORNECEDOR_TB_MUNICIPIO_CD_MUNICIPIO_FK = "tb_municipio_cd_municipio_fk" as string;
+    public static FORNECEDOR_CD_MUNICIPIO_FK = "cd_municipio_fk" as string;
    
     @Column({
         type: DataType.STRING(200),
@@ -47,9 +47,9 @@ export class Fornecedor extends Model {
         type: DataType.BIGINT,
         primaryKey: true,
         autoIncrement: true,
-        field: Fornecedor.FORNECEDOR_CD_fornecedor,
+        field: Fornecedor.FORNECEDOR_CD_fornecedor_pk,
     })
-    cd_fornecedor!: number;
+    cd_fornecedor_pk!: number;
 
     @Column({
         type: DataType.STRING(8),
@@ -105,7 +105,7 @@ export class Fornecedor extends Model {
           model: Municipio,
           key: 'cd_municipio'}
     })
-    tb_municipio_cd_municipio_fk!: number;
+    cd_municipio_fk!: number;
 
     @Column({
         type: DataType.STRING(11),

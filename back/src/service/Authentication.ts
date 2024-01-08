@@ -34,7 +34,7 @@ export class AuthenticationService implements IAuthenticationService {
             return Authentication.generateToken(
                 usuario.login_rede,
                 usuario.nm_usuario,
-                usuario.cd_usuario,
+                usuario.cd_usuario_pk,
                 usuario.fl_usuario_ativo,
                 usuario.cd_user_inclusao_usuario,
                 usuario.dt_alteracao_usuario,

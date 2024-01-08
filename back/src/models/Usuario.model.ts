@@ -9,7 +9,7 @@ export class Usuario extends Model {
   public static USUARIO_LOGIN_REDE = "login_rede" as string;
   public static USUARIO_SENHA_REDE = "senha_rede" as string;
   public static USUARIO_NM_USUARIO = "nm_usuario" as string;
-  public static USUARIO_CD_USUARIO = "cd_usuario" as string;
+  public static USUARIO_CD_USUARIO_pk = "cd_usuario_pk" as string;
   public static USUARIO_FL_USUARIO_ATIVO = "fl_usuario_ativo" as string;
   public static USUARIO_CD_USER_INCLUSAO_USUARIO = "cd_user_inclusao_usuario" as string;
   public static USUARIO_DT_ALTERACAO_USUARIO = "dt_alteracao_usuario" as string;
@@ -38,9 +38,9 @@ export class Usuario extends Model {
     type: DataType.BIGINT,
     primaryKey: true,
     autoIncrement: true,
-    field: Usuario.USUARIO_CD_USUARIO,
+    field: Usuario.USUARIO_CD_USUARIO_pk,
   })
-  cd_usuario!: number;
+  cd_usuario_pk!: number;
 
   @Column({
     type: DataType.BOOLEAN,

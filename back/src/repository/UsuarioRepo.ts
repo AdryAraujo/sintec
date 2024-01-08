@@ -22,7 +22,7 @@ export class UsuarioRepo{
         try {
             const new_usuario = await Usuario.findOne({
                 where: {
-                    cd_usuario: usuario.cd_usuario,
+                    cd_usuario_pk: usuario.cd_usuario_pk,
                 },
             })
             if (!new_usuario) {
@@ -47,7 +47,7 @@ export class UsuarioRepo{
         try {
             const new_usuario = await Usuario.findOne({
                 where: {
-                    cd_usuario: usuarioId,
+                    cd_usuario_pk: usuarioId,
                 },
             })
             if (!new_usuario) {
@@ -64,7 +64,7 @@ export class UsuarioRepo{
         try {
             const new_usuario = await Usuario.findOne({
                 where: {
-                    cd_usuario: usuarioId,
+                    cd_usuario_pk: usuarioId,
                 },
             })
             if (!new_usuario) {

@@ -9,11 +9,11 @@ export class Estado extends Model {
     public static ESTADO_TABLE_NAME = "tb_estado" as string;
     public static ESTADO_nm_estado = "nm_estado" as string;
     public static ESTADO_sigla_uf = "sigla_uf" as string;
-    public static ESTADO_CD_estado = "cd_estado" as string;
+    public static ESTADO_CD_estado_pk = "cd_estado_pk" as string;
     public static ESTADO_CD_USER_ALTERACAO = "cd_user_alteracao" as string;
     public static ESTADO_CD_USER_INCLUSAO = "cd_user_inclusao" as string;
     public static ESTADO_FL_PAIS_ATIVO = "fl_pais_ativo" as string;
-    public static ESTADO_TB_pais_CD_pais_FK = "tb_pais_cd_pais_fk" as string;
+    public static ESTADO_CD_pais_FK = "cd_pais_fk" as string;
    
     @Column({
         type: DataType.STRING(100),
@@ -31,9 +31,9 @@ export class Estado extends Model {
         type: DataType.BIGINT,
         primaryKey: true,
         autoIncrement: true,
-        field: Estado.ESTADO_CD_estado,
+        field: Estado.ESTADO_CD_estado_pk,
     })
-    cd_estado!: number;
+    cd_estado_pk!: number;
 
     @Column({
         type: DataType.BIGINT,
@@ -71,6 +71,6 @@ export class Estado extends Model {
           model: Pais,
           key: 'cd_pais'}
     })
-    tb_pais_cd_pais_fk!: number;
+    cd_pais_fk!: number;
 
 }
