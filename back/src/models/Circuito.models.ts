@@ -52,7 +52,7 @@ export class Circuito extends Model {
         type: DataType.BOOLEAN,
         field: Circuito.CIRCUITO_FL_circuito_ATIVO,
     })
-    fl_CIRCUITO_ativo!: boolean;
+    fl_circuito_ativo!: boolean;
 
     @Column({
         allowNull: false,

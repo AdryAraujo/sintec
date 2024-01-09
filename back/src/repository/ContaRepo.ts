@@ -85,7 +85,6 @@ export class ContaRepo {
             new_conta.fl_ativo = conta.fl_ativo;
             new_conta.nr_periodo = conta.nr_periodo;
             new_conta.vlr_total = conta.vlr_total;
-            new_conta.cd_contrato_fk = conta.cd_contrato_fk;
             await new_conta.save();
         } catch (error) {
             throw new Error("");
