@@ -35,8 +35,6 @@ class Database {
       models: [Usuario, Conta, Contrato, Municipio, Bairro, Pais, Estado, Unidade_adm, Fornecedor]
     });
 
-    Conta.belongsTo(Contrato, { foreignKey: "tb_contrato_cd_contrato_fk" });
-
     await this.sequelize
       .authenticate()
       .then(() => {

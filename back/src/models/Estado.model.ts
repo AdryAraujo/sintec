@@ -1,4 +1,4 @@
-import { Model, Table, Column, DataType } from "sequelize-typescript";
+import { Model, Table, Column, DataType, ForeignKey } from "sequelize-typescript";
 import { Pais } from "./Pais.model";
 
 @Table({
@@ -12,7 +12,7 @@ export class Estado extends Model {
     public static ESTADO_CD_estado_pk = "cd_estado_pk" as string;
     public static ESTADO_CD_USER_ALTERACAO = "cd_user_alteracao" as string;
     public static ESTADO_CD_USER_INCLUSAO = "cd_user_inclusao" as string;
-    public static ESTADO_FL_PAIS_ATIVO = "fl_pais_ativo" as string;
+    public static ESTADO_FL_estado_ATIVO = "fl_estado_ativo" as string;
     public static ESTADO_CD_pais_FK = "cd_pais_fk" as string;
    
     @Column({
@@ -49,7 +49,7 @@ export class Estado extends Model {
 
     @Column({
         type: DataType.BOOLEAN,
-        field: Estado.ESTADO_FL_PAIS_ATIVO,
+        field: Estado.ESTADO_FL_estado_ATIVO,
     })
     fl_estado_ativo!: boolean;
 
@@ -65,12 +65,7 @@ export class Estado extends Model {
       })
     updatedAt!: Date;
 
-    @Column({
-        type: DataType.BIGINT,
-        references: {
-          model: Pais,
-          key: 'cd_pais'}
-    })
+    @ForeignKey(() => Pais)
+    @Column
     cd_pais_fk!: number;
-
 }

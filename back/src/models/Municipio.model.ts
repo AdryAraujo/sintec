@@ -78,6 +78,7 @@ export class Municipio extends Model {
         type: DataType.DATE
       })
     updatedAt!: Date;
+    
     @ForeignKey(() => Estado)
     @Column
     cd_estado_fk!: number;

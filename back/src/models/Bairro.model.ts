@@ -57,6 +57,7 @@ export class Bairro extends Model {
         type: DataType.DATE
       })
     updatedAt!: Date;
+    
     @ForeignKey(() => Municipio)
     @Column
     tb_municipio_cd_municipio_fk!: number;

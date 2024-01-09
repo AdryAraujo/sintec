@@ -124,14 +124,6 @@ export class Unidade_adm extends Model {
         type: DataType.DATE
       })
     updatedAt!: Date;
-    @ForeignKey(() => Municipio)
-    @Column({
-        type: DataType.BIGINT,
-        references: {
-          model: Municipio,
-          key: 'cd_municipio'}
-    })
-    cd_municipio_fk!: number;
 
     @Column({
         type: DataType.STRING(11),
@@ -156,4 +148,8 @@ export class Unidade_adm extends Model {
         field: Unidade_adm.UNIDADE_ADM_NR_TELEFONE2,
     })
     nr_telefone2!: string;
+
+    @ForeignKey(() => Municipio)
+    @Column
+    cd_municipio_fk!: number;
 }
