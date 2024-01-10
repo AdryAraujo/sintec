@@ -49,7 +49,7 @@ export class Pais extends Model {
         type: DataType.BOOLEAN,
         field: Pais.PAIS_FL_PAIS_ATIVO,
     })
-    fl_PAIS_ativo!: boolean;
+    fl_pais_ativo!: boolean;
 
     @Column({
         allowNull: false,

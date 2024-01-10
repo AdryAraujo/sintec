@@ -85,7 +85,7 @@ export class Fornecedor extends Model {
         type: DataType.BOOLEAN,
         field: Fornecedor.FORNECEDOR_FL_FORNECEDOR_ATIVO,
     })
-    fl_FORNECEDOR_ativo!: boolean;
+    fl_fornecedor_ativo!: boolean;
 
     @Column({
         allowNull: false,

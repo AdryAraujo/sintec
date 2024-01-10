@@ -8,11 +8,11 @@ import { Municipio } from "./Municipio.model";
 export class Bairro extends Model {
     public static BAIRRO_TABLE_NAME = "tb_bairro" as string;
     public static BAIRRO_nm_bairro = "nm_bairro" as string;
-    public static BAIRRO_CD_bairro = "cd_bairro" as string;
+    public static BAIRRO_CD_bairro_pk = "cd_bairro_pk" as string;
     public static BAIRRO_CD_USER_ALTERACAO = "cd_user_alteracao" as string;
     public static BAIRRO_CD_USER_INCLUSAO = "cd_user_inclusao" as string;
     public static BAIRRO_FL_BAIRRO_ATIVO = "fl_bairro_ativo" as string;
-    public static BAIRRO_TB_municipio_CD_municipio_FK = "tb_municipio_cd_municipio_fk" as string;
+    public static BAIRRO_cd_municipio_fk = "cd_municipio_fk" as string;
    
     @Column({
         type: DataType.STRING(100),
@@ -24,9 +24,9 @@ export class Bairro extends Model {
         type: DataType.BIGINT,
         primaryKey: true,
         autoIncrement: true,
-        field: Bairro.BAIRRO_CD_bairro,
+        field: Bairro.BAIRRO_CD_bairro_pk,
     })
-    cd_bairro!: number;
+    cd_bairro_pk!: number;
 
     @Column({
         type: DataType.BIGINT,
@@ -60,5 +60,5 @@ export class Bairro extends Model {
     
     @ForeignKey(() => Municipio)
     @Column
-    tb_municipio_cd_municipio_fk!: number;
+    cd_municipio_fk!: number;
 }
