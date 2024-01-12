@@ -27,8 +27,8 @@ class App {
     this.app.route("/").get((req: Request, res: Response) => {
       res.send("welcome home");
     });
-    this.app.use("/api/usuario", UsuarioRouter);
-    this.app.use("/api/conta", ContaRouter);
+    this.app.use("/api/public", UsuarioRouter);
+    this.app.use("/api/contas", ContaRouter);
 
   }
 }
