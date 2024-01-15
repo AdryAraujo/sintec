@@ -1,24 +1,25 @@
 import { Request, Response } from "express";
-import { Pais } from "../models/Pais.model";
-import { PaisRepo } from "../repository/PaisRepo";
+import { Estado } from "../models/Estado.model";
+import { EstadoRepo } from "../repository/EstadoRepo";
 
 class PaisController {
     async create(req: Request, res: Response) {
         try {
-            const { cd_pais_pk, nm_pais,
-                cd_user_alteracao, sigla_pais, fl_pais_ativo,
-                cd_user_inclusao } = req.body;
+            const { cd_estado_pk, nm_estado,
+                cd_user_alteracao, sigla_uf, fl_estado_ativo,
+                cd_user_inclusao, cd_pais_fk } = req.body;
 
-            const new_pais = new Pais();
+            const new_estado = new Estado();
 
-            new_pais.cd_pais_pk = cd_pais_pk;
-            new_pais.nm_pais = nm_pais;
-            new_pais.sigla_pais = sigla_pais;
-            new_pais.cd_user_alteracao = cd_user_alteracao;
-            new_pais.cd_user_inclusao = cd_user_inclusao;
-            new_pais.fl_pais_ativo = fl_pais_ativo;
+            new_estado.cd_estado_pk = cd_estado_pk;
+            new_estado.nm_estado = nm_estado;
+            new_estado.sigla_uf = sigla_uf;
+            new_estado.cd_user_alteracao = cd_user_alteracao;
+            new_estado.cd_user_inclusao = cd_user_inclusao;
+            new_estado.fl_estado_ativo = fl_estado_ativo;
+            new_estado.cd_pais_fk = cd_pais_fk;
 
-            await PaisRepo.save(new_pais);
+            await EstadoRepo.save(new_estado);
 
             return res.status(200).json({
                 status: "Ok!",
@@ -35,7 +36,7 @@ class PaisController {
 
     async getAll(req: Request, res: Response) {
         try {
-            const resp_data = await PaisRepo.getAll();
+            const resp_data = await EstadoRepo.getAll();
 
             return res.status(200).json({
                 status: "Ok!",
@@ -53,8 +54,8 @@ class PaisController {
     async delete(req: Request, res: Response) {
         try {
 
-            let cd_pais_pk = parseInt(req.params["cd_pais_pk"])
-            await PaisRepo.delete(cd_pais_pk)
+            let cd_estado_pk = parseInt(req.params["cd_estado_pk"])
+            await EstadoRepo.delete(cd_estado_pk)
 
             res.status(200).json({
                 status: "Ok!",
@@ -71,13 +72,13 @@ class PaisController {
     async findById(req: Request, res: Response) {
         console.log(req)
         try {
-            let cd_pais_pk = parseInt(req.params["cd_pais_pk"])
-            const new_pais = await PaisRepo.getById(cd_pais_pk)
+            let cd_estado_pk = parseInt(req.params["cd_estado_pk"])
+            const new_estado = await EstadoRepo.getById(cd_estado_pk)
 
             res.status(200).json({
                 status: "Ok!",
                 message: "Busca realizada com sucesso!",
-                data: new_pais,
+                data: new_estado,
             })
         } catch (err) {
             res.status(500).json({
@@ -89,16 +90,16 @@ class PaisController {
 
     async update(req: Request, res: Response) {
         try {
-            let cd_pais_pk = parseInt(req.params["cd_pais_pk"]);
-            const new_pais = new Pais();
+            let cd_estado_pk = parseInt(req.params["cd_estado_pk"]);
+            const new_estado = new Estado();
 
-            new_pais.cd_pais_pk = cd_pais_pk;
-            new_pais.nm_pais = req.body.nm_pais;
-            new_pais.cd_user_alteracao = req.body.cd_user_alteracao;
-            new_pais.cd_user_inclusao = req.body.cd_user_inclusao;
-            new_pais.fl_pais_ativo = req.body.fl_pais_ativo;
+            new_estado.cd_estado_pk = cd_estado_pk;
+            new_estado.nm_estado = req.body.nm_estado;
+            new_estado.cd_user_alteracao = req.body.cd_user_alteracao;
+            new_estado.cd_user_inclusao = req.body.cd_user_inclusao;
+            new_estado.fl_estado_ativo = req.body.fl_estado_ativo;
 
-            await PaisRepo.update(new_pais);
+            await EstadoRepo.update(new_estado);
 
             res.status(200).json({
                 status: "Ok!",
