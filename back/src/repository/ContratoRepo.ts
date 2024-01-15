@@ -27,6 +27,7 @@ export class ContratoRepo {
         try {
             return await Contrato.findAll();
         } catch (error) {
+            console.log(error)
             throw new Error("Failed to fetch all data!");
         }
     }

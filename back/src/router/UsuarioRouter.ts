@@ -3,6 +3,11 @@ import UsuarioController from "../controller/UsuarioController";
 import { createUsuarioSchema, updateUsuarioSchema } from "../schema/UsuarioSchema";
 import validate from "../helper/validate";
 import BairroController from "../controller/BairroController";
+import FornecedorController from "../controller/FornecedorController";
+import MunicipioController from "../controller/MunicipioController";
+import EstadoController from "../controller/EstadoController";
+import PaisController from "../controller/PaisController";
+import Unidade_admController from "../controller/Unidade_admController";
 
 class UsuarioRoutes extends BaseRoutes {
   public routes(): void {
@@ -45,7 +50,6 @@ class UsuarioRoutes extends BaseRoutes {
         this.router.get("/procurarEstado", EstadoController.getAll);
         this.router.patch(
             "/alterar/:cd_estado_pk",
-            validate(updateContaSchema),
             EstadoController.update
           );
         this.router.delete("/delete/:cd_estado_pk", EstadoController.delete);
@@ -56,7 +60,6 @@ class UsuarioRoutes extends BaseRoutes {
         this.router.get("/procurarPais", PaisController.getAll);
         this.router.patch(
             "/alterar/:cd_pais_pk",
-            validate(updateContaSchema),
             PaisController.update
           );
         this.router.delete("/delete/:cd_pais_pk", PaisController.delete);
@@ -67,7 +70,6 @@ class UsuarioRoutes extends BaseRoutes {
     this.router.get("/procurarUnidade_adm", Unidade_admController.getAll);
     this.router.patch(
         "/alterar/:cd_unidade_pk",
-        validate(updateContaSchema),
         Unidade_admController.update
       );
     this.router.delete("/delete/:cd_unidade_pk", Unidade_admController.delete);

@@ -24,7 +24,6 @@ class ContaRoutes extends BaseRoutes {
         this.router.get("/procurarContrato", ContratoController.getAll);
         this.router.patch(
             "/alterar/:cd_contrato_pk",
-            validate(updateContaSchema),
             ContratoController.update
           );
         this.router.delete("/delete/:cd_contrato_pk", ContratoController.delete);
@@ -35,7 +34,6 @@ class ContaRoutes extends BaseRoutes {
         this.router.get("/procurarCircuito", CircuitoController.getAll);
         this.router.patch(
             "/alterar/:cd_circuito_pk",
-            validate(updateContaSchema),
             CircuitoController.update
           );
         this.router.delete("/delete/:cd_circuito_pk", CircuitoController.delete);

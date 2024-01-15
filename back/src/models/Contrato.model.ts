@@ -89,17 +89,17 @@ export class Contrato extends Model {
     })
     fl_renovacao!: boolean;
 
-    @Column({
-        allowNull: false,
-        type: DataType.DATE
-      })
-    createdAt!: Date;
+    // @Column({
+    //     allowNull: false,
+    //     type: DataType.DATE
+    //   })
+    // createdAt!: Date;
 
-    @Column({
-        allowNull: false,
-        type: DataType.DATE
-      })
-    updatedAt!: Date;
+    // @Column({
+    //     allowNull: false,
+    //     type: DataType.DATE
+    //   })
+    // updatedAt!: Date;
 
     @ForeignKey(() => Fornecedor)
     @Column
