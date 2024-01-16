@@ -108,4 +108,13 @@ export class Conta extends Model {
         field: Conta.CONTA_DT_ALTERACAO,
     })
     updatedAt!: Date;
+
+    // beforeSave(options: any) {
+    //     const { currentUser } = this.context;
+    //     if (!options.isNewRecord) {
+    //       this.cd_user_alteracao = currentUser.id;
+    //     } else {
+    //       this.cd_user_inclusao = currentUser.id;
+    //     }
+    //   }
 }
