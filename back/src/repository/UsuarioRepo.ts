@@ -8,10 +8,10 @@ export class UsuarioRepo{
                 senha_rede: usuario.senha_rede,
                 nm_usuario: usuario.nm_usuario,
                 fl_usuario_ativo: usuario.fl_usuario_ativo,
-                cd_user_inclusao_usuario: usuario.cd_user_inclusao_usuario,
-                dt_alteracao_usuario: usuario.dt_alteracao_usuario,
-                dt_inclusao_usuario: usuario.dt_inclusao_usuario,
-                cd_user_alteracao_usuario: usuario.cd_user_alteracao_usuario
+                cd_user_inclusao: usuario.cd_user_inclusao,
+                dt_alteracao: usuario.dt_alteracao,
+                dt_inclusao: usuario.dt_inclusao,
+                cd_user_alteracao: usuario.cd_user_alteracao
             })
         } catch (error) {
             throw new Error("Falha ao criar um usuario!");
@@ -32,10 +32,10 @@ export class UsuarioRepo{
             new_usuario.login_rede = usuario.login_rede;
             new_usuario.senha_rede = usuario.senha_rede;
             new_usuario.fl_usuario_ativo = usuario.fl_usuario_ativo;
-            new_usuario.cd_user_inclusao_usuario = usuario.cd_user_inclusao_usuario;
-            new_usuario.dt_alteracao_usuario = usuario.dt_alteracao_usuario;
-            new_usuario.dt_inclusao_usuario = usuario.dt_inclusao_usuario;
-            new_usuario.cd_user_alteracao_usuario = usuario.cd_user_alteracao_usuario;
+            new_usuario.cd_user_inclusao = usuario.cd_user_inclusao;
+            new_usuario.dt_alteracao = usuario.dt_alteracao;
+            new_usuario.dt_inclusao = usuario.dt_inclusao;
+            new_usuario.cd_user_alteracao = usuario.cd_user_alteracao;
 
             await new_usuario.save();
         } catch (error) {

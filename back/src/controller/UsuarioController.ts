@@ -35,17 +35,17 @@ class UsuarioController {
       // register controller
       async register(req: Request, res: Response) {
         try {
-          const { nm_usuario, fl_usuario_ativo, login_rede, senha_rede, cd_user_inclusao_usuario, dt_alteracao_usuario, dt_inclusao_usuario, cd_user_alteracao_usuario} = req.body;
+          const { nm_usuario, fl_usuario_ativo, login_rede, senha_rede, cd_user_inclusao, dt_alteracao, dt_inclusao, cd_user_alteracao} = req.body;
     
           await new AuthenticationService().register(
             login_rede,
             nm_usuario,
             senha_rede,
             fl_usuario_ativo,
-            cd_user_inclusao_usuario,
-            dt_alteracao_usuario,
-            dt_inclusao_usuario,
-            cd_user_alteracao_usuario
+            cd_user_inclusao,
+            dt_alteracao,
+            dt_inclusao,
+            cd_user_alteracao
           );
     
           return res.status(200).json({
@@ -127,10 +127,10 @@ class UsuarioController {
             new_usuario.login_rede = req.body.login_rede;
             new_usuario.senha_rede = req.body.senha_rede;
             new_usuario.fl_usuario_ativo = req.body.fl_usuario_ativo;
-            new_usuario.cd_user_inclusao_usuario = req.body.cd_user_inclusao_usuario;
-            new_usuario.dt_alteracao_usuario = req.body.dt_alteracao_usuario;
-            new_usuario.dt_inclusao_usuario = req.body.dt_inclusao_usuario;
-            new_usuario.cd_user_alteracao_usuario = req.body.cd_user_alteracao_usuario;
+            new_usuario.cd_user_inclusao = req.body.cd_user_inclusao;
+            new_usuario.dt_alteracao = req.body.dt_alteracao;
+            new_usuario.dt_inclusao = req.body.dt_inclusao;
+            new_usuario.cd_user_alteracao = req.body.cd_user_alteracao;
 
             await UsuarioRepo.update(new_usuario);
 
