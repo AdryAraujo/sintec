@@ -4,7 +4,7 @@ import { Contrato } from "./Contrato.model";
 @Table({
     tableName: 'tb_conta',
     schema: 'contas',
-    timestamps: false
+    timestamps: true
 })
 export class Conta extends Model {
     public static CONTA_TABLE_NAME = "tb_Conta" as string;
@@ -14,16 +14,14 @@ export class Conta extends Model {
     public static CONTA_CD_CONTA_pk = "cd_conta_pk" as string;
     public static CONTA_DT_MES_REF = "dt_mes_ref" as string;
     public static CONTA_NM_UNI_CONSU = "nm_uni_consu" as string;
-    // public static CONTA_DT_ALTERACAO = "dt_alteracao" as string;
-    // public static CONTA_DT_INCLUSAO = "dt_inclusao" as string;
+    public static CONTA_DT_ALTERACAO = "dt_alteracao" as string;
+    public static CONTA_DT_INCLUSAO = "dt_inclusao" as string;
     public static CONTA_CD_USER_ALTERACAO = "cd_user_alteracao" as string;
     public static CONTA_CD_USER_INCLUSAO = "cd_user_inclusao" as string;
     public static CONTA_FL_ATIVO = "fl_ativo" as string;
     public static CONTA_NR_PERIODO = "nr_periodo" as string;
     public static CONTA_VLR_TOTAL = "vlr_total" as string;
     public static CONTA_CD_CONTRATO_FK = "cd_contrato_fk" as string;
-    public readonly createdAt!: Date;
-    public readonly updatedAt!: Date;
 
     @Column({
         type: DataType.DATEONLY,
@@ -96,4 +94,18 @@ export class Conta extends Model {
     @ForeignKey(() => Contrato)
     @Column
     cd_contrato_fk: number;
+
+    @Column({
+        type: DataType.DATE,
+        allowNull: false,
+        field: Conta.CONTA_DT_INCLUSAO,
+    })
+    createdAt!: Date;
+
+    @Column({
+        type: DataType.DATE,
+        allowNull: false,
+        field: Conta.CONTA_DT_ALTERACAO,
+    })
+    updatedAt!: Date;
 }

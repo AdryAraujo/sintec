@@ -12,7 +12,7 @@ class ContaRoutes extends BaseRoutes {
         this.router.post("/createConta", ContaController.create);
         this.router.get("/procurarConta", ContaController.getAll);
         this.router.patch(
-            "/alterar/:cd_conta_pk",
+            "/alterarConta/:cd_conta_pk",
             validate(updateContaSchema),
             ContaController.update
           );
@@ -23,7 +23,7 @@ class ContaRoutes extends BaseRoutes {
         this.router.post("/createContrato", ContratoController.create);
         this.router.get("/procurarContrato", ContratoController.getAll);
         this.router.patch(
-            "/alterar/:cd_contrato_pk",
+            "/alterarContrato/:cd_contrato_pk",
             ContratoController.update
           );
         this.router.delete("/delete/:cd_contrato_pk", ContratoController.delete);
@@ -33,7 +33,7 @@ class ContaRoutes extends BaseRoutes {
         this.router.post("/createCircuito", CircuitoController.create);
         this.router.get("/procurarCircuito", CircuitoController.getAll);
         this.router.patch(
-            "/alterar/:cd_circuito_pk",
+            "/alterarCircuito/:cd_circuito_pk",
             CircuitoController.update
           );
         this.router.delete("/delete/:cd_circuito_pk", CircuitoController.delete);

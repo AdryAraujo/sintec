@@ -3,7 +3,7 @@ import { Estado } from "./Estado.model";
 
 @Table({
     tableName: 'tb_municipio',
-    timestamps: false
+    timestamps: true
 })
 export class Municipio extends Model {
     public static MUNICIPIO_TABLE_NAME = "tb_municipio" as string;
@@ -16,7 +16,23 @@ export class Municipio extends Model {
     public static MUNICIPIO_FL_MUNICIPIO_ATIVO = "fl_municipio_ativo" as string;
     public static MUNICIPIO_nr_ibge = "nr_ibge" as string;
     public static MUNICIPIO_CD_ESTADO_FK = "cd_estado_fk" as string;
-   
+    public static MUNICIPIO_DT_INCLUSAO = "dt_inclusao" as string;
+    public static MUNICIPIO_DT_ALTERACAO = "dt_alteracao" as string;
+
+    @Column({
+        type: DataType.DATE,
+        allowNull: false,
+        field: Municipio.MUNICIPIO_DT_INCLUSAO,
+    })
+    createdAt!: Date;
+
+    @Column({
+        type: DataType.DATE,
+        allowNull: false,
+        field: Municipio.MUNICIPIO_DT_ALTERACAO,
+    })
+    updatedAt!: Date;
+
     @Column({
         type: DataType.STRING(100),
         field: Municipio.MUNICIPIO_nm_municipio,
@@ -66,18 +82,6 @@ export class Municipio extends Model {
         field: Municipio.MUNICIPIO_FL_MUNICIPIO_ATIVO,
     })
     fl_municipio_ativo!: boolean;
-
-    @Column({
-        allowNull: false,
-        type: DataType.DATE
-      })
-    createdAt!: Date;
-
-    @Column({
-        allowNull: false,
-        type: DataType.DATE
-      })
-    updatedAt!: Date;
     
     @ForeignKey(() => Estado)
     @Column

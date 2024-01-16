@@ -4,7 +4,7 @@ import { Conta } from "./Conta.model";
 
 @Table({
     tableName: 'tb_circuito',
-    timestamps: false
+    timestamps: true
 })
 export class Circuito extends Model {
     public static CIRCUITO_TABLE_NAME = "tb_circuito" as string;
@@ -15,6 +15,8 @@ export class Circuito extends Model {
     public static CIRCUITO_CD_USER_INCLUSAO = "cd_user_inclusao" as string;
     public static CIRCUITO_FL_circuito_ATIVO = "fl_circuito_ativo" as string;
     public static CIRCUITO_CD_conta_FK = "cd_conta_fk" as string;
+    public static CIRCUITO_DT_INCLUSAO = "dt_inclusao" as string;
+    public static CIRCUITO_DT_ALTERACAO = "dt_alteracao" as string;
    
     @Column({
         type: DataType.STRING(50),
@@ -56,13 +58,15 @@ export class Circuito extends Model {
 
     @Column({
         allowNull: false,
-        type: DataType.DATE
+        type: DataType.DATE,
+        field: Circuito.CIRCUITO_DT_INCLUSAO,
       })
     createdAt!: Date;
 
     @Column({
         allowNull: false,
-        type: DataType.DATE
+        type: DataType.DATE,
+        field: Circuito.CIRCUITO_DT_ALTERACAO,
       })
     updatedAt!: Date;
 

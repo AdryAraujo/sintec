@@ -4,7 +4,7 @@ import { Municipio } from "./Municipio.model";
 @Table({
     tableName: 'tb_fornecedor',
     schema: 'contas',
-    timestamps: false
+    timestamps: true
 })
 export class Fornecedor extends Model {
     public static FORNECEDOR_TABLE_NAME = "tb_fornecedor" as string;
@@ -24,7 +24,23 @@ export class Fornecedor extends Model {
     public static FORNECEDOR_NR_TELEFONE = "nr_telefone" as string;
     public static FORNECEDOR_NM_REPRESENTANTE = "nm_representante" as string;
     public static FORNECEDOR_CD_MUNICIPIO_FK = "cd_municipio_fk" as string;
+    public static FORNECEDOR_DT_INCLUSAO = "dt_inclusao" as string;
+    public static FORNECEDOR_DT_ALTERACAO = "dt_alteracao" as string;
    
+    @Column({
+        type: DataType.DATE,
+        allowNull: false,
+        field: Fornecedor.FORNECEDOR_DT_INCLUSAO,
+    })
+    createdAt!: Date;
+
+    @Column({
+        type: DataType.DATE,
+        allowNull: false,
+        field: Fornecedor.FORNECEDOR_DT_ALTERACAO,
+    })
+    updatedAt!: Date;
+
     @Column({
         type: DataType.STRING(200),
         field: Fornecedor.FORNECEDOR_nm_fornecedor,
@@ -86,18 +102,6 @@ export class Fornecedor extends Model {
         field: Fornecedor.FORNECEDOR_FL_FORNECEDOR_ATIVO,
     })
     fl_fornecedor_ativo!: boolean;
-
-    @Column({
-        allowNull: false,
-        type: DataType.DATE
-      })
-    createdAt!: Date;
-
-    @Column({
-        allowNull: false,
-        type: DataType.DATE
-      })
-    updatedAt!: Date;
 
     @Column({
         type: DataType.STRING(11),

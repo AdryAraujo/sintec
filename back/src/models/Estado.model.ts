@@ -3,7 +3,7 @@ import { Pais } from "./Pais.model";
 
 @Table({
     tableName: 'tb_estado',
-    timestamps: false
+    timestamps: true
 })
 export class Estado extends Model {
     public static ESTADO_TABLE_NAME = "tb_estado" as string;
@@ -14,7 +14,23 @@ export class Estado extends Model {
     public static ESTADO_CD_USER_INCLUSAO = "cd_user_inclusao" as string;
     public static ESTADO_FL_estado_ATIVO = "fl_estado_ativo" as string;
     public static ESTADO_CD_pais_FK = "cd_pais_fk" as string;
+    public static ESTADO_DT_INCLUSAO = "dt_inclusao" as string;
+    public static ESTADO_DT_ALTERACAO = "dt_alteracao" as string;
    
+    @Column({
+        type: DataType.DATE,
+        allowNull: false,
+        field: Estado.ESTADO_DT_INCLUSAO,
+    })
+    createdAt!: Date;
+
+    @Column({
+        type: DataType.DATE,
+        allowNull: false,
+        field: Estado.ESTADO_DT_ALTERACAO,
+    })
+    updatedAt!: Date;
+
     @Column({
         type: DataType.STRING(100),
         field: Estado.ESTADO_nm_estado,
@@ -52,18 +68,6 @@ export class Estado extends Model {
         field: Estado.ESTADO_FL_estado_ATIVO,
     })
     fl_estado_ativo!: boolean;
-
-    @Column({
-        allowNull: false,
-        type: DataType.DATE
-      })
-    createdAt!: Date;
-
-    @Column({
-        allowNull: false,
-        type: DataType.DATE
-      })
-    updatedAt!: Date;
 
     @ForeignKey(() => Pais)
     @Column

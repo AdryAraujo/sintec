@@ -2,7 +2,7 @@ import { Model, Table, Column, DataType } from "sequelize-typescript";
 
 @Table({
   tableName: 'tb_usuario',
-  timestamps: false
+  timestamps: true
 })
 export class Usuario extends Model {
   public static USUARIO_TABLE_NAME = "tb_usuario" as string;
@@ -11,10 +11,24 @@ export class Usuario extends Model {
   public static USUARIO_NM_USUARIO = "nm_usuario" as string;
   public static USUARIO_CD_USUARIO_pk = "cd_usuario_pk" as string;
   public static USUARIO_FL_USUARIO_ATIVO = "fl_usuario_ativo" as string;
-  public static USUARIO_CD_USER_INCLUSAO_USUARIO = "cd_user_inclusao_usuario" as string;
-  public static USUARIO_DT_ALTERACAO_USUARIO = "dt_alteracao_usuario" as string;
-  public static USUARIO_DT_INCLUSAO_USUARIO = "dt_inclusao_usuario" as string;
-  public static USUARIO_CD_USER_ALTERACAO_USUARIO = "cd_user_alteracao_usuario" as string;
+  public static USUARIO_CD_USER_INCLUSAO = "cd_user_inclusao" as string;
+  public static USUARIO_DT_ALTERACAO = "dt_alteracao" as string;
+  public static USUARIO_DT_INCLUSAO = "dt_inclusao_" as string;
+  public static USUARIO_CD_USER_ALTERACAO = "cd_user_alteracao" as string;
+
+  @Column({
+    type: DataType.DATE,
+    allowNull: false,
+    field: Usuario.USUARIO_DT_INCLUSAO,
+  })
+  createdAt!: Date;
+
+  @Column({
+    type: DataType.DATE,
+    allowNull: false,
+    field: Usuario.USUARIO_DT_ALTERACAO,
+  })
+  updatedAt!: Date;
 
   @Column({
     type: DataType.STRING(100),
@@ -51,29 +65,29 @@ export class Usuario extends Model {
 
   @Column({
     type: DataType.BIGINT,
-    field: Usuario.USUARIO_CD_USER_INCLUSAO_USUARIO,
+    field: Usuario.USUARIO_CD_USER_INCLUSAO,
     allowNull: true,
   })
-  cd_user_inclusao_usuario!: number;
+  cd_user_inclusao!: number;
 
   @Column({
     type: DataType.DATEONLY,
-    field: Usuario.USUARIO_DT_ALTERACAO_USUARIO,
+    field: Usuario.USUARIO_DT_ALTERACAO,
     allowNull: true,
   })
-  dt_alteracao_usuario!: Date;
+  dt_alteracao!: Date;
 
   @Column({
     type: DataType.DATEONLY,
-    field: Usuario.USUARIO_DT_INCLUSAO_USUARIO,
+    field: Usuario.USUARIO_DT_INCLUSAO,
     allowNull: true,
   })
-  dt_inclusao_usuario!: Date;
+  dt_inclusao!: Date;
 
   @Column({
     type: DataType.BIGINT,
-    field: Usuario.USUARIO_CD_USER_ALTERACAO_USUARIO,
+    field: Usuario.USUARIO_CD_USER_ALTERACAO,
     allowNull: true,
   })
-  cd_user_alteracao_usuario!: number;
+  cd_user_alteracao!: number;
 }

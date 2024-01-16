@@ -16,7 +16,7 @@ class UsuarioRoutes extends BaseRoutes {
     this.router.post("/login", UsuarioController.login);
     this.router.post("/register", UsuarioController.register);
     this.router.patch(
-      "/:cd_usuario",
+      "alterarUsuario/:cd_usuario",
       validate(updateUsuarioSchema),
       UsuarioController.update
     );
@@ -29,7 +29,7 @@ class UsuarioRoutes extends BaseRoutes {
     this.router.post("/createFornecedor", FornecedorController.create);
         this.router.get("/procurarFornecedor", FornecedorController.getAll);
         this.router.patch(
-            "/alterar/:cd_fornecedor_pk",
+            "/alterarFornecedor/:cd_fornecedor_pk",
             FornecedorController.update
           );
         this.router.delete("/delete/:cd_fornecedor_pk", FornecedorController.delete);
@@ -39,7 +39,7 @@ class UsuarioRoutes extends BaseRoutes {
     this.router.post("/createEstado", MunicipioController.create);
         this.router.get("/procurarMunicipio", MunicipioController.getAll);
         this.router.patch(
-            "/alterar/:cd_municipio_pk",
+            "/alterarMunicipio/:cd_municipio_pk",
             MunicipioController.update
           );
         this.router.delete("/delete/:cd_municipio_pk", MunicipioController.delete);
@@ -49,7 +49,7 @@ class UsuarioRoutes extends BaseRoutes {
     this.router.post("/createEstado", EstadoController.create);
         this.router.get("/procurarEstado", EstadoController.getAll);
         this.router.patch(
-            "/alterar/:cd_estado_pk",
+            "/alterarEstado/:cd_estado_pk",
             EstadoController.update
           );
         this.router.delete("/delete/:cd_estado_pk", EstadoController.delete);
@@ -59,7 +59,7 @@ class UsuarioRoutes extends BaseRoutes {
     this.router.post("/createPais", PaisController.create);
         this.router.get("/procurarPais", PaisController.getAll);
         this.router.patch(
-            "/alterar/:cd_pais_pk",
+            "/alterarPais/:cd_pais_pk",
             PaisController.update
           );
         this.router.delete("/delete/:cd_pais_pk", PaisController.delete);
@@ -69,7 +69,7 @@ class UsuarioRoutes extends BaseRoutes {
     this.router.post("/createUnidade_adm", Unidade_admController.create);
     this.router.get("/procurarUnidade_adm", Unidade_admController.getAll);
     this.router.patch(
-        "/alterar/:cd_unidade_pk",
+        "/alterarUnidade_adm/:cd_unidade_pk",
         Unidade_admController.update
       );
     this.router.delete("/delete/:cd_unidade_pk", Unidade_admController.delete);
@@ -79,7 +79,7 @@ class UsuarioRoutes extends BaseRoutes {
     this.router.post("/createBairroController", BairroController.create);
         this.router.get("/procurarc", BairroController.getAll);
         this.router.patch(
-            "/alterar/:cd_bairro_pk",
+            "/alterarBairro/:cd_bairro_pk",
             BairroController.update
           );
         this.router.delete("/delete/:cd_bairro_pk", BairroController.delete);

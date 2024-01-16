@@ -3,7 +3,7 @@ import { Municipio } from "./Municipio.model";
 
 @Table({
     tableName: 'tb_unidade_administrativa',
-    timestamps: false
+    timestamps: true
 })
 export class Unidade_adm extends Model {
     public static UNIDADE_ADM_TABLE_NAME = "tb_unidade_administrativa" as string;
@@ -26,7 +26,23 @@ export class Unidade_adm extends Model {
     public static UNIDADE_ADM_NR_TELEFONE2 = "nr_telefone2" as string;
     public static UNIDADE_ADM_NM_complemento = "nm_complemento" as string;
     public static UNIDADE_ADM_CD_MUNICIPIO_FK = "cd_municipio_fk" as string;
+    public static UNIDADE_ADM_DT_INCLUSAO = "dt_inclusao" as string;
+    public static UNIDADE_ADM_DT_ALTERACAO = "dt_alteracao" as string;
    
+    @Column({
+        type: DataType.DATE,
+        allowNull: false,
+        field: Unidade_adm.UNIDADE_ADM_DT_INCLUSAO,
+    })
+    createdAt!: Date;
+
+    @Column({
+        type: DataType.DATE,
+        allowNull: false,
+        field: Unidade_adm.UNIDADE_ADM_DT_ALTERACAO,
+    })
+    updatedAt!: Date;
+
     @Column({
         type: DataType.STRING(100),
         field: Unidade_adm.UNIDADE_ADM_nm_dre,
@@ -112,18 +128,6 @@ export class Unidade_adm extends Model {
         field: Unidade_adm.UNIDADE_ADM_FL_unidade_adm_ATIVO,
     })
     fl_unidade_adm_ativo!: boolean;
-
-    @Column({
-        allowNull: false,
-        type: DataType.DATE
-      })
-    createdAt!: Date;
-
-    @Column({
-        allowNull: false,
-        type: DataType.DATE
-      })
-    updatedAt!: Date;
 
     @Column({
         type: DataType.STRING(11),

@@ -4,7 +4,7 @@ import { Fornecedor } from "./Fornecedor.model";
 @Table({
     tableName: 'tb_contrato',
     schema: 'contas',
-    timestamps: false
+    timestamps: true
 })
 export class Contrato extends Model {
     public static CONTRATO_TABLE_NAME = "tb_contrato" as string;
@@ -16,6 +16,8 @@ export class Contrato extends Model {
     public static CONTRATO_nm_tp_contrato = "nm_tp_contrato" as string;
     public static CONTRATO_CD_USER_ALTERACAO = "cd_user_alteracao" as string;
     public static CONTRATO_CD_USER_INCLUSAO = "cd_user_inclusao" as string;
+    public static CONTRATO_DT_INCLUSAO = "dt_inclusao" as string;
+    public static CONTRATO_DT_ALTERACAO = "dt_alteracao" as string;
     public static CONTRATO_FL_contrato_ATIVO = "fl_contrato_ativo" as string;
     public static CONTRATO_nr_contrato = "nr_contrato" as string;
     public static CONTRATO_FL_RENOVACAO = "fl_renovacao" as string;
@@ -89,20 +91,23 @@ export class Contrato extends Model {
     })
     fl_renovacao!: boolean;
 
-    // @Column({
-    //     allowNull: false,
-    //     type: DataType.DATE
-    //   })
-    // createdAt!: Date;
+    @Column({
+        type: DataType.DATE,
+        allowNull: false,
+        field: Contrato.CONTRATO_DT_INCLUSAO,
+    })
+    createdAt!: Date;
 
-    // @Column({
-    //     allowNull: false,
-    //     type: DataType.DATE
-    //   })
-    // updatedAt!: Date;
+    @Column({
+        type: DataType.DATE,
+        allowNull: false,
+        field: Contrato.CONTRATO_DT_ALTERACAO,
+    })
+    updatedAt!: Date;
 
     @ForeignKey(() => Fornecedor)
     @Column
     cd_fornecedor_fk!: number;
 
 }
+

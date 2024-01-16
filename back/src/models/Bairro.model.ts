@@ -3,7 +3,7 @@ import { Municipio } from "./Municipio.model";
 
 @Table({
     tableName: 'tb_bairro',
-    timestamps: false
+    timestamps: true
 })
 export class Bairro extends Model {
     public static BAIRRO_TABLE_NAME = "tb_bairro" as string;
@@ -13,7 +13,23 @@ export class Bairro extends Model {
     public static BAIRRO_CD_USER_INCLUSAO = "cd_user_inclusao" as string;
     public static BAIRRO_FL_BAIRRO_ATIVO = "fl_bairro_ativo" as string;
     public static BAIRRO_cd_municipio_fk = "cd_municipio_fk" as string;
+    public static BAIRRO_DT_INCLUSAO = "dt_inclusao" as string;
+    public static BAIRRO_DT_ALTERACAO = "dt_alteracao" as string;
    
+    @Column({
+        type: DataType.DATE,
+        allowNull: false,
+        field: Bairro.BAIRRO_DT_INCLUSAO,
+    })
+    createdAt!: Date;
+
+    @Column({
+        type: DataType.DATE,
+        allowNull: false,
+        field: Bairro.BAIRRO_DT_ALTERACAO,
+    })
+    updatedAt!: Date;
+
     @Column({
         type: DataType.STRING(100),
         field: Bairro.BAIRRO_nm_bairro,
@@ -45,18 +61,6 @@ export class Bairro extends Model {
         field: Bairro.BAIRRO_FL_BAIRRO_ATIVO,
     })
     fl_bairro_ativo!: boolean;
-
-    @Column({
-        allowNull: false,
-        type: DataType.DATE
-      })
-    createdAt!: Date;
-
-    @Column({
-        allowNull: false,
-        type: DataType.DATE
-      })
-    updatedAt!: Date;
     
     @ForeignKey(() => Municipio)
     @Column
