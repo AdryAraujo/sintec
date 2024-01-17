@@ -13,7 +13,7 @@ export class Usuario extends Model {
   public static USUARIO_FL_USUARIO_ATIVO = "fl_usuario_ativo" as string;
   public static USUARIO_CD_USER_INCLUSAO = "cd_user_inclusao" as string;
   public static USUARIO_DT_ALTERACAO = "dt_alteracao" as string;
-  public static USUARIO_DT_INCLUSAO = "dt_inclusao_" as string;
+  public static USUARIO_DT_INCLUSAO = "dt_inclusao" as string;
   public static USUARIO_CD_USER_ALTERACAO = "cd_user_alteracao" as string;
 
   @Column({

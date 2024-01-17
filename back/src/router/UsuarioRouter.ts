@@ -1,6 +1,6 @@
 import BaseRoutes from "./base/BaseRouter";
 import UsuarioController from "../controller/UsuarioController";
-import { createUsuarioSchema, updateUsuarioSchema } from "../schema/UsuarioSchema";
+import { updateUsuarioSchema } from "../schema/UsuarioSchema";
 import validate from "../helper/validate";
 import BairroController from "../controller/BairroController";
 import FornecedorController from "../controller/FornecedorController";
