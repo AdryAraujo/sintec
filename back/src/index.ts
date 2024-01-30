@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from "express";
 import Database from "./config/database";
 import UsuarioRouter from "./router/UsuarioRouter";
 import ContaRouter from "./router/ContaRouter";
+import { manipuladorDeErros } from "./middleware/ManipuladorDeErros";
 
 class App {
   public app: Application;
@@ -39,3 +40,5 @@ const app = new App().app;
 app.listen(port, () => {
   console.log("✅ Server started successfully!");
 });
+
+app.use(manipuladorDeErros);
