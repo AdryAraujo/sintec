@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { identify, login, register } from '../services/api';
-import {api} from '../services/api';
+// import {api} from '../services/api';
 
 type User = {
   cd_usuario: number,

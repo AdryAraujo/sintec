@@ -1,9 +1,10 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { Conta } from "../models/Conta.model";
 import { ContaRepo } from "../repository/ContaRepo";
+import { manipuladorDeErros } from "../middleware/ManipuladorDeErros";
 
 class ContaController {
-  async create(req: Request, res: Response) {
+  async create(req: Request, res: Response, next: NextFunction) {
     try {
       const { dt_venc, vlr_conta, nr_conta, 
               cd_conta_pk, dt_mes_ref, nm_uni_consu, 
@@ -30,11 +31,12 @@ class ContaController {
         message: "Successfully created Conta!",
       });
     } catch (error) {
-      console.log(error)
-      return res.status(500).json({
-        status: "Erro ao Inserir linha no banco",
-        message: "Erro ao Inserir linha no banco",
-      });
+      next(error);
+      // console.log(error)
+      // return res.status(500).json({
+      //   status: "Erro ao Inserir linha no banco",
+      //   message: "Erro ao Inserir linha no banco",
+      // });
     }
   }
 

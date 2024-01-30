@@ -15,7 +15,7 @@ export class ErroBase extends Error {
     res.status(this.status).json({
       mensagem: this.message,
       status: this.status,
-      errors: this.errors || [] // Include Sequelize errors if available
+      errors: this.errors // Include Sequelize errors if available
     });
   }
 }
