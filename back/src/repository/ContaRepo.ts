@@ -1,3 +1,4 @@
+import { ApiError, BadRequestError, NotFoundError } from "../helper/apiErrros";
 import { Conta } from "../models/Conta.model";
 
 export class ContaRepo {
@@ -18,7 +19,7 @@ export class ContaRepo {
                 cd_contrato_fk: conta.cd_contrato_fk,
             });
         } catch (error) {
-            console.log(error)
+            // console.log(error)
             throw new Error("Failed to save Conta!");
         }
     }

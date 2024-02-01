@@ -1,7 +1,8 @@
 import { NextFunction, Request, Response } from "express";
 import { Conta } from "../models/Conta.model";
 import { ContaRepo } from "../repository/ContaRepo";
-import { manipuladorDeErros } from "../middleware/ManipuladorDeErros";
+import { ApiError, NotFoundError } from "../helper/apiErrros";
+import { errorMiddleware } from "../middleware/ManipuladorDeErros";
 
 class ContaController {
   async create(req: Request, res: Response, next: NextFunction) {
@@ -31,16 +32,12 @@ class ContaController {
         message: "Successfully created Conta!",
       });
     } catch (error) {
+      console.log();
       next(error);
-      // console.log(error)
-      // return res.status(500).json({
-      //   status: "Erro ao Inserir linha no banco",
-      //   message: "Erro ao Inserir linha no banco",
-      // });
     }
   }
 
-  async getAll(req: Request, res: Response) {
+  async getAll(req: Request, res: Response, next: NextFunction) {
     try {
       const resp_data = await ContaRepo.getAll();
 
@@ -50,10 +47,7 @@ class ContaController {
         result: resp_data,
       });
     } catch (error) {
-      return res.status(500).json({
-        status: "Internal server error!",
-        message: "Internal server error!",
-      });
+      next(error);
     }
   }
 

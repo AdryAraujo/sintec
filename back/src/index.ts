@@ -1,8 +1,11 @@
+import 'express-async-errors'
 import express, { Application, Request, Response } from "express";
 import Database from "./config/database";
 import UsuarioRouter from "./router/UsuarioRouter";
 import ContaRouter from "./router/ContaRouter";
-import { manipuladorDeErros } from "./middleware/ManipuladorDeErros";
+import { errorMiddleware } from "./middleware/ManipuladorDeErros";
+import { errorMiddleware404 } from "./middleware/Middleware404";
+
 
 class App {
   public app: Application;
@@ -37,8 +40,10 @@ class App {
 const port: number = 8000;
 const app = new App().app;
 
+app.use(errorMiddleware404)
+app.use(errorMiddleware);
+
 app.listen(port, () => {
   console.log("✅ Server started successfully!");
 });
 
-app.use(manipuladorDeErros);
