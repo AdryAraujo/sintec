@@ -4,7 +4,7 @@ import Database from "./config/database";
 import UsuarioRouter from "./router/UsuarioRouter";
 import ContaRouter from "./router/ContaRouter";
 import { errorMiddleware } from "./middleware/ManipuladorDeErros";
-import { errorMiddleware404 } from "./middleware/Middleware404";
+import { errorMiddleware404 } from './middleware/Middleware404';
 
 
 class App {
@@ -33,15 +33,14 @@ class App {
     });
     this.app.use("/api/public", UsuarioRouter);
     this.app.use("/api/contas", ContaRouter);
-
   }
-}
+  
 
+}
 const port: number = 8000;
 const app = new App().app;
 
-app.use(errorMiddleware404)
-app.use(errorMiddleware);
+app.use(errorMiddleware)
 
 app.listen(port, () => {
   console.log("✅ Server started successfully!");
